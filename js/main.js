@@ -73,10 +73,10 @@
 
   if (!daysEl) return;
 
-  // Tournament start: July 19, 2025, 11:00 AM  ← TESTING
-  const TARGET = new Date(2025, 6, 19, 11, 0, 0);
-  // Tournament end cutoff: 2 hours after Grand Final end (7:15 PM → 9:15 PM)  ← TESTING
-  const END_TARGET = new Date(2025, 6, 19, 21, 15, 0);
+  // Tournament start: May 30, 2026, 8:30 AM
+  const TARGET = new Date(2026, 4, 30, 8, 30, 0);
+  // Tournament end cutoff: 2 hours after Grand Final end (7:15 PM → 9:15 PM)
+  const END_TARGET = new Date(2026, 4, 30, 21, 15, 0);
 
   function pad(n) { return String(n).padStart(2, '0'); }
 
