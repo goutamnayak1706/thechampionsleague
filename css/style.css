@@ -206,6 +206,103 @@ body::after {
   box-shadow: 0 3px 16px var(--primary-glow);
 }
 
+/* ── Teams Dropdown ── */
+.nav-teams-item {
+  position: relative;
+}
+.nav-teams-link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.nav-chevron {
+  font-size: 0.75em;
+  transition: transform var(--transition);
+}
+.nav-teams-item:hover .nav-chevron {
+  transform: rotate(180deg);
+}
+.teams-dropdown {
+  display: none;
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  min-width: 260px;
+  z-index: 2000;
+  animation: fadeIn 0.18s ease both;
+}
+.nav-teams-item:hover .teams-dropdown,
+.nav-teams-item:focus-within .teams-dropdown {
+  display: block;
+}
+.teams-dropdown-inner {
+  background: rgba(10,14,30,0.97);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius);
+  padding: 16px 14px 12px;
+  box-shadow: var(--shadow-lg), 0 0 40px rgba(59,107,235,0.15);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+}
+.teams-dropdown-title {
+  font-size: 0.67em;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  opacity: 0.85;
+}
+.teams-dropdown-list {
+  list-style: none;
+  margin: 0 0 10px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.teams-dropdown-list li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85em;
+  font-weight: 600;
+  color: var(--text-dim);
+  padding: 6px 10px;
+  border-radius: var(--radius-sm);
+  transition: background var(--transition), color var(--transition);
+  cursor: default;
+}
+.teams-dropdown-list li:hover {
+  background: var(--surface2);
+  color: var(--text);
+}
+.teams-dropdown-list li i {
+  color: var(--primary);
+  font-size: 0.85em;
+}
+.teams-dropdown-roster {
+  display: block;
+  text-align: center;
+  font-size: 0.8em;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  background: rgba(247,201,72,0.08);
+  border: 1px solid rgba(247,201,72,0.2);
+  border-radius: var(--radius-sm);
+  padding: 7px 14px;
+  transition: background var(--transition), border-color var(--transition);
+}
+.teams-dropdown-roster:hover {
+  background: rgba(247,201,72,0.16);
+  border-color: rgba(247,201,72,0.4);
+  text-decoration: none;
+}
+
 .hamburger {
   display: none;
   flex-direction: column;
@@ -752,6 +849,14 @@ body::after {
   letter-spacing: 1px;
   text-transform: uppercase;
 }
+.date-pill.ko  {
+  background: linear-gradient(135deg, #a04000, var(--gold));
+  box-shadow: 0 3px 14px var(--gold-glow);
+}
+.date-pill.fin {
+  background: linear-gradient(135deg, var(--accent), #8b0060);
+  box-shadow: 0 3px 14px var(--accent-glow);
+}
 
 /* ── Match Cards ── */
 .matches-grid {
@@ -951,7 +1056,7 @@ body::after {
 #fireworksCanvas {
   position: fixed;
   inset: 0;
-  z-index: -1;
+  z-index: 0;
   pointer-events: none;
   opacity: 0.55;
 }

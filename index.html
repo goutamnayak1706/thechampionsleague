@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Champions League Schedule 2025</title>
+  <title>The Champions League 2026</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -16,35 +16,56 @@
     <a class="navbar-brand" href="#">
       <img src="images/TCL.jpeg" alt="TCL Logo">
       <div class="brand-text">
-        TCL 2025
-        <span>Champions League</span>
+        TCL 2026
+        <span>The Champions League</span>
       </div>
     </a>
     <ul class="nav-links">
-      <li><a href="#" class="active"><i class="bi bi-calendar3"></i> Schedule</a></li>
+      <li><a href="index.html" class="active"><i class="bi bi-house-fill"></i> Home</a></li>
+      <li><a href="index.html#schedule"><i class="bi bi-calendar3"></i> Schedule</a></li>
       <li><a href="rulebook.html"><i class="bi bi-book"></i> Rulebook</a></li>
-      <li><a href="roster.html"><i class="bi bi-people"></i> Roster</a></li>
+      <li class="nav-teams-item">
+        <a href="roster.html" class="nav-teams-link"><i class="bi bi-people-fill"></i> Teams <i class="bi bi-chevron-down nav-chevron"></i></a>
+        <div class="teams-dropdown">
+          <div class="teams-dropdown-inner">
+            <div class="teams-dropdown-title"><i class="bi bi-trophy-fill"></i> Participating Teams</div>
+            <ul class="teams-dropdown-list">
+              <li><i class="bi bi-shield-fill"></i> Super Smashers</li>
+              <li><i class="bi bi-shield-fill"></i> Smashers XI</li>
+              <li><i class="bi bi-shield-fill"></i> Jaatsdway!</li>
+              <li><i class="bi bi-shield-fill"></i> Dutch Lords</li>
+              <li><i class="bi bi-shield-fill"></i> Strikers</li>
+              <li><i class="bi bi-shield-fill"></i> Minnal Cricket Club</li>
+              <li><i class="bi bi-shield-fill"></i> Powerhitters</li>
+              <li><i class="bi bi-shield-fill"></i> Team Hoysala</li>
+              <li><i class="bi bi-shield-fill"></i> Utrecht Super XI</li>
+              <li><i class="bi bi-shield-fill"></i> Romeo XI</li>
+            </ul>
+            <a href="roster.html" class="teams-dropdown-roster">View Full Roster &rarr;</a>
+          </div>
+        </div>
+      </li>
     </ul>
-    <button class="hamburger" id="hamburgerBtn" aria-label="Open menu"
-      onclick="document.getElementById('mobileMenu').classList.toggle('open')">
+    <button class="hamburger" id="hamburgerBtn" aria-label="Open menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
   </nav>
 
   <div class="mobile-menu" id="mobileMenu">
-    <a href="#"><i class="bi bi-calendar3"></i> Schedule</a>
+    <a href="index.html"><i class="bi bi-house-fill"></i> Home</a>
+    <a href="index.html#schedule"><i class="bi bi-calendar3"></i> Schedule</a>
     <a href="rulebook.html"><i class="bi bi-book"></i> Rulebook</a>
-    <a href="roster.html"><i class="bi bi-people"></i> Roster</a>
+    <a href="roster.html"><i class="bi bi-people-fill"></i> Teams / Roster</a>
   </div>
 
   <div class="hero">
-    <div class="hero-eyebrow"><i class="bi bi-trophy-fill"></i> Cricket &middot; Almere &middot; 2025</div>
+    <div class="hero-eyebrow"><i class="bi bi-trophy-fill"></i> Cricket &middot; Almere &middot; 2026</div>
     <div class="hero-title">The Champions League</div>
-    <div class="hero-subtitle">19th July 2025 &mdash; The Battle for Glory</div>
+    <div class="hero-subtitle">19th July 2026 &mdash; The Battle for Glory</div>
     <img src="images/TCL.jpeg" alt="Champions League Poster" class="hero-poster reveal">
     <div class="hero-badges">
       <span class="hero-badge"><i class="bi bi-geo-alt-fill"></i> Almere, Netherlands</span>
-      <span class="hero-badge"><i class="bi bi-calendar-event-fill"></i> 19 July 2025</span>
+      <span class="hero-badge"><i class="bi bi-calendar-event-fill"></i> 19 July 2026</span>
       <span class="hero-badge"><i class="bi bi-people-fill"></i> 8 Teams</span>
     </div>
   </div>
@@ -64,26 +85,26 @@
           <div class="cd-unit"><span class="cd-num" id="cd-secs">00</span><span class="cd-text">Secs</span></div>
         </div>
         <div class="countdown-started" style="display:none"><i class="bi bi-trophy-fill"></i>&nbsp; Tournament Has Begun!</div>
-        <div class="countdown-target" id="cd-target"><i class="bi bi-clock"></i>&nbsp; Kick-off: 19 July 2025, 11:00 AM &nbsp;|&nbsp; Almere, Netherlands</div>
+        <div class="countdown-target" id="cd-target"><i class="bi bi-clock"></i>&nbsp; Kick-off: 19 July 2026, 11:00 AM &nbsp;|&nbsp; Almere, Netherlands</div>
       </div>
     </div>
 
     <div class="sponsors-section reveal">
       <div class="sponsors-lbl">Powered by our sponsors</div>
       <div class="sponsors-grid">
-        <a href="https://sportfysiotherapiealmere.nl/" target="_blank" class="sponsor-card">
+        <a href="https://sportfysiotherapiealmere.nl/" target="_blank" rel="noopener noreferrer" class="sponsor-card">
           <img src="images/leon.jpeg" alt="Sportfysiotherapie Almere">
           <span>Sportfysiotherapie Almere</span>
         </a>
-        <a href="https://www.think-goodies.com" target="_blank" class="sponsor-card">
+        <a href="https://www.think-goodies.com" target="_blank" rel="noopener noreferrer" class="sponsor-card">
           <img src="images/parallel_logo.svg" alt="Think Goodies">
           <span>Think Goodies</span>
         </a>
-        <a href="https://maps.app.goo.gl/N2iS6ZbHbGvohFxC9" target="_blank" class="sponsor-card">
+        <a href="https://maps.app.goo.gl/N2iS6ZbHbGvohFxC9" target="_blank" rel="noopener noreferrer" class="sponsor-card">
           <img src="images/bits_bytes.jpeg" alt="Bits N Bytes">
           <span>Bits &amp; Bytes</span>
         </a>
-        <a href="https://charcoalfoods.nl/" target="_blank" class="sponsor-card">
+        <a href="https://charcoalfoods.nl/" target="_blank" rel="noopener noreferrer" class="sponsor-card">
           <img src="images/charcoal.jpeg" alt="Charcoal Foods">
           <span>Charcoal Foods</span>
         </a>
@@ -96,15 +117,15 @@
       <a href="rulebook.html" target="_blank">The Champions League Rulebook &rarr;</a>
     </div>
 
-    <div class="section-heading reveal"><i class="bi bi-calendar3"></i> Match Schedule &mdash; 19 July 2025</div>
+    <div id="schedule" class="section-heading reveal"><i class="bi bi-calendar3"></i> Match Schedule &mdash; 19 July 2026</div>
 
     <div class="date-divider">
-      <span class="date-pill"><i class="bi bi-flag-fill"></i>&nbsp; Pre-Quarter Final &nbsp;&middot;&nbsp; 19 July 2025</span>
+      <span class="date-pill"><i class="bi bi-flag-fill"></i>&nbsp; Pre-Quarter Final &nbsp;&middot;&nbsp; 19 July 2026</span>
     </div>
     <div class="matches-grid">
       <div class="match-card">
         <div class="match-header">
-          <span class="match-badge">Pre-QF 2</span>
+          <span class="match-badge">Pre-QF 1</span>
           <span class="match-ground"><i class="bi bi-geo-alt"></i> Ground 1</span>
         </div>
         <div class="match-vs-row">
@@ -174,7 +195,7 @@
         <div class="match-vs-row">
           <span class="match-team">Strikers</span>
           <span class="match-vs-badge">VS</span>
-          <span class="match-team right">PQ-2 Winner</span>
+          <span class="match-team right">Pre-QF 2 Winner</span>
         </div>
         <div class="match-footer">
           <span class="match-time"><i class="bi bi-clock"></i> 2:45 pm &ndash; 4:00 pm</span>
@@ -280,18 +301,19 @@
   <footer class="site-footer">
     <div class="footer-logo">
       <img src="images/TCL.jpeg" alt="TCL">
-      The Champions League 2025
+      The Champions League 2026
     </div>
     <div class="footer-links">
-      <a href="#"><i class="bi bi-calendar3"></i> Schedule</a>
+      <a href="index.html"><i class="bi bi-house-fill"></i> Home</a>
+      <a href="index.html#schedule"><i class="bi bi-calendar3"></i> Schedule</a>
       <a href="rulebook.html"><i class="bi bi-book"></i> Rulebook</a>
-      <a href="roster.html"><i class="bi bi-people"></i> Roster</a>
+      <a href="roster.html"><i class="bi bi-people"></i> Teams</a>
       <a href="mailto:kalingawarriorsalmere@gmail.com"><i class="bi bi-envelope-fill"></i> Contact</a>
-      <a href="https://wa.me/+31659580699" target="_blank"><i class="bi bi-whatsapp"></i> WhatsApp</a>
+      <a href="https://wa.me/+31659580699" target="_blank" rel="noopener noreferrer"><i class="bi bi-whatsapp"></i> WhatsApp</a>
     </div>
     <div class="footer-copy">
       Created by <strong style="color:#9ab0d8">Goutam Nayak</strong> &nbsp;&middot;&nbsp;
-      &copy; The Champions League 2025. All rights reserved.
+      &copy; The Champions League 2026. All rights reserved.
     </div>
   </footer>
 

@@ -28,6 +28,14 @@
       btn.classList.remove('active');
     }
   });
+  // Close menu when a mobile nav link is clicked
+  menu.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      menu.classList.remove('open');
+      btn.classList.remove('active');
+      btn.setAttribute('aria-expanded', 'false');
+    });
+  });
 })();
 
 /* ── Scroll-reveal ── */
@@ -104,7 +112,12 @@
   }
 
   tick();
-  setInterval(tick, 1000);
+  const timer = setInterval(() => {
+    tick();
+    if (TARGET.getTime() - Date.now() <= 0) {
+      clearInterval(timer);
+    }
+  }, 1000);
 })();
 
 /* ── Schedule tabs ── */
