@@ -156,6 +156,56 @@
   });
 })();
 
+/* ── Schedule date tabs (inline bar) ── */
+(function () {
+  function switchScheduleDate(date) {
+    // Toggle tab buttons
+    document.querySelectorAll('.schedule-tab-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.date === date);
+    });
+    // Toggle panels
+    document.querySelectorAll('.schedule-tab-panel').forEach(panel => {
+      panel.classList.toggle('active', panel.id === 'panel-' + date);
+    });
+    // Update active state in nav dropdown links
+    document.querySelectorAll('.schedule-date-navlink').forEach(link => {
+      link.classList.toggle('active', link.dataset.date === date);
+    });
+    // Update section heading text
+    const heading = document.getElementById('schedule');
+    if (heading) {
+      const labels = {
+        may30: '30 May 2026',
+        may31: '31 May 2026',
+        jun6:  '6 June 2026'
+      };
+      heading.innerHTML = '<i class="bi bi-calendar3"></i> ' + (labels[date] || '');
+    }
+  }
+
+  // Inline tab bar buttons
+  document.querySelectorAll('.schedule-tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      switchScheduleDate(btn.dataset.date);
+      document.getElementById('schedule').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+
+  // Nav dropdown date links
+  document.querySelectorAll('.schedule-date-navlink').forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const date = link.dataset.date;
+      switchScheduleDate(date);
+      const section = document.getElementById('schedule');
+      if (section) section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+
+  // Default: show may30
+  switchScheduleDate('may30');
+})();
+
 /* ── Match search ── */
 (function () {
   const input     = document.getElementById('matchSearch');

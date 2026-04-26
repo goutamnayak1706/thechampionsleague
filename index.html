@@ -23,7 +23,19 @@
     <ul class="nav-links">
       <li><a href="index.html" class="active"><i class="bi bi-house-fill"></i> Home</a></li>
       <li><a href="index.html#pools"><i class="bi bi-grid-fill"></i> Pools</a></li>
-      <li><a href="index.html#schedule"><i class="bi bi-calendar3"></i> Schedule</a></li>
+      <li class="nav-schedule-item">
+        <a href="index.html#schedule" class="nav-schedule-link"><i class="bi bi-calendar3"></i> Schedule <i class="bi bi-chevron-down nav-chevron"></i></a>
+        <div class="schedule-dropdown">
+          <div class="schedule-dropdown-inner">
+            <div class="schedule-dropdown-title"><i class="bi bi-calendar3"></i> Match Days</div>
+            <ul class="schedule-dropdown-list">
+              <li><a href="#schedule" class="schedule-date-navlink" data-date="may30"><i class="bi bi-calendar-event"></i> 30 May 2026</a></li>
+              <li><a href="#schedule" class="schedule-date-navlink" data-date="may31"><i class="bi bi-calendar-event"></i> 31 May 2026</a></li>
+              <li><a href="#schedule" class="schedule-date-navlink" data-date="jun6"><i class="bi bi-calendar-event"></i> 6 June 2026</a></li>
+            </ul>
+          </div>
+        </div>
+      </li>
       <li><a href="rulebook.html"><i class="bi bi-book"></i> Rulebook</a></li>
       <li class="nav-teams-item">
         <a href="roster.html" class="nav-teams-link"><i class="bi bi-people-fill"></i> Teams <i class="bi bi-chevron-down nav-chevron"></i></a>
@@ -123,7 +135,7 @@
       </div>
     </div>
 
-<div id="pools" class="section-heading section-heading-pools reveal" style="margin-top: 8rem; padding-top: 2rem; border-top: 1px solid rgba(154,176,216,0.1);"><i class="bi bi-grid-fill"></i> Team Pools</div>
+    <div id="pools" class="section-heading section-heading-pools reveal" style="margin-top: 8rem; padding-top: 2rem; border-top: 1px solid rgba(154,176,216,0.1);"><i class="bi bi-grid-fill"></i> Team Pools</div>
 
     <div class="pools-grid reveal">
 
@@ -196,186 +208,245 @@
 
     </div>
 
+    <!-- ══ Schedule Section ══ -->
     <div id="schedule" class="section-heading reveal"><i class="bi bi-calendar3"></i> Match Schedule &mdash; 30 May 2026</div>
 
-    <div class="date-divider">
-      <span class="date-pill"><i class="bi bi-flag-fill"></i>&nbsp; Pre-Quarter Final &nbsp;&middot;&nbsp; 30 May 2026</span>
-    </div>
-    <div class="matches-grid">
-      <div class="match-card">
-        <div class="match-header">
-          <span class="match-badge">Pre-QF 1</span>
-          <span class="match-ground"><i class="bi bi-geo-alt"></i> Ground 1</span>
-        </div>
-        <div class="match-vs-row">
-          <span class="match-team">Team Hoysala</span>
-          <span class="match-vs-badge">VS</span>
-          <span class="match-team right">Utrecht Super XI</span>
-        </div>
-        <div class="match-footer">
-          <span class="match-time"><i class="bi bi-clock"></i> 11:00 am &ndash; 12:15 pm</span>
-        </div>
-      </div>
-      <div class="match-card">
-        <div class="match-header">
-          <span class="match-badge">Pre-QF 2</span>
-          <span class="match-ground"><i class="bi bi-geo-alt"></i> Ground 1</span>
-        </div>
-        <div class="match-vs-row">
-          <span class="match-team">Romeo XI</span>
-          <span class="match-vs-badge">VS</span>
-          <span class="match-team right">Utrecht Super XI</span>
-        </div>
-        <div class="match-footer">
-          <span class="match-time"><i class="bi bi-clock"></i> 12:15 pm &ndash; 1:30 pm</span>
-        </div>
-      </div>
+    <!-- Date tab buttons bar -->
+    <div class="schedule-tabs-bar reveal">
+      <button class="schedule-tab-btn active" data-date="may30"><i class="bi bi-calendar-event"></i> 30 May 2026</button>
+      <button class="schedule-tab-btn" data-date="may31"><i class="bi bi-calendar-event"></i> 31 May 2026</button>
+      <button class="schedule-tab-btn" data-date="jun6"><i class="bi bi-calendar-event"></i> 6 June 2026</button>
     </div>
 
-    <div class="date-divider">
-      <span class="date-pill ko"><i class="bi bi-lightning-fill"></i>&nbsp; Quarter Finals</span>
-    </div>
-    <div class="matches-grid">
-      <div class="match-card ko">
-        <div class="match-header">
-          <span class="match-badge ko">Quarter Final</span>
-          <span class="match-ground"><i class="bi bi-geo-alt"></i> Ground 1</span>
-        </div>
-        <div class="match-vs-row">
-          <span class="match-team">Super Smashers</span>
-          <span class="match-vs-badge">VS</span>
-          <span class="match-team right">Smashers XI</span>
-        </div>
-        <div class="match-footer">
-          <span class="match-time"><i class="bi bi-clock"></i> 1:30 pm &ndash; 2:45 pm</span>
-          <span class="match-pool-tag tag-ko">QF 1</span>
-        </div>
-      </div>
-      <div class="match-card ko">
-        <div class="match-header">
-          <span class="match-badge ko">Quarter Final</span>
-          <span class="match-ground"><i class="bi bi-geo-alt"></i> Ground 2</span>
-        </div>
-        <div class="match-vs-row">
-          <span class="match-team">Jaatsdway!</span>
-          <span class="match-vs-badge">VS</span>
-          <span class="match-team right">Dutch Lords</span>
-        </div>
-        <div class="match-footer">
-          <span class="match-time"><i class="bi bi-clock"></i> 1:30 pm &ndash; 2:45 pm</span>
-          <span class="match-pool-tag tag-ko">QF 2</span>
-        </div>
-      </div>
-      <div class="match-card ko">
-        <div class="match-header">
-          <span class="match-badge ko">Quarter Final</span>
-          <span class="match-ground"><i class="bi bi-geo-alt"></i> Ground 1</span>
-        </div>
-        <div class="match-vs-row">
-          <span class="match-team">Strikers</span>
-          <span class="match-vs-badge">VS</span>
-          <span class="match-team right">Pre-QF 2 Winner</span>
-        </div>
-        <div class="match-footer">
-          <span class="match-time"><i class="bi bi-clock"></i> 2:45 pm &ndash; 4:00 pm</span>
-          <span class="match-pool-tag tag-ko">QF 3</span>
-        </div>
-      </div>
-      <div class="match-card ko">
-        <div class="match-header">
-          <span class="match-badge ko">Quarter Final</span>
-          <span class="match-ground"><i class="bi bi-geo-alt"></i> Ground 2</span>
-        </div>
-        <div class="match-vs-row">
-          <span class="match-team">Minnal Cricket Club</span>
-          <span class="match-vs-badge">VS</span>
-          <span class="match-team right">Powerhitters</span>
-        </div>
-        <div class="match-footer">
-          <span class="match-time"><i class="bi bi-clock"></i> 2:45 pm &ndash; 4:00 pm</span>
-          <span class="match-pool-tag tag-ko">QF 4</span>
-        </div>
-      </div>
-    </div>
+    <!-- ══ Panel: 30 May 2026 ══ -->
+    <div class="schedule-tab-panel active" id="panel-may30">
 
-    <div class="date-divider">
-      <span class="date-pill ko"><i class="bi bi-lightning-charge-fill"></i>&nbsp; Semi Finals</span>
-    </div>
-    <div class="matches-grid">
-      <div class="match-card ko">
-        <div class="match-header">
-          <span class="match-badge ko">Semi Final</span>
-          <span class="match-ground"><i class="bi bi-geo-alt"></i> Ground 1</span>
+      <div class="date-divider">
+        <span class="date-pill"><i class="bi bi-flag-fill"></i>&nbsp; Pre-Quarter Final &nbsp;&middot;&nbsp; 30 May 2026</span>
+      </div>
+      <div class="matches-grid">
+        <div class="match-card">
+          <div class="match-header">
+            <span class="match-badge">Pre-QF 1</span>
+            <span class="match-ground"><i class="bi bi-geo-alt"></i> Ground 1</span>
+          </div>
+          <div class="match-vs-row">
+            <span class="match-team">Team Hoysala</span>
+            <span class="match-vs-badge">VS</span>
+            <span class="match-team right">Utrecht Super XI</span>
+          </div>
+          <div class="match-footer">
+            <span class="match-time"><i class="bi bi-clock"></i> 11:00 am &ndash; 12:15 pm</span>
+          </div>
         </div>
-        <div class="match-vs-row">
-          <span class="match-team">QF1 Winner</span>
-          <span class="match-vs-badge">VS</span>
-          <span class="match-team right">QF4 Winner</span>
-        </div>
-        <div class="match-footer">
-          <span class="match-time"><i class="bi bi-clock"></i> 4:00 pm &ndash; 5:15 pm</span>
-          <span class="match-pool-tag tag-ko">SF 1</span>
+        <div class="match-card">
+          <div class="match-header">
+            <span class="match-badge">Pre-QF 2</span>
+            <span class="match-ground"><i class="bi bi-geo-alt"></i> Ground 1</span>
+          </div>
+          <div class="match-vs-row">
+            <span class="match-team">Romeo XI</span>
+            <span class="match-vs-badge">VS</span>
+            <span class="match-team right">Utrecht Super XI</span>
+          </div>
+          <div class="match-footer">
+            <span class="match-time"><i class="bi bi-clock"></i> 12:15 pm &ndash; 1:30 pm</span>
+          </div>
         </div>
       </div>
-      <div class="match-card ko">
-        <div class="match-header">
-          <span class="match-badge ko">Semi Final</span>
-          <span class="match-ground"><i class="bi bi-geo-alt"></i> Ground 2</span>
-        </div>
-        <div class="match-vs-row">
-          <span class="match-team">QF2 Winner</span>
-          <span class="match-vs-badge">VS</span>
-          <span class="match-team right">QF3 Winner</span>
-        </div>
-        <div class="match-footer">
-          <span class="match-time"><i class="bi bi-clock"></i> 4:00 pm &ndash; 5:15 pm</span>
-          <span class="match-pool-tag tag-ko">SF 2</span>
-        </div>
-      </div>
-    </div>
 
-    <div class="date-divider">
-      <span class="date-pill"><i class="bi bi-award"></i>&nbsp; Third Place Play-off</span>
-    </div>
-    <div class="matches-grid">
-      <div class="match-card">
-        <div class="match-header">
-          <span class="match-badge">3rd Place</span>
-          <span class="match-ground"><i class="bi bi-geo-alt"></i> Ground 2</span>
+      <div class="date-divider">
+        <span class="date-pill ko"><i class="bi bi-lightning-fill"></i>&nbsp; Quarter Finals</span>
+      </div>
+      <div class="matches-grid">
+        <div class="match-card ko">
+          <div class="match-header">
+            <span class="match-badge ko">Quarter Final</span>
+            <span class="match-ground"><i class="bi bi-geo-alt"></i> Ground 1</span>
+          </div>
+          <div class="match-vs-row">
+            <span class="match-team">Super Smashers</span>
+            <span class="match-vs-badge">VS</span>
+            <span class="match-team right">Smashers XI</span>
+          </div>
+          <div class="match-footer">
+            <span class="match-time"><i class="bi bi-clock"></i> 1:30 pm &ndash; 2:45 pm</span>
+            <span class="match-pool-tag tag-ko">QF 1</span>
+          </div>
         </div>
-        <div class="match-vs-row">
-          <span class="match-team">SF1 Loser</span>
-          <span class="match-vs-badge">VS</span>
-          <span class="match-team right">SF2 Loser</span>
+        <div class="match-card ko">
+          <div class="match-header">
+            <span class="match-badge ko">Quarter Final</span>
+            <span class="match-ground"><i class="bi bi-geo-alt"></i> Ground 2</span>
+          </div>
+          <div class="match-vs-row">
+            <span class="match-team">Jaatsdway!</span>
+            <span class="match-vs-badge">VS</span>
+            <span class="match-team right">Dutch Lords</span>
+          </div>
+          <div class="match-footer">
+            <span class="match-time"><i class="bi bi-clock"></i> 1:30 pm &ndash; 2:45 pm</span>
+            <span class="match-pool-tag tag-ko">QF 2</span>
+          </div>
         </div>
-        <div class="match-footer">
-          <span class="match-time"><i class="bi bi-clock"></i> 5:30 pm &ndash; 6:45 pm</span>
+        <div class="match-card ko">
+          <div class="match-header">
+            <span class="match-badge ko">Quarter Final</span>
+            <span class="match-ground"><i class="bi bi-geo-alt"></i> Ground 1</span>
+          </div>
+          <div class="match-vs-row">
+            <span class="match-team">Strikers</span>
+            <span class="match-vs-badge">VS</span>
+            <span class="match-team right">Pre-QF 2 Winner</span>
+          </div>
+          <div class="match-footer">
+            <span class="match-time"><i class="bi bi-clock"></i> 2:45 pm &ndash; 4:00 pm</span>
+            <span class="match-pool-tag tag-ko">QF 3</span>
+          </div>
+        </div>
+        <div class="match-card ko">
+          <div class="match-header">
+            <span class="match-badge ko">Quarter Final</span>
+            <span class="match-ground"><i class="bi bi-geo-alt"></i> Ground 2</span>
+          </div>
+          <div class="match-vs-row">
+            <span class="match-team">Minnal Cricket Club</span>
+            <span class="match-vs-badge">VS</span>
+            <span class="match-team right">Powerhitters</span>
+          </div>
+          <div class="match-footer">
+            <span class="match-time"><i class="bi bi-clock"></i> 2:45 pm &ndash; 4:00 pm</span>
+            <span class="match-pool-tag tag-ko">QF 4</span>
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="date-divider">
-      <span class="date-pill fin"><i class="bi bi-trophy-fill"></i>&nbsp; The Grand Final</span>
-    </div>
-    <div class="matches-grid">
-      <div class="match-card final">
-        <div class="match-header">
-          <span class="match-badge final">Grand Final</span>
-          <span class="match-ground"><i class="bi bi-geo-alt"></i> Ground 1</span>
+      <div class="date-divider">
+        <span class="date-pill ko"><i class="bi bi-lightning-charge-fill"></i>&nbsp; Semi Finals</span>
+      </div>
+      <div class="matches-grid">
+        <div class="match-card ko">
+          <div class="match-header">
+            <span class="match-badge ko">Semi Final</span>
+            <span class="match-ground"><i class="bi bi-geo-alt"></i> Ground 1</span>
+          </div>
+          <div class="match-vs-row">
+            <span class="match-team">QF1 Winner</span>
+            <span class="match-vs-badge">VS</span>
+            <span class="match-team right">QF4 Winner</span>
+          </div>
+          <div class="match-footer">
+            <span class="match-time"><i class="bi bi-clock"></i> 4:00 pm &ndash; 5:15 pm</span>
+            <span class="match-pool-tag tag-ko">SF 1</span>
+          </div>
         </div>
-        <div class="match-vs-row">
-          <span class="match-team">SF1 Winner</span>
-          <span class="match-vs-badge">VS</span>
-          <span class="match-team right">SF2 Winner</span>
-        </div>
-        <div class="match-footer">
-          <span class="match-time"><i class="bi bi-clock"></i> 6:00 pm &ndash; 7:15 pm</span>
-          <span class="match-pool-tag tag-final">&#127942; Final</span>
+        <div class="match-card ko">
+          <div class="match-header">
+            <span class="match-badge ko">Semi Final</span>
+            <span class="match-ground"><i class="bi bi-geo-alt"></i> Ground 2</span>
+          </div>
+          <div class="match-vs-row">
+            <span class="match-team">QF2 Winner</span>
+            <span class="match-vs-badge">VS</span>
+            <span class="match-team right">QF3 Winner</span>
+          </div>
+          <div class="match-footer">
+            <span class="match-time"><i class="bi bi-clock"></i> 4:00 pm &ndash; 5:15 pm</span>
+            <span class="match-pool-tag tag-ko">SF 2</span>
+          </div>
         </div>
       </div>
-    </div>
 
-  </div>
+      <div class="date-divider">
+        <span class="date-pill"><i class="bi bi-award"></i>&nbsp; Third Place Play-off</span>
+      </div>
+      <div class="matches-grid">
+        <div class="match-card">
+          <div class="match-header">
+            <span class="match-badge">3rd Place</span>
+            <span class="match-ground"><i class="bi bi-geo-alt"></i> Ground 2</span>
+          </div>
+          <div class="match-vs-row">
+            <span class="match-team">SF1 Loser</span>
+            <span class="match-vs-badge">VS</span>
+            <span class="match-team right">SF2 Loser</span>
+          </div>
+          <div class="match-footer">
+            <span class="match-time"><i class="bi bi-clock"></i> 5:30 pm &ndash; 6:45 pm</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="date-divider">
+        <span class="date-pill fin"><i class="bi bi-trophy-fill"></i>&nbsp; The Grand Final</span>
+      </div>
+      <div class="matches-grid">
+        <div class="match-card final">
+          <div class="match-header">
+            <span class="match-badge final">Grand Final</span>
+            <span class="match-ground"><i class="bi bi-geo-alt"></i> Ground 1</span>
+          </div>
+          <div class="match-vs-row">
+            <span class="match-team">SF1 Winner</span>
+            <span class="match-vs-badge">VS</span>
+            <span class="match-team right">SF2 Winner</span>
+          </div>
+          <div class="match-footer">
+            <span class="match-time"><i class="bi bi-clock"></i> 6:00 pm &ndash; 7:15 pm</span>
+            <span class="match-pool-tag tag-final">&#127942; Final</span>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /panel-may30 -->
+
+    <!-- ══ Panel: 31 May 2026 ══ -->
+    <div class="schedule-tab-panel" id="panel-may31">
+      <div class="date-divider">
+        <span class="date-pill"><i class="bi bi-calendar-event"></i>&nbsp; 31 May 2026 &nbsp;&middot;&nbsp; Matches TBC</span>
+      </div>
+      <div class="matches-grid">
+        <div class="match-card">
+          <div class="match-header">
+            <span class="match-badge">TBC</span>
+            <span class="match-ground"><i class="bi bi-geo-alt"></i> TBC</span>
+          </div>
+          <div class="match-vs-row">
+            <span class="match-team">TBC</span>
+            <span class="match-vs-badge">VS</span>
+            <span class="match-team right">TBC</span>
+          </div>
+          <div class="match-footer">
+            <span class="match-time"><i class="bi bi-clock"></i> TBC</span>
+          </div>
+        </div>
+      </div>
+    </div><!-- /panel-may31 -->
+
+    <!-- ══ Panel: 6 June 2026 ══ -->
+    <div class="schedule-tab-panel" id="panel-jun6">
+      <div class="date-divider">
+        <span class="date-pill"><i class="bi bi-calendar-event"></i>&nbsp; 6 June 2026 &nbsp;&middot;&nbsp; Matches TBC</span>
+      </div>
+      <div class="matches-grid">
+        <div class="match-card">
+          <div class="match-header">
+            <span class="match-badge">TBC</span>
+            <span class="match-ground"><i class="bi bi-geo-alt"></i> TBC</span>
+          </div>
+          <div class="match-vs-row">
+            <span class="match-team">TBC</span>
+            <span class="match-vs-badge">VS</span>
+            <span class="match-team right">TBC</span>
+          </div>
+          <div class="match-footer">
+            <span class="match-time"><i class="bi bi-clock"></i> TBC</span>
+          </div>
+        </div>
+      </div>
+    </div><!-- /panel-jun6 -->
+
+  </div><!-- /main-container -->
 
   <footer class="site-footer">
     <div class="footer-logo">

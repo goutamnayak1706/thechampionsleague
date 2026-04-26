@@ -903,6 +903,136 @@ body::after {
 .pool-e .team-num { background: #5020c8; }
 
 /* ════════════════════════════════════════
+   SCHEDULE NAV DROPDOWN
+   ════════════════════════════════════════ */
+.nav-schedule-item {
+  position: relative;
+}
+.nav-schedule-link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.nav-schedule-item:hover .nav-chevron {
+  transform: rotate(180deg);
+}
+.schedule-dropdown {
+  display: none;
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 220px;
+  z-index: 2000;
+  animation: fadeIn 0.18s ease both;
+}
+.nav-schedule-item:hover .schedule-dropdown,
+.nav-schedule-item:focus-within .schedule-dropdown {
+  display: block;
+}
+.schedule-dropdown-inner {
+  background: rgba(10,14,30,0.97);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius);
+  padding: 14px 12px 12px;
+  box-shadow: var(--shadow-lg), 0 0 40px rgba(59,107,235,0.15);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+}
+.schedule-dropdown-title {
+  font-size: 0.67em;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--primary);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  opacity: 0.9;
+}
+.schedule-dropdown-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.schedule-dropdown-list li a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.88em;
+  font-weight: 600;
+  color: var(--text-dim);
+  padding: 8px 12px;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  transition: background var(--transition), color var(--transition);
+  cursor: pointer;
+}
+.schedule-dropdown-list li a:hover,
+.schedule-dropdown-list li a.active {
+  background: var(--surface2);
+  color: var(--text);
+}
+.schedule-dropdown-list li a.active {
+  background: rgba(59,107,235,0.18);
+  color: #7aa0f5;
+}
+.schedule-dropdown-list li a i {
+  color: var(--primary);
+  font-size: 0.9em;
+}
+
+/* ════════════════════════════════════════
+   SCHEDULE DATE TABS (inline bar)
+   ════════════════════════════════════════ */
+.schedule-tabs-bar {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 24px 0 28px;
+}
+.schedule-tab-btn {
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  color: var(--text-dim);
+  border-radius: var(--radius-pill);
+  padding: 10px 26px;
+  font-family: 'Poppins', system-ui, sans-serif;
+  font-size: 0.875em;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all var(--transition);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  backdrop-filter: blur(8px);
+}
+.schedule-tab-btn:hover {
+  border-color: rgba(255,255,255,0.18);
+  color: var(--text);
+  background: var(--surface2);
+}
+.schedule-tab-btn.active {
+  background: linear-gradient(135deg, var(--primary), #5b8af0);
+  border-color: transparent;
+  color: #fff;
+  box-shadow: 0 4px 18px var(--primary-glow);
+}
+.schedule-tab-panel {
+  display: none;
+}
+.schedule-tab-panel.active {
+  display: block;
+  animation: fadeUp 0.4s ease both;
+}
+
+/* ════════════════════════════════════════
    SCHEDULE TABS
    ════════════════════════════════════════ */
 .tabs-bar {
