@@ -693,6 +693,69 @@ body::after {
 /* ════════════════════════════════════════
    POOLS GRID
    ════════════════════════════════════════ */
+.pool-header {
+  padding: 14px 18px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+.pool-header::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.1), transparent);
+  pointer-events: none;
+}
+.pool-a .pool-header { background: linear-gradient(135deg, #1a2e6e, #2d4db5); }
+.pool-b .pool-header { background: linear-gradient(135deg, #0a5c38, #0d8a56); }
+.pool-c .pool-header { background: linear-gradient(135deg, #6e0a20, #b01535); }
+.pool-d .pool-header { background: linear-gradient(135deg, #6e3d0a, #c07010); }
+.pool-e .pool-header { background: linear-gradient(135deg, #2d0a7a, #5020c8); }
+
+.pool-badge {
+  font-size: 1em;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+.pool-team-count {
+  font-size: 0.72em;
+  opacity: 0.8;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.pool-team-list {
+  list-style: none;
+  padding: 10px 14px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.pool-team-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.06);
+  font-size: 0.88em;
+  font-weight: 600;
+  color: var(--text);
+  transition: background var(--transition), border-color var(--transition);
+}
+.pool-team-list li:hover { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.14); }
+.pool-a .pool-team-list li i { color: #7aa0f5; }
+.pool-b .pool-team-list li i { color: #34d88e; }
+.pool-c .pool-team-list li i { color: #f55; }
+.pool-d .pool-team-list li i { color: var(--gold); }
+.pool-e .pool-team-list li i { color: #a07cf5; }
+
 .pools-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
