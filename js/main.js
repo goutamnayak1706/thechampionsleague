@@ -1,5 +1,5 @@
 /* ══════════════════════════════════════════════
-   TCL 2025 — Champions Cricket League
+   TCL 2026 — Champions Cricket League
    main.js  |  Dynamic interactions
    ══════════════════════════════════════════════ */
 
