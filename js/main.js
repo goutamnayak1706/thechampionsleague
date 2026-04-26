@@ -73,8 +73,10 @@
 
   if (!daysEl) return;
 
-  // Set tournament start date here (YYYY, MM-1, DD, HH, MM)
-  const TARGET = new Date(2025, 6, 19, 11, 0, 0); // July 19, 2025, 11:00
+  // Tournament start: July 19, 2025, 11:00 AM  ← TESTING
+  const TARGET = new Date(2025, 6, 19, 11, 0, 0);
+  // Tournament end cutoff: 2 hours after Grand Final end (7:15 PM → 9:15 PM)  ← TESTING
+  const END_TARGET = new Date(2025, 6, 19, 21, 15, 0);
 
   function pad(n) { return String(n).padStart(2, '0'); }
 
@@ -90,12 +92,28 @@
 
   function tick() {
     const now  = Date.now();
+
+    if (now >= END_TARGET.getTime()) {
+      // Tournament is over
+      if (wrap)    wrap.style.display = 'none';
+      if (targetEl) targetEl.style.display = 'none';
+      if (started) {
+        started.innerHTML = '<i class="bi bi-trophy-fill"></i>&nbsp; Tournament has ended for ' + END_TARGET.getFullYear();
+        started.style.display = 'block';
+      }
+      return;
+    }
+
     const diff = TARGET.getTime() - now;
 
     if (diff <= 0) {
+      // Tournament has started but not yet ended
       if (wrap)    wrap.style.display = 'none';
-      if (started) started.style.display = 'block';
       if (targetEl) targetEl.style.display = 'none';
+      if (started) {
+        started.innerHTML = '<i class="bi bi-trophy-fill"></i>&nbsp; Tournament Has Begun!';
+        started.style.display = 'block';
+      }
       return;
     }
 
@@ -114,7 +132,7 @@
   tick();
   const timer = setInterval(() => {
     tick();
-    if (TARGET.getTime() - Date.now() <= 0) {
+    if (Date.now() >= END_TARGET.getTime()) {
       clearInterval(timer);
     }
   }, 1000);
