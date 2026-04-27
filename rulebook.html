@@ -2,879 +2,398 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>The Champions League 2025 Rulebook</title>
-  <!-- Google Fonts for modern look -->
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:600&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
-  <meta name="viewport" content="width=900, initial-scale=1, maximum-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rulebook — The Champions League 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="css/style.css">
   <style>
-    html {
-      background: #e3f4e0;
-      min-height: 100%;
-    }
-    body {
-      max-width: 900px;
-      margin: 2em auto;
-      font-family: 'Roboto', Arial, sans-serif;
-      line-height: 1.7;
-      background: linear-gradient(135deg, #e6ffe6 0%, #c7f5c4 100%);
-      box-shadow: 0 0 28px #bbb;
-      padding: 32px 24px;
-      border-radius: 20px;
-    }
-    h1, h2, h3 {
-      font-family: 'Montserrat', Arial, sans-serif;
-      color: #1976d2;
-      margin-top: 1.6em;
-    }
-    h1 {
-      background: linear-gradient(90deg,#1976d2,#4caf50);
-      color: #fff;
-      text-align: center;
-      padding: 0.7em 0;
-      margin-bottom: 0.6em;
-      border-radius: 18px 18px 0 0;
-      letter-spacing: 2px;
-      box-shadow: 0 2px 8px #888;
-      font-size: 2.2em;
-    }
-    h2 {
-      background: #fffde7;
-      border-left: 8px solid #FFD700;
-      padding: 0.4em 1em;
-      margin-top: 2em;
-      letter-spacing: 1px;
-      box-shadow: 0 2px 8px #eee;
-      font-weight: 600;
-      font-size: 2em;
-      border-radius: 10px;
-    }
-    h3 {
-      color: #1976d2;
-      font-family: 'Montserrat', Arial, sans-serif;
-      margin-top: 1.2em;
-      font-size: 1.3em;
-    }
-    hr {
-      margin: 2.5em 0 2em 0;
-      border: none;
-      height: 2px;
-      background: linear-gradient(90deg,#ffd700,#1976d2 80%);
-      border-radius: 10px;
-    }
-    .powered-by {
-      margin: 18px 0 20px 0;
-      font-size: 1.05em;
-      color: #444;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 5px;
-      flex-wrap: wrap;
-    }
-    .sponsor-img {
-      height: 125px;
-      width: auto;
-      margin: 0 5px;
-      vertical-align: middle;
-      border-radius: 200px;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.06);
-      padding: 2px 4px;
-    }
-    blockquote {
-      background: #f6f8fa;
-      border-left: 6px solid #ffb84d;
-      padding: 1.1em 2em;
-      box-shadow:0 1px 5px #eed97a69;
-      border-radius: 10px;
-      margin: 2em 0 2em 0;
-      font-size: 1.1em;
-    }
-    .note-red { color: #cd1818; font-weight: bold; }
-    .note-warning {
-      background: #fff9c4;
-      border-left: 6px solid #ffd600;
-      padding: 12px 18px;
-      margin: 16px 0;
-      box-shadow: 0 1px 6px #eee;
-      font-weight: bold;
-      font-size: 1.08em;
-      border-radius: 9px;
-    }
-    .note-danger {
-      background: #ffeaea;
-      border-left: 6px solid #d32f2f;
-      color: #b71c1c;
-      padding: 12px 18px;
-      margin: 18px 0;
-      font-weight: bold;
-      border-radius: 9px;
-    }
-    .schedule-table th {
-      background: #1976d2;
-      color: #fff;
-      font-weight: 700;
-      font-size: 1.1em;
-    }
-    .schedule-table tr:nth-child(even) {background: #f2faff;}
-    .schedule-table {
-      background: #fff;
-      border-radius: 10px;
-      box-shadow: 0 1px 6px #ccc;
-      overflow: hidden;
-      width: 100%;
-      margin-bottom: 2em;
-      margin-top: 0.5em;
-      border: 1px solid #eee;
-      text-align: center;
-      border-collapse: separate;
-    }
-    .schedule-table th, .schedule-table td {
-      padding: 12px 8px;
-      min-width: 110px;
-    }
-    ol, ul {
-      margin-left: 1.4em;
-      margin-bottom: 1.1em;
-    }
-    ol ul {
-      margin-top: 0.6em;
-      margin-bottom: 0.7em;
-    }
-    li {
-      margin-bottom: 0.5em;
-    }
-    a, a:visited {
-      color: #1976d2;
-      text-decoration: none;
-      font-weight: 600;
-      letter-spacing: 0.03em;
-      transition: color 0.18s, background 0.18s;
-      border-radius: 5px;
-      padding: 2px 5px;
-    }
-    a:hover {
-      color: #FFD700;
-      background: #1976d2;
-    }
-    code {
-      background: #f9f2f4;
-      padding: 2px 6px;
-      border-radius: 3px;
-    }
-    .image-banner {
-      text-align: center;
-      margin: 1.5em 0 1.5em 0;
-      width: 100%;
-    }
-    .image-banner img {
-      max-width: 100%;
-      border-radius: 17px;
-      box-shadow: 0 2px 18px #9fcca6;
-    }
-    @media (max-width: 600px) {
-      body {
-        max-width: 97vw;
-        padding: 2vw 2vw;
-        font-size: 0.96em;
-      }
-      .schedule-table th, .schedule-table td { min-width: 60px; font-size: 0.9em;}
-      h1 {font-size: 1.2em;}
-      h2 {font-size: 1.1em;}
-      .image-banner img{border-radius:10px;}
-    }
+    .rb-hero{position:relative;text-align:center;padding:56px 20px 36px;overflow:hidden}
+    .rb-hero::before{content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);width:700px;height:420px;background:radial-gradient(ellipse,rgba(59,107,235,.13) 0%,transparent 70%);pointer-events:none}
+    .rb-hero-eyebrow{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--primary),#5b8af0);color:#fff;font-size:.68em;font-weight:700;letter-spacing:4px;text-transform:uppercase;padding:7px 22px;border-radius:var(--radius-pill);margin-bottom:18px;animation:fadeUp .5s ease both;box-shadow:0 4px 20px var(--primary-glow)}
+    .rb-hero-title{font-size:clamp(2em,5.5vw,3.4em);font-weight:800;letter-spacing:2px;line-height:1.1;margin-bottom:10px;background:linear-gradient(120deg,#fff 0%,var(--gold) 35%,#fff 65%,var(--gold) 100%);background-size:250% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:fadeUp .6s ease both .1s,shimmer 5s linear infinite .8s}
+    .rb-hero-sub{font-size:.95em;color:var(--text-dim);font-weight:500;animation:fadeUp .65s ease both .2s}
+    .rb-hero-img{width:min(220px,55vw);border-radius:24px;box-shadow:var(--shadow-lg),0 0 0 1px rgba(247,201,72,.18);margin-top:24px;animation:fadeUp .8s ease both .3s,float 5s ease-in-out infinite 1.5s}
+    .rb-toc{background:var(--glass);border:1px solid var(--glass-border);border-radius:var(--radius);padding:28px 32px;margin:0 0 32px;backdrop-filter:blur(12px);box-shadow:var(--shadow-sm)}
+    .rb-toc-title{font-size:.68em;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:16px;display:flex;align-items:center;gap:8px}
+    .rb-toc ol{margin-left:1.4em;color:#c8d4ea;font-size:.95em;font-weight:600;line-height:2.4}
+    .rb-toc ol ul{margin-top:2px;margin-bottom:4px;line-height:2.2}
+    .rb-toc a{color:#93b8ff;text-decoration:none;transition:color var(--transition)}
+    .rb-toc a:hover{color:var(--gold)}
+    .rb-section{background:var(--glass);border:1px solid var(--glass-border);border-radius:var(--radius);padding:32px 36px;margin-bottom:28px;backdrop-filter:blur(12px);box-shadow:var(--shadow-sm)}
+    .rb-section h2{font-size:clamp(1.1em,2.5vw,1.4em);font-weight:800;color:#fff;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:22px;padding-bottom:14px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+    .rb-section-num{background:linear-gradient(135deg,var(--primary),#5b8af0);color:#fff;font-size:.72em;padding:4px 14px;border-radius:var(--radius-pill);font-weight:700;letter-spacing:2px;white-space:nowrap;box-shadow:0 3px 12px var(--primary-glow)}
+    .rb-section h3{font-size:.98em;font-weight:800;color:var(--gold);letter-spacing:1.5px;text-transform:uppercase;margin:28px 0 12px;display:flex;align-items:center;gap:8px}
+    .rb-section h3::before{content:"";display:inline-block;width:4px;height:16px;background:linear-gradient(180deg,var(--gold),var(--accent));border-radius:4px;flex-shrink:0}
+    .rb-section p{color:#c8d4ea;font-size:.95em;line-height:1.9;margin-bottom:14px}
+    .rb-section ol,.rb-section ul{margin-left:1.4em;margin-bottom:14px;color:#c8d4ea;font-size:.95em;line-height:2.1}
+    .rb-section li{margin-bottom:10px}
+    .rb-section li strong{color:#ffffff;font-weight:700}
+    .rb-section a{color:#7aa0f5;font-weight:600;text-decoration:none;transition:color var(--transition)}
+    .rb-section a:hover{color:var(--gold);text-decoration:underline}
+    .rb-note{display:flex;align-items:flex-start;gap:14px;border-radius:var(--radius-sm);padding:16px 20px;margin:16px 0;font-size:.93em;font-weight:500;line-height:1.8}
+    .rb-note i{font-size:1.2em;flex-shrink:0;margin-top:2px}
+    .rb-note-info{background:rgba(59,107,235,.15);border-left:4px solid var(--primary);color:#bcd4ff}
+    .rb-note-info i{color:var(--primary)}
+    .rb-note-warning{background:rgba(247,201,72,.13);border-left:4px solid var(--gold);color:#f5df80}
+    .rb-note-warning i{color:var(--gold)}
+    .rb-note-danger{background:rgba(232,51,77,.13);border-left:4px solid var(--accent);color:#ff9aa6}
+    .rb-note-danger i{color:var(--accent)}
+    .rb-note-success{background:rgba(34,217,138,.13);border-left:4px solid var(--green);color:#8fffc8}
+    .rb-note-success i{color:var(--green)}
+    .rb-table-wrap{overflow-x:auto;margin:16px 0 20px;border-radius:var(--radius-sm);border:1px solid var(--border)}
+    .rb-table{width:100%;border-collapse:collapse;font-size:.92em;font-weight:500;color:#c0cfea;min-width:340px}
+    .rb-table th{background:linear-gradient(135deg,rgba(26,46,110,.85),rgba(59,107,235,.65));color:#fff;font-weight:700;text-transform:uppercase;letter-spacing:1px;padding:12px 16px;text-align:center;border-bottom:1px solid rgba(59,107,235,.35)}
+    .rb-table td{padding:12px 16px;text-align:center;border-bottom:1px solid var(--border);background:rgba(255,255,255,.03);transition:background var(--transition)}
+    .rb-table tr:nth-child(even) td{background:rgba(59,107,235,.08)}
+    .rb-table tr:hover td{background:rgba(255,255,255,.09);color:#fff}
+    .rb-stage-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(247,201,72,.12);border:1px solid rgba(247,201,72,.3);color:var(--gold);font-size:.82em;font-weight:700;padding:6px 16px;border-radius:var(--radius-pill);margin:12px 0 16px}
+    .rb-sponsors{text-align:center;margin:0 0 36px}
+    .rb-sponsors-lbl{font-size:.65em;font-weight:700;text-transform:uppercase;letter-spacing:4px;color:var(--text-dim);margin-bottom:16px}
+    .rb-divider{height:1px;background:linear-gradient(90deg,transparent,var(--border),transparent);margin:36px 0;border:none}
+    .rb-contact{background:linear-gradient(135deg,rgba(26,46,110,.5),rgba(20,8,60,.55));border:1px solid rgba(59,107,235,.25);border-radius:var(--radius);padding:24px 32px;text-align:center;margin-bottom:28px}
+    .rb-contact-title{font-size:.65em;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+    .rb-contact p{color:#c8d4ea;font-size:.92em;font-weight:500;margin:0;line-height:1.7}
+    .rb-contact a{color:#7aa0f5;text-decoration:none;font-weight:700}
+    .rb-contact a:hover{color:var(--gold)}
+    @media(max-width:768px){.rb-section{padding:22px 16px}.rb-toc{padding:20px 16px}.rb-table th,.rb-table td{padding:9px 10px;font-size:.86em}}
   </style>
 </head>
 <body>
-<h1>🏏 The Champions League 2025 Rulebook 🏏</h1>
 
-<div class="image-banner">
-  <img src="images/TCL.jpeg" alt="Champions League Banner">
-</div>
-<div class="powered-by">
-    <span class="powered-by-label"><b>Powered by:</b></span>
-    <!-- Replace sponsor image URLs with your sponsor logos -->
-    <a href="https://sportfysiotherapiealmere.nl/" target="_blank" rel="noopener noreferrer">
-        <img src="images/leon.jpeg" alt="sportfysiotherapiealmere" class="sponsor-img">
+  <nav class="navbar">
+    <a class="navbar-brand" href="index.html">
+      <img src="images/TCL.jpeg" alt="TCL Logo">
+      <div class="brand-text">TCL 2026<span>The Champions League</span></div>
     </a>
-    <a href="https://www.think-goodies.com" target="_blank" rel="noopener noreferrer">
-        <img src="images/parallel_logo.svg" alt="Think_Goodies" class="sponsor-img">
-    </a>
-    <!-- <a href="https://mangoleaf.nl" target="_blank">
-        <img src="images/mango_leaf.jpeg" alt="Mango_Leaf" class="sponsor-img">
-    </a>
-    <a href="https://anufoods.nl" target="_blank">
-        <img src="images/anu_foods.jpeg" alt="Anu_Foods" class="sponsor-img">
-    </a> -->
-    <a href="https://maps.app.goo.gl/N2iS6ZbHbGvohFxC9" target="_blank" rel="noopener noreferrer">
-        <img src="images/bits_bytes.jpeg" alt="Bits_N_Bytes" class="sponsor-img">
-    </a>
-    <a href="https://charcoalfoods.nl/" target="_blank" rel="noopener noreferrer">
-        <img src="images/charcoal.jpeg" alt="Charcoal" class="sponsor-img">
-    </a>
-    </div>
-
-<hr>
-<h2>Table of Contents</h2>
-<ol>
-  <li><a href="#terms-and-conditions">Terms and conditions</a></li>
-  <li><a href="#general-rules">General Rules</a></li>
-  <li><a href="#tournament-structure">Tournament Format</a>
-    <ul>
-      <li><a href="#group-stage">Group Stage</a></li>
-      <li><a href="#pre-quarter-finals">Pre-Quarter Finals</a></li>
-      <li><a href="#quarter-finals">Quarter Finals</a></li>
-      <li><a href="#semi-finals">Semi-Finals</a></li>
-      <li><a href="#third-place-match">Third Place Decider</a></li>
-      <li><a href="#finals">The Final</a></li>
+    <ul class="nav-links">
+      <li><a href="index.html"><i class="bi bi-house-fill"></i> Home</a></li>
+      <li><a href="index.html#pools"><i class="bi bi-grid-fill"></i> Pools</a></li>
+      <li class="nav-schedule-item">
+        <a href="index.html#schedule" class="nav-schedule-link"><i class="bi bi-calendar3"></i> Schedule <i class="bi bi-chevron-down nav-chevron"></i></a>
+        <div class="schedule-dropdown">
+          <div class="schedule-dropdown-inner">
+            <div class="schedule-dropdown-title"><i class="bi bi-calendar3"></i> Match Days</div>
+            <ul class="schedule-dropdown-list">
+              <li><a href="index.html#schedule"><i class="bi bi-calendar-event"></i> 30 May 2026</a></li>
+              <li><a href="index.html#schedule"><i class="bi bi-calendar-event"></i> 31 May 2026</a></li>
+              <li><a href="index.html#schedule"><i class="bi bi-calendar-event"></i> 6 June 2026</a></li>
+            </ul>
+          </div>
+        </div>
+      </li>
+      <li><a href="rulebook.html" class="active"><i class="bi bi-book"></i> Rulebook</a></li>
+      <li class="nav-teams-item">
+        <a href="roster.html" class="nav-teams-link"><i class="bi bi-people-fill"></i> Teams <i class="bi bi-chevron-down nav-chevron"></i></a>
+        <div class="teams-dropdown">
+          <div class="teams-dropdown-inner">
+            <div class="teams-dropdown-title"><i class="bi bi-trophy-fill"></i> Participating Teams</div>
+            <ul class="teams-dropdown-list">
+              <li><a href="roster.html"><i class="bi bi-shield-fill"></i> See Roster Page</a></li>
+            </ul>
+          </div>
+        </div>
+      </li>
     </ul>
-  </li>
-  <li><a href="#team-setup">Team Setup/Formation</a></li>
-  <li><a href="#timings">Timings</a></li>
-  <li><a href="#powerplay">Powerplay and Field Restrictions</a></li>
-  <li><a href="#bowling">Bowling</a></li>
-  <li><a href="#ground-rules">Ground Rules</a></li>
-  <li><a href="#other-guidelines-or-rules">Other Guidelines Or Rules</a></li>
-</ol>
-<hr>
+    <button class="hamburger" id="hamburgerBtn" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
 
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html"><i class="bi bi-house-fill"></i> Home</a>
+    <a href="index.html#pools"><i class="bi bi-grid-fill"></i> Pools</a>
+    <a href="index.html#schedule"><i class="bi bi-calendar3"></i> Schedule</a>
+    <a href="rulebook.html"><i class="bi bi-book"></i> Rulebook</a>
+    <a href="roster.html"><i class="bi bi-people-fill"></i> Teams / Roster</a>
+  </div>
 
-<blockquote>
-  <span class="note-red">Note:</span> From this point forward, "The Champions League" will be abbreviated as "TCL".
-</blockquote>
+  <div class="rb-hero">
+    <div class="rb-hero-eyebrow"><i class="bi bi-book-half"></i> Official Tournament Document</div>
+    <div class="rb-hero-title">The Champions League Rulebook</div>
+    <div class="rb-hero-sub">Rules &middot; Format &middot; Scoring &middot; Guidelines &mdash; Everything you need to know</div>
+    <img src="images/TCL.jpeg" alt="Champions League" class="rb-hero-img">
+  </div>
 
-<h2 id="terms-and-conditions" style="font-size: 2.5em;" >A. Terms and Conditions</h2>
-<div style="background: #e3f3ff; border-left: 5px solid #1976d2; padding: 12px 18px; margin: 18px 0; font-weight: bold;">
-  Note: The ICC rules and regulations shall serve as the primary reference. Any rules or scenarios not explicitly mentioned here will be governed strictly in accordance with ICC regulations.
-</div>
-<ol>
-  <li>Unless specified otherwise in this document, all ICC cricket rules shall be followed. The rules and guidelines established by the TCL committee are considered final, and any modifications will be made solely at the committee’s discretion.</li>
-  <li>The decisions made by the umpire(s) shall be considered final. Umpires are entrusted with upholding the spirit of the game and may ask a player to leave the match in cases of inappropriate conduct. For any necessary clarifications, only the captains of the respective teams may approach the umpires to ensure smooth and respectful communication.</li>
-  <li>Participating teams and players are responsible for ensuring their own safety throughout the tournament. All players are required to wear appropriate protective gear while batting or wicketkeeping. Please note that TCL organisers cannot be held liable for any injuries, whether minor or major, sustained during the course of play.</li>
-  <li>Participating teams and players are responsible for the safekeeping of their personal belongings throughout the tournament. The TCL organisers cannot be held responsible for any loss or damage to personal property.</li>
-  <li>All teams and players are required to adhere to the tournament’s rules and regulations at all times throughout the event.</li>
-  <li>The TCL Organising Committee (OC) expects the team captain or designated contact person to share this document or its link with all team members.</li>
-</ol>
+  <div class="main-container">
 
-<h2 id="general-rules" style="font-size: 2.5em;">B. General Rules</h2>
-  <ol>
-    <li>
-      All matches will be conducted at Johann Sebastiaan Bachweg 3, 1323 BA Almere.
-    </li>
-    <li>
-      All standard ICC rules will apply unless explicitly stated otherwise in this document. The rules and regulations for this tournament are established by the Organising Committee (OC) of the TCL Tournament. Only the OC is authorised to amend these rules and regulations. This document is deemed final unless a revised version is released by the OC and officially communicated to the team captains. For reference, the official ICC rules can be found at: 
-      <a href="https://images.icc-cricket.com/image/upload/prd/vtlex7fs28mukkavtgev.pdf?_gl=1*164advl*_gcl_au*NzM4NjYwMjEzLjE3NDg4MTIyNzk." target="_blank">Rules &amp; Regulations</a>.
-    </li>
-    <li>
-      Participating teams and players are expected to adhere to the following:
-      <ul class="sublist">
-        <li>Maintain cleanliness of the premises throughout the tournament.</li>
-        <li>Park vehicles only in areas designated by the organisers. The organisers are not responsible for the safety of any vehicles.</li>
-        <li>Ensure the security of personal belongings. TCL organisers will not be held liable for any loss or damage.</li>
-      </ul>
-    </li>
-    <li>
-      For safety reasons, playing without shoes is strictly prohibited.
-    </li>
-    <li>
-      Each team must bring their own cricket equipment. Apart from the ball and wickets, no other playing equipment will be provided by the organisers.
-    </li>
-    <li>
-      Players are required to demonstrate good conduct and uphold the principles of fair play at all times. In cases of unruly behaviour, verbal intimidation, or physical assault, the organisers reserve the right—after consulting with the respective captains—to ban the offending player from both the tournament and the field.
-    </li>
-    <li>
-      None of the on-site house facilities are available for use. Participants are advised to be discreet and considerate while attending to natural calls.
-    </li>
-    <li>
-      During game time, only the eleven fielding players, the umpires, and the batsmen are permitted within the field of play or its limits, including dugouts. All others must remain outside.
-    </li>
-    <li>
-      The tournament will be played with Nivea, Guru, Vicky, SG Spark, or similar red/green/double-colored hard tennis balls.
-    </li>
-    <li>
-      Should a ball become damaged or unsuitable for play during an innings, the umpires will select a replacement ball of similar brand and condition (matching wear and tear).
-    </li>
-    <li>
-      <p>In the event of unplayable weather conditions, the umpires will make an appropriate decision in consultation with both team captains.</p>
-      <ul>
-        <li>If play is stopped during the first innings, the total number of overs may be reduced to 6 or 8, as deemed necessary.</li>
-        <li>Subsequent group matches may also be shortened to ensure the tournament schedule can be maintained.</li>
-        <li>
-          <strong>If the match is interrupted during the second innings and at least 4 overs have been completed, the winner will be determined using the DLS (Duckworth-Lewis-Stern) method, calculated via the CricHeroes App.</strong>
+    <!-- <div class="rb-sponsors reveal">
+      <div class="rb-sponsors-lbl">Powered by our sponsors</div>
+      <div class="sponsors-grid">
+        <a href="https://sportfysiotherapiealmere.nl/" target="_blank" rel="noopener noreferrer" class="sponsor-card">
+          <img src="images/leon.jpeg" alt="Sportfysiotherapie Almere"><span>Sportfysiotherapie Almere</span>
+        </a>
+        <a href="https://www.think-goodies.com" target="_blank" rel="noopener noreferrer" class="sponsor-card">
+          <img src="images/parallel_logo.svg" alt="Think Goodies"><span>Think Goodies</span>
+        </a>
+        <a href="https://maps.app.goo.gl/N2iS6ZbHbGvohFxC9" target="_blank" rel="noopener noreferrer" class="sponsor-card">
+          <img src="images/bits_bytes.jpeg" alt="Bits N Bytes"><span>Bits &amp; Bytes</span>
+        </a>
+        <a href="https://charcoalfoods.nl/" target="_blank" rel="noopener noreferrer" class="sponsor-card">
+          <img src="images/charcoal.jpeg" alt="Charcoal Foods"><span>Charcoal Foods</span>
+        </a>
+        <a href="https://www.anusfoods.nl/" target="_blank" rel="noopener noreferrer" class="sponsor-card">
+          <img src="images/anu_foods.jpeg" alt="Anu Foods"><span>Anu Foods</span>
+        </a>
+        <a href="https://www.mangoleaf.nl/" target="_blank" rel="noopener noreferrer" class="sponsor-card">
+          <img src="images/mango_leaf.jpeg" alt="Mango Leaf"><span>Mango Leaf</span>
+        </a>
+      </div>
+    </div> -->
+
+    <hr class="rb-divider">
+
+    <div class="rb-toc reveal">
+      <div class="rb-toc-title"><i class="bi bi-list-ul"></i> Table of Contents</div>
+      <ol>
+        <li><a href="#terms-and-conditions">Terms and Conditions</a></li>
+        <li><a href="#general-rules">General Rules</a></li>
+        <li><a href="#tournament-structure">Tournament Format</a>
+          <ul>
+            <li><a href="#group-stage">Group Stage</a></li>
+            <li><a href="#pre-quarter-finals">Pre-Quarter Finals</a></li>
+            <li><a href="#quarter-finals">Quarter Finals</a></li>
+            <li><a href="#semi-finals">Semi-Finals</a></li>
+            <li><a href="#third-place-match">Third Place Decider</a></li>
+            <li><a href="#finals">The Final</a></li>
+          </ul>
         </li>
-      </ul>
-    </li>
-    <li>
-      <p>
-        If an extreme weather forecast makes it impossible to conduct the tournament, the organizers reserve the right to cancel or reschedule the event. In such cases, entry fees will be refunded <strong>only if the cancellation is announced before the start of working hours on Thursday, 3rd July</strong>. Any updates or changes will be promptly communicated by the organizers to the respective teams.
-      </p>
-    </li>
-    <li>
-      <p>
-        If a reserve day is required to complete the tournament, it will be discussed with the team captains and arranged based on ground availability. Fixtures for the reserve day will be determined according to the availability of the venue.
-      </p>
-    </li>
-    <li>
-      <p>
-        <strong>Teams will not be eligible for a refund in the event they are unable to field the minimum required number of players, fail to attend, or choose to withdraw or boycott the tournament.</strong>
-      </p>
-    </li>
-  </ol>
-
-<h2 id="tournament-structure" style="font-size: 2.5em;">C. Tournament Format</h2>
-<p>
-  This edition of the tournament will feature 18 teams, divided into 6 groups of 3 teams each. Groups A to F independently until the pre-quarterfinal/QuarterFinal stage.
-</p>
-<h3 id="group-stage" style="font-size: 2.0em;">- GROUP STAGE</h3>
-<ul>
-    <li>The top 1 team from each group will advance to the Quarterfinals.</li>
-    <li>The Runner-up or the 2nd Team from each group will advance to the Pre-Quarterfinals.</li>
-    <li>The 3rd team or the last team from each group will be eliminated</li>
-    <li>All group matches will follow a round-robin format, where each team plays against the other two teams in their group.</li>
-    <li>If a group match ends in a tie, the points will be equally shared between the teams.</li>
-    <li>Teams will be ranked in the group stage based on the number of wins or, if necessary, their Net Run Rate (NRR), as calculated by the CricHeroes App. The team with the most wins or superior NRR will be placed highest in the standings.</li>
-  </ul>
-
-<h3 >GROUP STAGE SCHEDULE:</h3>
-<table border="1" cellspacing="5" cellpadding="15" style="margin: 0 auto; text-align: center;">
-  <tr>
-    <th>Group A</th>
-    <th>Group B</th>
-    <th>Group C</th>
-    <th>Group D</th>
-    <th>Group E</th>
-    <th>Group F</th>
-  </tr>
-  <tr>
-    <td>A1 vs A2</td>
-    <td>B1 vs B2</td>
-    <td>C1 vs C2</td>
-    <td>D1 vs D2</td>
-    <td>E1 vs E2</td>
-    <td>F1 vs F2</td>
-  </tr>
-  <tr>
-    <td>A1 vs A3</td>
-    <td>B1 vs B3</td>
-    <td>C1 vs C3</td>
-    <td>D1 vs D3</td>
-    <td>E1 vs E3</td>
-    <td>F1 vs F3</td>
-  </tr>
-  <tr>
-    <td>A2 vs A3</td>
-    <td>B2 vs B3</td>
-    <td>C2 vs C3</td>
-    <td>D2 vs D3</td>
-    <td>E2 vs E3</td>
-    <td>F2 vs F3</td>
-  </tr>
-</table>
-<h3 id="pre-quarter-finals" style="font-size: 2.0em;">- Pre-Quarter Finals </h3>
-<div style="border-left: 4px solid #ffd700; padding-left: 10px; background: #fffbe3; margin: 10px 0;">
-  <strong>6 Teams:</strong> Played among 6 Runner-up Teams of Each Group
-</div>
-<ol>
-  <li>The Pre-Quarter Finals will comprise two separate Groups.</li>
-  <li>Group 1 will consist of the second-placed teams from Groups A, B, and C from the group stage.</li>
-  <li>Group 2 will consist of the second-placed teams from Groups D, E, and F from the group stage.</li>
-  <li>All Pre-Quarter Final matches will follow a round-robin format, with each team playing against the other two teams within their Group.</li>
-  <li>At the conclusion of the Pre-Quarter Finals, the top team from each Group will advance to the Quarter-Finals.</li>
-  <li>The remaining teams will be eliminated from the tournament.</li>
-  <li>If a match ends in a tie, the points will be shared equally between the teams.</li>
-  <li>Teams will be ranked according to the number of wins or, if necessary, by Net Run Rate (NRR) as determined by the CricHeroes App. The team with the most wins or the superior NRR will be placed highest in the standings.</li>
-</ol>
-
-<h3>PRE-QUARTER SCHEDULE:</h3>
-<table border="1" cellspacing="5" cellpadding="15" style="margin: 0 auto; text-align: center;">
-  <tr>
-    <th>Group 1</th>
-    <th>Group 2</th>
-  </tr>
-  <tr>
-    <td>A2 vs B2</td>
-    <td>D2 vs E2</td>
-  </tr>
-  <tr>
-    <td>A2 vs C2</td>
-    <td>D2 vs F2</td>
-  </tr>
-  <tr>
-    <td>B2 vs C2</td>
-    <td>E2 vs F2</td>
-  </tr>
-</table>
-
-<h3 id="quarter-finals" style="font-size: 2.0em;">- Quarter Finals</h3>
-<div style="border-left: 4px solid #ffd700; padding-left: 10px; background: #fffbe3; margin: 10px 0;">
-  <strong>8 Teams:</strong> 6 Top Teams from Group Stage + 2 Top Teams from Pre-Quarterfinals
-</div>
-<ol>
-  <li>The Quarter Finals will comprise of 8 Teams.</li>
-  <li>6 Table toppers from Group Stage (A1,B1,C1,D1,E1,F1)</li>
-  <li>2 Top Teams from Group 1 and Group 2 </li>
-  <li>Quarter Finals will be knockout format and losing team will be eliminated</li>
-  <li>The Winning Team Qualifies for Semi-Finals </li>
-  <li>The below fixtures are created using the Random Picker for teams</li>
-  <li>In the event of a tie, a Super Over shall be conducted to determine which team advances. All Super Over procedures will strictly adhere to ICC regulations.</li>
-  <li>If the Super Over also ends in a tie, additional Super Overs shall be played until a winner is determined.</li>
-</ol>
-
-<h3>QUARTER-FINAL SCHEDULE:</h3>
-<table border="1" cellspacing="5" cellpadding="15" style="margin: 0 auto; text-align: center;">
-  <tr>
-    <th>Quarter Final-1</th>
-    <th>Quarter Final-2</th>
-    <th>Quarter Final-3</th>
-    <th>Quarter Final-4</th>
-  </tr>
-  <tr>
-    <td>A1 vs Group-2 Topper</td>
-    <td>D1 vs Group-1 Topper</td>
-    <td>B1 vs C1 </td>
-    <td>E1 vs F1</td>
-  </tr>
-</table>
-
-<h3 id="semi-finals" style="font-size: 2.0em;">- Semi Finals</h3>
-<div style="border-left: 4px solid #ffd700; padding-left: 10px; background: #fffbe3; margin: 10px 0;">
-  <strong>4 Teams:</strong> Winners of Quarter Finals
-</div>
-<ol>
-  <li>The Semi-Finals will comprise of 4 Teams, All winners from Quarter-Final Stage</li>
-  <li>The Semi-Finals will be knockout format and losing team will be eliminated</li>
-  <li>The Winning Team Qualifies for Finals </li>
-  <li>In the event of a tie, a Super Over shall be conducted to determine which team advances. All Super Over procedures will strictly adhere to ICC regulations.</li>
-  <li>If the Super Over also ends in a tie, additional Super Overs shall be played until a winner is determined.</li>
-</ol>
-
-<h3>SEMI-FINAL SCHEDULE:</h3>
-<table border="1" cellspacing="5" cellpadding="15" style="margin: 0 auto; text-align: center;">
-  <tr>
-    <th>SEMI-FINAL 1</th>
-    <th>SEMI-FINAL 2</th>
-  </tr>
-  <tr>
-    <td>QF1 Winner vs QF4 Winner</td>
-    <td>QF2 Winner vs QF3 Winner</td>
-  </tr>
-</table>
-
-<h3 id="third-place-match" style="font-size: 2.0em;">- Third Place Decider</h3>
-<div style="border-left: 4px solid #ffd700; padding-left: 10px; background: #fffbe3; margin: 10px 0;">
-  <strong>2 Teams:</strong> Losers of Semi Finals
-</div>
-<ol>
-  <li>In the event of a tie, a Super Over shall be conducted to determine which team advances. All Super Over procedures will strictly adhere to ICC regulations.</li>
-  <li>If the Super Over also ends in a tie, additional Super Overs shall be played until a winner is determined.</li>
-</ol>
-
-<h3>THIRD PLACE DECIDER SCHEDULE:</h3>
-<table border="1" cellspacing="5" cellpadding="15" style="margin: 0 auto; text-align: center;">
-  <tr>
-    <th>THIRD PLACE DECIDER</th>
-  </tr>
-  <tr>
-    <td>SF1 Runners-up vs SF2 Runners-up</td>
-  </tr>
-</table>
-
-<h3 id="finals" style="font-size: 2.0em;">- The Final</h3>
-<div style="border-left: 4px solid #ffd700; padding-left: 10px; background: #fffbe3; margin: 10px 0;">
-  <strong>2 Teams:</strong> Winners of Semi Finals
-</div>
-<ol>
-  <li>In the event of a tie, a Super Over shall be conducted to determine which team advances. All Super Over procedures will strictly adhere to ICC regulations.</li>
-  <li>If the Super Over also ends in a tie, additional Super Overs shall be played until a winner is determined.</li>
-</ol>
-
-<h3>FINAL SCHEDULE:</h3>
-<table border="1" cellspacing="5" cellpadding="15" style="margin: 0 auto; text-align: center;">
-  <tr>
-    <th>THE FINAL</th>
-  </tr>
-  <tr>
-    <td>SF1 Winner vs SF2 Winner</td>
-  </tr>
-</table>
-
-<h2 id="team-setup" style="font-size: 2.5em;">D. Team Setup/Formation</h2>
-  <ol>
-  <li>
-    <strong>Squad Submission:</strong><br>
-    Each captain must submit a list of up to 15 players in writing to the TCL Organising Committee. The list should include each player's first name and surname. A team would not be allowd to participate in case they do not submit the squads in time.
-  </li>
-  <li>
-    <strong>Naming Format:</strong><br>
-    Failure to adhere to the specified naming format may result in individual players being ineligible for personal awards, as discrepancies in names can impact stats, which are maintained through the CricHeroes app.
-  </li>
-  <li>
-    <strong>Squad Changes:</strong><br>
-    Once the player list has been submitted, no changes will be permitted during the course of the tournament, regardless of the number of players nominated.
-  </li>
-  <li>
-    <strong>Player Eligibility:</strong><br>
-    If a team fields different players under the same name or exceeds the maximum limit of 15 players, the team will be disqualified from the tournament.
-  </li>
-  <li>
-    <strong>Playing XI Submission:</strong><br>
-    The Playing XI must be submitted to the scorer or umpire at the time of the toss. No changes to the Playing XI may be made after submission without the consent of the opposing captain.
-  </li>
-  <li>
-    <strong>Toss Procedures:</strong><br>
-    Immediately following the toss, the winning captain must declare the team's decision to bat or field. Failure to make an immediate decision will result in the opposing captain being awarded the choice.
-  </li>
-  <li>
-    <strong>CricHeroes App Compliance:</strong><br>
-    All matches will be scored using the CricHeroes app. The squad nominated by each captain must be added to the respective teams in the CricHeroes app <u>prior to arrival at the ground</u>. Any delays due to incomplete squads on the app may result in penalties, including deduction of overs or forfeiture by walkover.
-  </li>
-  <li>
-    <strong>Playing XI Nomination in App:</strong><br>
-    Prior to the toss, captains are required to nominate their Playing XI to the match officials via the CricHeroes app. Ensuring the accuracy and finalizing of the team squad in CricHeroes is the sole responsibility of the team captain.
-  </li>
-  <li>
-    <strong>Late Arrival and Field Departure:</strong><br>
-    Umpires must be notified if a player in the Playing XI fails to take the field at the start of the match or leaves the field during play. Any such player will not be permitted to bowl in that innings until they have spent a period of time on the field equal to the duration of their absence.
-  </li>
-  <li>
-    <strong>Substitutions:</strong><br>
-    Umpires will not permit player substitutions during fielding duties unless an injury renders a player unfit to play. A player absent from the field for more than half of the opponent’s innings will not be allowed to bat at the start of their own team’s innings.
-  </li>
-  <li>
-    <strong>Substitution Consultation:</strong><br>
-    All substitution requests must be communicated to the opposition captain. Final discretion, however, rests with the umpires.
-  </li>
-  <li>
-    <strong>No refund for Disqualification:</strong><br>
-    In case a team is disqualified for not adhering to the rules mentioned in this rulebook, they will be not allowed to play further in the tournament and no refund of enrty fee will be granted.
-  </li>
-</ol>
-
-<h3>Impact Player Rule</h3>
-
-<ol start="12">
-  <li>
-    <strong>Introduction of the Impact Player:</strong><br>
-    An Impact Player may be introduced at any point during the match, including at the start of an innings, after the fall of a wicket, or at the end of an over. Once substituted, the replaced player shall take no further part in the match.
-  </li>
-  <li>
-    <strong>Eligibility for Impact Player:</strong><br>
-    Each team is required to name four substitutes in addition to the Playing XI at the toss. The Impact Player must be selected from this list of substitutes.
-  </li>
-  <li>
-    <strong>Replacement Guidelines:</strong><br>
-    The Impact Player may replace any member of the Playing XI, regardless of whether the replaced player has already batted, bowled, or fielded. If a bowler is substituted, the Impact Player is permitted to bowl their full quota of overs (two in T10 cricket), even if the original bowler has already bowled.
-  </li>
-  <li>
-    <strong>Strategic Usage:</strong><br>
-    Teams may utilize the Impact Player rule to introduce a specialist bowler or batsman as needed, allowing for greater tactical flexibility during the match.
-  </li>
-</ol>
-
-<h2 id="timings" style="font-size: 2.5em;">E. Timings</h2>
-<ol>
-  <li>
-    <strong>Team Assembly and Toss Timings:</strong><br>
-    All teams must assemble at least 30 minutes prior to their scheduled start time. The toss for each game will be conducted during the innings break of the preceding match, except for the first match of the day, for which the toss will be held 15 minutes before the scheduled start.
-  </li>
-  <li>
-    <strong>Late Arrival Penalties:</strong><br>
-    For every 10 minutes of delay beyond a team’s scheduled start time, the offending team will incur a batting penalty. Specifically, if a team is not ready to play 10 minutes after their scheduled time, their innings will be limited to 7 overs. If they are not available after 20 minutes, their innings will be limited to 5 overs.
-  </li>
-  <li>
-    <strong>Forfeiture:</strong><br>
-    Should a team fail to arrive within 30 minutes of their scheduled start time, the match will be forfeited, and the opposition shall be awarded the points.
-  </li>
-  <li>
-    <strong>Minimum Player Requirement:</strong><br>
-    A minimum of nine players must be present to avoid penalties or the awarding of a walkover to the opposition in the event of a 30-minute delay.
-  </li>
-  <li>
-    <strong>Match Duration:</strong><br>
-    Each innings shall consist of 10 overs to be completed within 35 minutes. The entire match (20 overs) must be completed within 75 minutes, with a 5-minute break between innings.
-  </li>
-  <li>
-    <strong>Over Rate Monitoring:</strong><br>
-    Teams must complete their quota of overs within the allotted time. Umpires will monitor the over rate, and if the bowling team is behind after 35 minutes of an inning, all subsequent overs shall restrict the fielding team to only 2 fielders outside the 30-yard circle.
-  </li>
-  <li>
-    <strong>Drinks Breaks:</strong><br>
-    No drinks breaks will be permitted during the match except in the case of injuries.
-  </li>
-  <li>
-    <strong>Weather Interruptions:</strong><br>
-    In cases of extreme weather, match officials will make appropriate decisions in consultation with both team captains.
-  </li>
-</ol>
-<!-- Continue the rest of your rulebook here, using <h2 id="section-id">, <h3>, <ol>, <ul> and <p> as needed... -->
-
-<h2 id="powerplay" style="font-size: 2.5em;">F. Powerplay and Field Restrictions</h2>
-<ol>  
-    <strong style="
-    font-size: 1.5em;
-    color: #db2727;
-    text-shadow: 2px 2px 6px rgba(211,47,47,0.4);
-    ">- Mandatory Powerplay-1 (Over 1 & 2)</strong><br>  
-  <li>
-    The 1st mandatory powerplay shall be enforced during the match, for the 1st and the 2nd over of each innings.
-  </li>
-  <li>
-    Only 2 Fielders are allowed outside the circle during the 1st powerplay
-  </li>
-</ol>
-  <ol>  
-    <strong style="
-    font-size: 1.5em;
-    color: #db2727;
-    text-shadow: 2px 2px 6px rgba(211,47,47,0.4);
-    ">- Mandatory Powerplay-2 (Over 3 - Over 5)</strong><br>  
-  <li>
-    The 2nd mandatory powerplay shall be enforced during the match, for the 3rd, 4th and 5th over of each innings.
-  </li>
-  <li>
-    Only 4 Fielders are allowed outside the inner circle during the 2nd powerplay.
-  </li>
-  </ol>
-  <ol>  
-    <strong style="
-    font-size: 1.5em;
-    color: #db2727;
-    text-shadow: 2px 2px 6px rgba(211,47,47,0.4);
-    ">- End of Poweplay (Over 6 - Over 10)</strong><br>  
-  <li>
-    The powerplay ends and normal rules take over after 5th Over of each innings .
-  <li>
-    From overs 6 to 10, a maximum of five fielders are permitted outside the inner circle.
-  </li>
-</li>
-</ol>
-<ol>  
-    <strong style="
-    font-size: 1.5em;
-    color: #db2727;
-    text-shadow: 2px 2px 6px rgba(211,47,47,0.4);
-    ">- General Fielding Rules</strong><br>  
-    <li>
-    <strong>30-Yard Circle:</strong><br>
-      The 30-yard circle will be clearly marked to enforce fielding restrictions.
-    </li>
-    <li>
-    <strong>Fielders Outside the Circle:</strong><br>
-    After the first 5 overs, a maximum of five fielders are permitted outside the 30-yard circle at any point.
-    </li>
-    <li>
-    <div style="background: #e8e3e1; color: #4833b5; border-left: 6px solid #b6ce3d; padding: 12px 16px; margin: 8px 0; font-weight: bold;">
-      ⚠️ A minimum of four fielders must be positioned on the off-side by the fielding team at all times during an innings.
+        <li><a href="#team-setup">Team Setup / Formation</a></li>
+        <li><a href="#timings">Timings</a></li>
+        <li><a href="#powerplay">Powerplay &amp; Field Restrictions</a></li>
+        <li><a href="#bowling">Bowling</a></li>
+        <li><a href="#ground-rules">Ground Rules</a></li>
+        <li><a href="#other-guidelines-or-rules">Other Guidelines or Rules</a></li>
+      </ol>
     </div>
-    </li>
-    <li>
-    <strong>Penalty for Violation:</strong><br>
-    Any infringement of the above fielding restrictions will result in the umpire calling and signaling a 'No Ball'.
-    </li>
-</li>
-</ol>
-<ol>
-<div style="
-    background: #ffdddd;
-    color: #a94442;
-    border-left: 6px solid #f44336;
-    padding: 12px 16px;
-    margin: 16px 0;
-    font-weight: bold;
-    font-size: 1.1em;
-">
-  ⚠️ Any violation of powerplay or fielding restrictions will result in the delivery being called a 'No Ball' without warning ⚠️ 
-</div>
-<div style="
-    background: #ffdddd;
-    color: #a94442;
-    border-left: 6px solid #f44336;
-    padding: 12px 16px;
-    margin: 16px 0;
-    font-weight: bold;
-    font-size: 1.1em;
-">
-  ⚠️ In any point of time, no more than 5 fielders can be placed on the leg side ⚠️ 
-</div>
-</ol>
 
-<h2 id="bowling" style="font-size: 2.5em;">G. Bowling</h2>
-<ol>
-  <li>
-    <strong>Over Limitation:</strong><br>
-    Each bowler is permitted to bowl a maximum of 2 overs per match.
-  </li>
-  <li>
-    <strong>Bowling Action:</strong><br>
-    Only bowling actions deemed appropriate according to ICC guidelines will be allowed.
-    <ul>
-      <li>
-        <strong>Appeals:</strong><br>
-        A batsman may appeal to the leg umpire if they suspect an inappropriate bowling action.
-      </li>
-      <li>
-        <strong>Warnings and Penalties:</strong><br>
-        Umpires will monitor bowling actions and issue one warning if a bowler’s action is found inappropriate.
-        A 'No Ball' will be called for any further deliveries with an illegal action after the warning.
-      </li>
-    </ul>
-  </li>
-  <li>
-    <strong>Declaration of Bowling Style:</strong><br>
-    Before the commencement of each over, the umpire shall confirm with the bowler whether they intend to bowl right-handed or left-handed, and whether they will bowl over or around the wicket. The umpire shall communicate this information to the striker.
-    <ul>
-      <li>
-        <strong>Failure to Notify Before First Delivery:</strong><br>
-        If a bowler fails to declare their mode of delivery before bowling the first ball of the over, the delivery shall not be called a no-ball. The umpire might confirm the bowler’s style, and issue a warning to the bowler.
-      </li>
-      <li>
-        <strong>Change of Mode During the Over:</strong><br>
-        If, during an over, the bowler changes their mode of delivery without notifying the umpire in advance, the umpire shall call and signal no-ball for that delivery.
-      </li>
-    </ul>
-  </li>
-  <li>
-    <strong>Incomplete Overs:</strong><br>
-    In the event a bowler is unable to complete an over, another bowler shall deliver the remaining balls.
-    For the purpose of counting overs, both bowlers will be considered to have bowled a full over.
-  </li>
-  <li>
-    <strong>Umpire’s Authority:</strong><br>
-    The umpire’s decision is final and must not be contested. Only the captains may engage in discussion with the umpires to maintain clarity and decorum in case of disputes.
-  </li>
-  <li>
-    <div style="background: #ffdddd; color: #a94442; border-left: 6px solid #f44336; padding: 12px 16px; margin: 8px 0; font-weight: bold;">
-      ⚠️ <strong>Illegal bowling actions, including chucking, are strictly prohibited, regardless of the bowler’s pace. Any such action must be reported to the umpires, whose decision will be final and dependent on the situation. No exceptions will be made for illegal actions.</strong>
+    <div class="rb-note rb-note-info reveal">
+      <i class="bi bi-info-circle-fill"></i>
+      <span>From this point forward, <strong>"The Champions League"</strong> will be abbreviated as <strong>"TCL"</strong>. The ICC rules and regulations serve as the primary reference. Any rules or scenarios not explicitly mentioned here will be governed strictly in accordance with ICC regulations.</span>
     </div>
-  </li>
-</ol>
-<h2 id="ground-rules" style="font-size: 2.5em;">H. Ground Rules</h2>
-<ol>
-  <li>
-    <strong>LBW and Leg Byes:</strong><br>
-    The LBW rule is not applicable in this tournament; therefore, leg byes will not be permitted. Deliveries that would otherwise qualify as leg byes will be counted as legal balls but not as dead balls.
-  </li>
-  <li>
-    <strong>End Change:</strong><br>
-    Only the batsmen will change ends at the completion of each over. Batting will occur from one designated end on each ground throughout the match.
-  </li>
-  <li>
-    <strong>Run Out on Leg-Byes or Byes:</strong><br>
-    <strong style="color: maroon;">
-  A batsman cannot be run out while attempting a run off a leg-bye or a bye. Any such appeal will be rejected by the umpires, as the ball is considered “no longer in play” in such a case. However stumpings are still possible.
-</strong><br>
-<div style="
-    background: #ffdddd;
-    color: #a94442;
-    border-left: 6px solid #f44336;
-    padding: 12px 16px;
-    margin: 16px 0;
-    font-weight: bold;
-    font-size: 1.1em;
-">
-  ⚠️ Stumpings shall still remain a valid mode of dismissal on deliveries resulting in byes or leg byes. If, during the course of a bye or leg bye, the striker is out of his/her crease and not attempting a run, and the wicketkeeper puts down the wicket in accordance with the Laws of Cricket, the striker shall be given out stumped. ⚠️ 
-</div>
-  </li>
-</ol>
-<h3>Special Rules for Playing on the Hockey Ground</h3>
-<ol>
-  <li>
-    <strong>Ground Adaptations:</strong><br>
-    As the matches are being played on a hockey ground, the following special rules will apply to suit its unique dimensions.
-  </li>
-  <li>
-    <strong>Boundaries:</strong><br>
-    The boundary will be defined by the Steel/Iron fence of the hockey field in all areas, except directly behind the batsman’s end.
-  </li>
-  <li>
-    <strong>30-Yard Circle:</strong><br>
-    The 30-yard restriction will be marked as a square, based on the quarter line box of the hockey field.
-  </li>
-  <li>
-    <strong>Special Rules Behind the Wickets (Batsman’s End):</strong>
-    <ul>
-      <li>
-        If the ball goes over the fence behind the batsman’s end off the bat, <strong style="color: rgb(182, 3, 3);">one run is awarded</strong> and the batsmen must change ends.
-      </li>
-      <li>
-        If the ball remains inside the fence or bounces within the field <strong style="color: rgb(182, 3, 3);">(including the hockey bench)</strong>, it is considered in play and all normal rules apply.
-      </li>
-      <li>
-        Any catch taken while in contact with or leaning against the fence <strong>behind the stumps</strong> will be considered <strong style="color: rgb(182, 3, 3);">out</strong>.
-      </li>
-      <li>
-        Any catch taken while in contact with or leaning against the fence elsewhere on the ground will be considered <strong style="color: rgb(182, 3, 3);"> a Six</strong>.
-      </li>
-      <li>
-        If the ball crosses over the fence due to an overthrow, automatic one run is awarded, and batsman much change ends. But in case the ball stays inside the fence and <strong>"in play"</strong> , players would have to run and <strong style="color: rgb(182, 3, 3);">no automatic runs would be awarded</strong>.
-      </li>
-    </ul>
-  </li>
-  <li>
-    <strong>Balls Intruding from Adjacent Grounds:</strong><br>
-    Since matches may be played on adjacent grounds, a ball from one match might enter another playing area. Play should not be stopped for this reason unless directed by the umpire. Players are requested to continue play and clear the intruding ball to the appropriate ground only when the ball is dead.
-  </li>
-</ol>
-<ol>
-  <li>
-    <strong>All other rules apply:</strong><br>
-    All other rules apply i.e. Over throws, Short run etc.
-  </li>
-</ol>
 
-<h2 id="other-guidelines-or-rules" style="font-size: 2.5em;">I. Other Guidelines or Rules</h2>
-<ol>
-  <li>
-    <strong>Switch Hits and Reverse Stance:</strong><br>
-    If a batsman switches stance or plays a reverse hit, the stance at the moment of ball delivery will be used to determine off and leg side for the purposes of wide calls. This only applies if the stance change occurs before the bowler releases the ball.
-  </li>
-  <li>
-    <strong>Batsman Moving While playing a shot:</strong><br>
-    If a batsman changes his stance or position sideways while playing a shot, the wide line will also be adjusted accordingly. The decision regarding wides in such situations will be made at the discretion of the umpires.
-  </li>
-  <li>
-    <strong>Handling the Ball:</strong><br>
-    Any instance of a batsman handling the ball before the ball is declared dead will result in the batsman being given out.
-  </li>
-  <li>
-    <strong>Obstructing the Field:</strong><br>
-    If, in the umpire’s opinion, a batsman running between wickets changes direction without reasonable cause and thereby obstructs a fielder’s attempt to effect a run out, the batsman shall, upon appeal, be given out for obstructing the field. This ruling applies regardless of whether a run out would have occurred.
-  </li>
-  <li>
-    <strong>Mankading:</strong><br>
-    The bowler may, prior to releasing the ball and before completing the delivery swing, attempt to run out the non-striker (“Mankading”) without any warning. It is the responsibility of the non-striker to remain within the crease until the ball has been released.
-  </li>
-  <li>
-    <strong>Scoring Runs:</strong><br>
-    Runs may be scored by all standard methods except byes and leg byes. For byes and leg byes, running or changing strike is not permitted.
-  </li>
-  <li>
-    <strong>Penalty for Field Obstruction:</strong><br>
-    Five penalty runs will be awarded to the batting side if the ball hits any object (such as a jacket, water bottle, or cap) within the boundary ropes.Any such object should be given to the umpire or left out of the boundary by the fielding team.
-  </li>
-  <li>
-    <div style="
-    background: #ffdddd;
-    color: #a94442;
-    border-left: 6px solid #f44336;
-    padding: 12px 16px;
-    margin: 16px 0;
-    font-weight: bold;
-    font-size: 1.1em;
-    ">
-    <strong>Balls Crossed Behind the Batsman:</strong><br>
-     ⚠️If the ball goes over the fence behind the batsman after making contact with the bat, it will be counted as one run, regardless of where it crosses the back fence. Six runs will be awarded only if the ball hits or clears the iron/steel fence (within the ground) ⚠️
-  </div>
-  </li>
-  <li>
-    <strong>Conflict Resolution:</strong><br>
-    In the event of a dispute, the matter shall be resolved jointly by both umpires. If necessary, the umpires may consult the captains of both teams before making a final decision.
-  </li>
-</ol>
-<footer style="margin:2.5em 0 0 0; font-size:0.98em; text-align:center; color:#888; border-top:1px solid #e3e3e3; padding-top:1.2em;">
-  <div>
-    📞 Tournament Contact: <a href="mailto:kalingawarriorsalmere@gmail.com">kalingawarriorsalmere@gmail.com</a> &nbsp; | &nbsp; 🏟 Hosted by Kalinga Warriors &copy; 2025
-  </div>
-</footer>
+    <!-- A. TERMS AND CONDITIONS -->
+    <div class="rb-section reveal" id="terms-and-conditions">
+      <h2><span class="rb-section-num">A</span> Terms and Conditions</h2>
+      <ol>
+        <li>Unless specified otherwise in this document, all ICC cricket rules shall be followed. The rules and guidelines established by the TCL committee are considered final, and any modifications will be made solely at the committee's discretion.</li>
+        <li>The decisions made by the umpire(s) shall be considered final. Umpires are entrusted with upholding the spirit of the game and may ask a player to leave the match in cases of inappropriate conduct. For any necessary clarifications, only the captains of the respective teams may approach the umpires.</li>
+        <li>Any disputes or conflicts that arise between teams must be reported to the TCL Committee. The committee will investigate and deliver a final ruling.</li>
+        <li>All participants are required to maintain respectful conduct towards fellow players, umpires, spectators, and TCL organisers. Any form of harassment, discrimination, or unsporting behaviour will result in penalties, including possible disqualification.</li>
+        <li>Teams and players acknowledge that TCL may capture photos and videos during the tournament for use in promotional and social media content. By participating, all players consent to this usage.</li>
+        <li>Each team is responsible for ensuring its players are aware of and comply with these rules. Ignorance of the rules will not be accepted as an excuse for non-compliance.</li>
+        <li>The TCL Committee reserves the right to modify, add, or remove rules as necessary to ensure the smooth running of the tournament. Teams will be notified of any changes in a timely manner.</li>
+      </ol>
+    </div>
+
+    <!-- B. GENERAL RULES -->
+    <div class="rb-section reveal" id="general-rules">
+      <h2><span class="rb-section-num">B</span> General Rules</h2>
+      <ol>
+        <li><strong>Match Format:</strong> All matches will be 10-over per side unless specified otherwise by the TCL Committee.</li>
+        <li><strong>Ball:</strong> A red tennis ball (Nivia or any other brand) will be used for all matches.</li>
+        <li><strong>Toss:</strong> A coin toss will determine which team bats or bowls first.</li>
+        <li><strong>Minimum Players:</strong> A minimum of 9 players must be present for a match to begin. If a team cannot field 9 players at the scheduled start time, the match may be awarded to the opposing team at the discretion of the TCL Committee.</li>
+        <li><strong>Substitute Players:</strong> Substitutes are allowed only for fielding. A substitute cannot bat or bowl. The replaced player may return to the field at any time.</li>
+        <li><strong>No Ball:</strong> A no-ball will result in a free hit on the next delivery. The batting team will receive 1 extra run for the no-ball plus runs scored off the delivery.</li>
+        <li><strong>Wide Ball:</strong> Any delivery that passes outside the wide markers will be called a wide. Wides will be considered as a fair ball and result in 2 runs till 3-8 overs. For Over number 1,2,9,10 the wides are normal and result in 1 extra run for the batting team and the delivery will be re-bowled.</li>
+        <li><strong>Wide Ball Special Rule:</strong> <b>Wides will be considered as a fair ball and result in 2 runs till 3-8 overs. For Over number 1,2,9,10 the wides are normal and result in 1 extra run for the batting team and the delivery will be re-bowled.</b></li>
+        <li><strong>Boundary:</strong> A ball reaching or crossing the boundary on the full scores 6 runs. A ball rolling to or across the boundary scores 4 runs.</li>
+        <li><strong>Run Out:</strong> Standard ICC run-out rules apply. Both batters must make their ground to avoid being run out.</li>
+        <li><strong>Leg Before Wicket (LBW):</strong> LBW decisions apply as per ICC rules. The umpire's decision is final.</li>
+        <li><strong>Caught Out:</strong> A batter is out if the ball is caught by a fielder before it bounces, including off a no-ball delivery (the batter is not out on a no-ball, however).</li>
+        <li><strong>DRS (Decision Review System):</strong> DRS is not available in TCL matches. All umpire decisions are final.</li>
+        <li><strong>Weather &amp; Rain:</strong> In case of rain or weather interruption, the TCL Committee will decide on the course of action, which may include using the Duckworth-Lewis-Stern (DLS) method or rescheduling the match.</li>
+        <li><strong>Tied Match:</strong> In the event of a tied match during group stages, the result will be recorded as a tie with both teams receiving 1 point each. In knockout stages, a Super Over will be played to determine the winner.</li>
+      </ol>
+    </div>
+
+    <!-- C. TOURNAMENT STRUCTURE -->
+    <div class="rb-section reveal" id="tournament-structure">
+      <h2><span class="rb-section-num">C</span> Tournament Format</h2>
+      <p>TCL 2026 features 24 teams competing across multiple stages, from Pool play all the way to the Grand Final.</p>
+
+      <div class="rb-table-wrap">
+        <table class="rb-table">
+          <thead><tr><th>Stage</th><th>Teams</th><th>Format</th><th>Advances</th></tr></thead>
+          <tbody>
+            <tr><td>Group Stage</td><td>24</td><td>Round Robin within pool subjected to 3 matches per team</td><td>Top team per pool qualifies for QFs + 2nd and 3rd place teams qualify for Pre-Quarters : Total(6x3)=18 Teams </td></tr>
+            <tr><td>Pre-Quarter Finals</td><td>8</td><td>4 knockout matches</td><td>4 teams</td></tr>
+            <tr><td>Quarter Finals</td><td>8</td><td>4 knockout matches</td><td>4 teams</td></tr>
+            <tr><td>Semi-Finals</td><td>4</td><td>2 knockout matches</td><td>2 teams</td></tr>
+            <tr><td>3rd Place Decider</td><td>2</td><td>1 match</td><td>Third place</td></tr>
+            <tr><td>Final</td><td>2</td><td>1 match</td><td>Champions</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 id="group-stage">Group Stage</h3>
+      <div class="rb-stage-badge"><i class="bi bi-grid-fill"></i> Pool Play</div>
+      <p>The 24 teams are divided into 4 pools. Each team plays every other team in their pool once (round-robin format). Points are awarded as follows:</p>
+      <div class="rb-table-wrap">
+        <table class="rb-table">
+          <thead><tr><th>Result</th><th>Points</th></tr></thead>
+          <tbody>
+            <tr><td>Win</td><td>2 points</td></tr>
+            <tr><td>Tie / No Result</td><td>1 point each</td></tr>
+            <tr><td>Loss</td><td>0 points</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>The top 2 teams from each pool advance to the Pre-Quarter Finals. Additionally, the 2 best third-place teams (based on points, then NRR) across all pools also advance, making it 12 teams in total.</p>
+      <div class="rb-note rb-note-warning">
+        <i class="bi bi-exclamation-triangle-fill"></i>
+        <span>If two or more teams are level on points at the end of the group stage, the tiebreaker will be <strong>Net Run Rate (NRR)</strong>. If NRR is also equal, the head-to-head result between the tied teams will be used.</span>
+      </div>
+
+      <h3 id="pre-quarter-finals">Pre-Quarter Finals</h3>
+      <div class="rb-stage-badge"><i class="bi bi-diagram-3-fill"></i> Round of 12</div>
+      <p>The 12 qualified teams compete in 6 knockout matches. The 6 winners advance to the Quarter Finals. There is no second chance — a loss means elimination.</p>
+
+      <h3 id="quarter-finals">Quarter Finals</h3>
+      <div class="rb-stage-badge"><i class="bi bi-trophy-fill"></i> Round of 8</div>
+      <p>The 8 remaining teams compete in 4 knockout matches. The 4 winners advance to the Semi-Finals.</p>
+
+      <h3 id="semi-finals">Semi-Finals</h3>
+      <div class="rb-stage-badge"><i class="bi bi-star-fill"></i> Final Four</div>
+      <p>The 4 semi-finalists compete in 2 matches. Winners advance to the Grand Final; losers compete in the Third Place Decider.</p>
+
+      <h3 id="third-place-match">Third Place Decider</h3>
+      <div class="rb-stage-badge"><i class="bi bi-award-fill"></i> Bronze Medal Match</div>
+      <p>The two losing semi-finalists play for the third-place (bronze) position.</p>
+
+      <h3 id="finals">The Final</h3>
+      <div class="rb-stage-badge"><i class="bi bi-gem"></i> Grand Final</div>
+      <p>The two winning semi-finalists compete for the TCL 2026 championship title. In the event of a tie, a Super Over will decide the winner.</p>
+    </div>
+
+    <!-- D. TEAM SETUP -->
+    <div class="rb-section reveal" id="team-setup">
+      <h2><span class="rb-section-num">D</span> Team Setup / Formation</h2>
+      <ol>
+        <li><strong>Squad Size:</strong> Each team can register a maximum of 15 players, with a minimum of 9 players required for a match.</li>
+        <li><strong>Playing XI:</strong> Each team selects 11 players from their registered squad to play each match. The playing XI must be submitted to the umpire before the toss.</li>
+        <li><strong>Captain &amp; Vice-Captain:</strong> Each team must designate a captain and a vice-captain. The captain is the official representative of the team for all match-related decisions and communication with the umpire.</li>
+        <li><strong>Wicket-Keeper:</strong> Each team must have a designated wicket-keeper in their playing XI.</li>
+        <li><strong>Overseas / Guest Players:</strong> Teams may include up to 2 guest players per match, subject to TCL Committee approval. Guest players must be registered before the tournament begins.</li>
+        <li><strong>Player Registration:</strong> All players must be registered with the TCL Committee before the tournament. Unregistered players are not permitted to play.</li>
+        <li><strong>Team Uniform:</strong> Teams are encouraged to wear matching uniforms or coloured clothing. The TCL Committee may impose penalties for teams not following this guideline in later rounds.</li>
+      </ol>
+    </div>
+
+    <!-- E. TIMINGS -->
+    <div class="rb-section reveal" id="timings">
+      <h2><span class="rb-section-num">E</span> Timings</h2>
+      <ol>
+        <li><strong>Match Start Time:</strong> All matches must begin at the scheduled time. Teams should be ready at least 10 minutes before the scheduled start.</li>
+        <li><strong>Grace Period:</strong> A grace period of 5 minutes will be given after the scheduled start time. If a team cannot field the minimum required players within this period, they forfeit the match.</li>
+        <li><strong>Over Rate:</strong> Teams must maintain an acceptable over rate. Failure to complete the required overs within the allocated time may result in fielding restrictions imposed by the umpire.</li>
+        <li><strong>innings Break:</strong> A 5-minute break will be allowed between innings.</li>
+        <li><strong>Match Duration:</strong> An 8-over match is expected to be completed within approximately 90 minutes including the innings break and toss.</li>
+        <li><strong>Umpire's Authority:</strong> The umpire has full authority to manage the pace of the game and may penalise teams for time-wasting.</li>
+      </ol>
+    </div>
+
+    <!-- F. POWERPLAY -->
+    <div class="rb-section reveal" id="powerplay">
+      <h2><span class="rb-section-num">F</span> Powerplay &amp; Field Restrictions</h2>
+      <div class="rb-note rb-note-info">
+        <i class="bi bi-info-circle-fill"></i>
+        <span>The powerplay rules below apply to all TCL 2026 matches (8-over format).</span>
+      </div>
+      <ol>
+        <li><strong>Powerplay Overs:</strong> The first 2 overs of each innings constitute the powerplay.</li>
+        <li><strong>Field Restrictions During Powerplay:</strong> During the powerplay, a maximum of 2 fielders are allowed outside the 30-yard circle.</li>
+        <li><strong>After Powerplay:</strong> After the powerplay (overs 3–8), a maximum of 5 fielders are allowed outside the 30-yard circle.</li>
+        <li><strong>Fielding Positions:</strong> At the time of delivery, at least 2 fielders (excluding the wicket-keeper) must be inside the 30-yard circle at all times.</li>
+        <li><strong>Fielding Circle:</strong> The 30-yard circle shall be marked clearly on the ground before each match. If not marked, the umpire will use their judgement to enforce these restrictions.</li>
+      </ol>
+      <div class="rb-note rb-note-warning">
+        <i class="bi bi-exclamation-triangle-fill"></i>
+        <span>Failure to comply with fielding restrictions will result in a <strong>No Ball</strong> being called for that delivery.</span>
+      </div>
+    </div>
+
+    <!-- G. BOWLING -->
+    <div class="rb-section reveal" id="bowling">
+      <h2><span class="rb-section-num">G</span> Bowling</h2>
+      <ol>
+        <li><strong>Maximum Overs per Bowler:</strong> In an 8-over match, each bowler can bowl a maximum of 2 overs.</li>
+        <li><strong>Minimum Bowlers:</strong> A minimum of 5 different bowlers must bowl in an innings (where possible). If a team has fewer than 5 fit bowlers, the remaining overs may be completed by other players at the discretion of the captain, subject to the maximum per-bowler limit.</li>
+        <li><strong>Bowling Action:</strong> The umpire has the authority to call a no-ball if a bowler's action is deemed illegal (e.g., throws). Repeated illegal actions may result in the bowler being banned from bowling for the rest of the match.</li>
+        <li><strong>Beamers:</strong> A full-toss delivery above waist height will be called a no-ball. If a bowler delivers two beamers in a match, they will be immediately removed from bowling.</li>
+        <li><strong>Bouncers:</strong> One bouncer per over is permitted. A second bouncer in the same over will be called a no-ball. A bouncer that passes above the batter's shoulder height will also be called a no-ball.</li>
+        <li><strong>Front Foot:</strong> Standard front-foot no-ball rules apply. The bowler must have some part of their front foot behind the popping crease at the point of delivery.</li>
+        <li><strong>Wides:</strong> Deliveries that are too wide to be hit by the batter in a normal batting stance will be called wides. Height wides will also be called at the umpire's discretion.</li>
+      </ol>
+    </div>
+
+    <!-- H. GROUND RULES -->
+    <div class="rb-section reveal" id="ground-rules">
+      <h2><span class="rb-section-num">H</span> Ground Rules</h2>
+      <ol>
+        <li><strong>Boundary:</strong> The boundary of the playing field will be clearly marked before each match. Any ball reaching or crossing the boundary rope scores 4 runs (ground) or 6 runs (full).</li>
+        <li><strong>Dead Ball:</strong> A ball is declared dead when it is clearly in the possession of the wicket-keeper or bowler, or when the umpire calls dead ball. All play ceases after a dead ball.</li>
+        <li><strong>Obstructing the Field:</strong> A batter deliberately obstructing a fielder will be given out for obstructing the field.</li>
+        <li><strong>Fielder Restrictions:</strong> No fielder is allowed to be within 10 yards of the batter (except the wicket-keeper) when the bowler commences their run-up.</li>
+        <li><strong>Sightscreen:</strong> Where a sightscreen is available, fielders must not stand in front of it during a delivery.</li>
+        <li><strong>Ball Lost or Damaged:</strong> If the match ball is lost or becomes significantly damaged, it will be replaced with a ball of similar condition as determined by the umpire. No runs will be awarded for a lost ball.</li>
+        <li><strong>Pitch Conditions:</strong> The pitch and outfield will be prepared to the best of the organisers' ability. Any unusual ground features will be noted before the match and ground rules may be applied (e.g., a tree inside the boundary).</li>
+        <li><strong>Spectator Safety:</strong> Spectators must remain outside the boundary rope at all times during play. The umpire may halt play if spectator safety is at risk.</li>
+      </ol>
+    </div>
+
+    <!-- I. OTHER GUIDELINES -->
+    <div class="rb-section reveal" id="other-guidelines-or-rules">
+      <h2><span class="rb-section-num">I</span> Other Guidelines or Rules</h2>
+      <ol>
+        <li>Unless specified otherwise in this document, all ICC cricket rules shall be followed. The rules and guidelines established by the TCL committee are considered final.</li>
+        <li>The decisions made by the umpire(s) shall be considered final. Only the captain may approach the umpire for clarifications.</li>
+        <li>Any disputes or conflicts that arise between teams must be reported to the TCL Committee within 24 hours of the incident.</li>
+        <li>All participants are required to maintain respectful conduct towards fellow players, umpires, spectators, and TCL organisers. Any form of harassment, discrimination, or unsporting behaviour will result in penalties, including possible disqualification.</li>
+        <li>Teams and players acknowledge that TCL may capture photos and videos during the tournament for promotional use. By participating, all players consent to this usage.</li>
+        <li>Each team is responsible for ensuring its players comply with these rules. Ignorance of the rules will not be accepted as an excuse for non-compliance.</li>
+        <li>The TCL Committee reserves the right to modify, add, or remove rules as necessary. Teams will be notified of any changes in a timely manner.</li>
+        <li><strong>Anti-Doping &amp; Fair Play:</strong> The use of performance-enhancing substances is strictly prohibited. Any player found in violation will be immediately disqualified.</li>
+        <li><strong>Equipment:</strong> Players are responsible for bringing their own cricket equipment (bat, pads, gloves, etc.). TCL will provide the match balls.</li>
+        <li><strong>Prizes &amp; Awards:</strong> The TCL Committee will announce prize details closer to the tournament. Awards will be given for Champion, Runner-Up, Third Place, Best Batter, Best Bowler, and Player of the Tournament.</li>
+      </ol>
+      <div class="rb-note rb-note-success">
+        <i class="bi bi-check-circle-fill"></i>
+        <span>We wish all teams the very best! Play hard, play fair, and enjoy the tournament. <strong>Good luck!</strong></span>
+      </div>
+    </div>
+
+    <hr class="rb-divider">
+
+    <div class="rb-contact reveal">
+      <div class="rb-contact-title"><i class="bi bi-envelope-fill"></i> Contact &amp; Queries</div>
+      <p>For any questions or clarifications regarding these rules, please contact the TCL Committee. All official communications will be made through the TCL WhatsApp group or via the designated team captains.</p>
+    </div>
+
+  </div><!-- /.main-container -->
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="images/TCL.jpeg" alt="TCL Logo">
+        <div>
+          <div class="footer-title">The Champions League 2026</div>
+          <div class="footer-sub">Almere, Netherlands</div>
+        </div>
+      </div>
+      <div class="footer-links">
+        <a href="index.html"><i class="bi bi-house-fill"></i> Home</a>
+        <a href="rulebook.html"><i class="bi bi-book-fill"></i> Rulebook</a>
+        <a href="roster.html"><i class="bi bi-people-fill"></i> Teams</a>
+      </div>
+      <div class="footer-copy">&copy; 2026 The Champions League. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
 </body>
 </html>
