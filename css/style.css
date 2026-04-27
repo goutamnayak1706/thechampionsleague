@@ -243,6 +243,20 @@ body::after {
   box-shadow: var(--shadow-lg), 0 0 40px rgba(59,107,235,0.15);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
+  max-height: min(420px, calc(100vh - var(--nav-h) - 20px));
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(59,107,235,0.4) transparent;
+}
+.teams-dropdown-inner::-webkit-scrollbar {
+  width: 5px;
+}
+.teams-dropdown-inner::-webkit-scrollbar-track {
+  background: transparent;
+}
+.teams-dropdown-inner::-webkit-scrollbar-thumb {
+  background: rgba(59,107,235,0.4);
+  border-radius: 99px;
 }
 .teams-dropdown-title {
   font-size: 0.67em;
@@ -455,6 +469,122 @@ body::after {
   transform: translateY(-2px);
 }
 .hero-badge i { color: var(--accent); }
+
+/* ── Hero "24 Teams" hover popover ── */
+.hero-badge-teams-wrap {
+  position: relative;
+  display: inline-flex;
+}
+.hero-badge-teams {
+  cursor: default;
+}
+.teams-hover-popover {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: calc(100% + 12px);
+  transform: translateY(-50%);
+  min-width: 200px;
+  max-height: 360px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(59,107,235,0.4) transparent;
+  z-index: 3000;
+  background: rgba(10,14,30,0.97);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius);
+  padding: 14px 12px 12px;
+  box-shadow: var(--shadow-lg), 0 0 40px rgba(59,107,235,0.18);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  animation: fadeIn 0.18s ease both;
+}
+.teams-hover-popover::-webkit-scrollbar { width: 4px; }
+.teams-hover-popover::-webkit-scrollbar-track { background: transparent; }
+.teams-hover-popover::-webkit-scrollbar-thumb { background: rgba(59,107,235,0.4); border-radius: 99px; }
+.teams-hover-popover::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 100%;
+  transform: translateY(-50%);
+  border: 7px solid transparent;
+  border-right-color: var(--glass-border);
+}
+.hero-badge-teams-wrap:hover .teams-hover-popover {
+  display: block;
+}
+.thp-title {
+  font-size: 0.67em;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  opacity: 0.85;
+}
+.thp-pool-group-label {
+  font-size: 0.62em;
+  font-weight: 800;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--primary);
+  padding: 6px 8px 4px;
+  margin-top: 4px;
+  border-bottom: 1px solid rgba(59,107,235,0.15);
+  margin-bottom: 2px;
+}
+.thp-team-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+.thp-team-list li {
+  font-size: 0.82em;
+  font-weight: 600;
+  color: var(--text-dim);
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 4px 8px;
+  border-radius: 7px;
+  transition: background var(--transition), color var(--transition);
+  cursor: default;
+}
+.thp-team-list li:hover {
+  background: var(--surface2);
+  color: var(--text);
+}
+.thp-team-list li i {
+  color: var(--primary);
+  font-size: 0.8em;
+  flex-shrink: 0;
+}
+
+@media (max-width: 600px) {
+  .teams-hover-popover {
+    top: calc(100% + 10px);
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: 180px;
+    max-height: 300px;
+  }
+  .teams-hover-popover::after {
+    top: auto;
+    bottom: 100%;
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+    border: 7px solid transparent;
+    border-bottom-color: var(--glass-border);
+  }
+}
 
 /* ════════════════════════════════════════
    MAIN CONTAINER
