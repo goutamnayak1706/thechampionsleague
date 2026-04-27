@@ -28,7 +28,7 @@
       btn.classList.remove('active');
     }
   });
-  // Close menu when a mobile nav link is clicked
+  // Close menu when a mobile nav link is clicked (but not group labels)
   menu.querySelectorAll('a').forEach(a => {
     a.addEventListener('click', () => {
       menu.classList.remove('open');
@@ -179,13 +179,14 @@
         may31: '31 May 2026',
         jun6:  '6 June 2026'
       };
-      heading.innerHTML = '<i class="bi bi-calendar3"></i> ' + (labels[date] || '');
+      heading.innerHTML = '<i class="bi bi-calendar3"></i> Match Schedule &mdash; ' + (labels[date] || '');
     }
   }
 
   // Inline tab bar buttons
   document.querySelectorAll('.schedule-tab-btn').forEach(btn => {
     btn.addEventListener('click', () => {
+      clearTeamFilter(false); // clear filter when switching dates
       switchScheduleDate(btn.dataset.date);
       document.getElementById('schedule').scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
@@ -195,6 +196,7 @@
   document.querySelectorAll('.schedule-date-navlink').forEach(link => {
     link.addEventListener('click', (e) => {
       e.preventDefault();
+      clearTeamFilter(false);
       const date = link.dataset.date;
       switchScheduleDate(date);
       const section = document.getElementById('schedule');
@@ -202,8 +204,103 @@
     });
   });
 
+  // Mobile schedule date links
+  document.querySelectorAll('.mobile-schedule-link').forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      clearTeamFilter(false);
+      const date = link.dataset.date;
+      switchScheduleDate(date);
+      const section = document.getElementById('schedule');
+      if (section) setTimeout(() => section.scrollIntoView({ behavior: 'smooth', block: 'start' }), 80);
+    });
+  });
+
   // Default: show may30
   switchScheduleDate('may30');
+})();
+
+/* ── Team filter ── */
+function filterByTeam(teamName) {
+  const banner     = document.getElementById('team-filter-banner');
+  const nameEl     = document.getElementById('team-filter-name');
+  const tabsBar    = document.getElementById('schedule-tabs-bar');
+  const heading    = document.getElementById('schedule');
+
+  // Show all date panels
+  document.querySelectorAll('.schedule-tab-panel').forEach(panel => {
+    panel.classList.add('active');
+  });
+
+  // Hide date tabs bar
+  if (tabsBar) tabsBar.style.display = 'none';
+
+  // Filter match cards: show only those containing this team
+  document.querySelectorAll('.match-card').forEach(card => {
+    const teams = (card.dataset.teams || '').split('|').map(t => t.trim());
+    card.style.display = teams.includes(teamName) ? '' : 'none';
+  });
+
+  // Update heading
+  if (heading) {
+    heading.innerHTML = '<i class="bi bi-people-fill"></i> Matches &mdash; ' + teamName;
+  }
+
+  // Show banner
+  if (nameEl)  nameEl.textContent = teamName;
+  if (banner)  banner.style.display = 'flex';
+
+  // Scroll to schedule
+  if (heading) heading.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function clearTeamFilter(scroll) {
+  const banner  = document.getElementById('team-filter-banner');
+  const tabsBar = document.getElementById('schedule-tabs-bar');
+
+  if (banner)  banner.style.display = 'none';
+  if (tabsBar) tabsBar.style.display = '';
+
+  // Reset all match cards visibility
+  document.querySelectorAll('.match-card').forEach(card => {
+    card.style.display = '';
+  });
+
+  // Re-apply current active date tab
+  const activeBtn = document.querySelector('.schedule-tab-btn.active');
+  if (activeBtn) {
+    const date = activeBtn.dataset.date;
+    document.querySelectorAll('.schedule-tab-panel').forEach(panel => {
+      panel.classList.toggle('active', panel.id === 'panel-' + date);
+    });
+    const heading = document.getElementById('schedule');
+    if (heading) {
+      const labels = { may30: '30 May 2026', may31: '31 May 2026', jun6: '6 June 2026' };
+      heading.innerHTML = '<i class="bi bi-calendar3"></i> Match Schedule &mdash; ' + (labels[date] || '');
+    }
+  }
+
+  if (scroll) {
+    const heading = document.getElementById('schedule');
+    if (heading) heading.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+}
+
+(function () {
+  // Desktop & mobile team filter links
+  document.querySelectorAll('.team-filter-link').forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const team = link.dataset.team;
+      if (team) filterByTeam(team);
+    });
+  });
+
+  // Clear filter button
+  const clearBtn = document.getElementById('teamFilterClear');
+  if (clearBtn) {
+    clearBtn.addEventListener('click', () => clearTeamFilter(true));
+  }
 })();
 
 /* ── Match search ── */

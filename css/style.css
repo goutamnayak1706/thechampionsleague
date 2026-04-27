@@ -1374,6 +1374,104 @@ body::after {
 .dark-toggle:hover { background: var(--surface2); border-color: rgba(255,255,255,0.18); }
 
 /* ════════════════════════════════════════
+   TEAM FILTER BANNER
+   ════════════════════════════════════════ */
+#team-filter-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  background: linear-gradient(135deg, rgba(59,107,235,0.18) 0%, rgba(232,51,77,0.12) 100%);
+  border: 1px solid rgba(59,107,235,0.35);
+  border-radius: var(--radius-pill);
+  padding: 10px 20px;
+  margin: 0 0 16px;
+  flex-wrap: wrap;
+}
+.team-filter-banner-text {
+  font-size: 0.88em;
+  font-weight: 600;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.team-filter-banner-text i { color: var(--primary); }
+.team-filter-banner-text strong { color: var(--gold); }
+.team-filter-clear {
+  background: rgba(232,51,77,0.15);
+  border: 1px solid rgba(232,51,77,0.3);
+  color: var(--accent);
+  border-radius: var(--radius-pill);
+  padding: 5px 14px;
+  font-family: 'Poppins', system-ui, sans-serif;
+  font-size: 0.78em;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: background var(--transition), border-color var(--transition);
+  white-space: nowrap;
+}
+.team-filter-clear:hover {
+  background: rgba(232,51,77,0.28);
+  border-color: rgba(232,51,77,0.55);
+}
+
+/* ════════════════════════════════════════
+   MOBILE MENU GROUPS
+   ════════════════════════════════════════ */
+.mobile-group-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.7em;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold);
+  opacity: 0.8;
+  padding: 12px 18px 4px;
+}
+.mobile-sub-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text-dim);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.88em;
+  padding: 9px 18px 9px 34px;
+  border-radius: var(--radius-sm);
+  transition: background var(--transition), color var(--transition);
+}
+.mobile-sub-link:hover { background: var(--surface2); color: var(--text); }
+.mobile-sub-link i { color: var(--primary); font-size: 0.85em; }
+.mobile-schedule-group,
+.mobile-teams-group {
+  border-top: 1px solid rgba(255,255,255,0.06);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  margin: 4px 0;
+  padding: 2px 0;
+}
+
+/* Teams dropdown list items as clickable links */
+.teams-dropdown-list li a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-dim);
+  text-decoration: none;
+  font-size: 0.85em;
+  font-weight: 600;
+  width: 100%;
+  transition: color var(--transition);
+}
+.teams-dropdown-list li a:hover { color: var(--text); }
+.teams-dropdown-list li a i { color: var(--primary); font-size: 0.85em; }
+
+/* ════════════════════════════════════════
    RESPONSIVE
    ════════════════════════════════════════ */
 @media (max-width: 768px) {
