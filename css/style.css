@@ -142,6 +142,7 @@ body::after {
   border-bottom: 1px solid var(--glass-border);
   box-shadow: 0 1px 0 rgba(255,255,255,0.04), 0 4px 32px rgba(0,0,0,0.5);
   transition: background var(--transition);
+  overflow: visible;
 }
 .navbar.scrolled {
   background: rgba(5,8,18,0.97);

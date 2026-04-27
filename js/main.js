@@ -174,12 +174,7 @@
     // Update section heading text
     const heading = document.getElementById('schedule');
     if (heading) {
-      const labels = {
-        may30: '30 May 2026',
-        may31: '31 May 2026',
-        jun6:  '6 June 2026'
-      };
-      heading.innerHTML = '<i class="bi bi-calendar3"></i> Match Schedule &mdash; ' + (labels[date] || '');
+      heading.innerHTML = '<i class="bi bi-calendar3"></i> Match Schedule';
     }
   }
 
@@ -294,8 +289,7 @@ function clearTeamFilter(scroll) {
     });
     const heading = document.getElementById('schedule');
     if (heading) {
-      const labels = { may30: '30 May 2026', may31: '31 May 2026', jun6: '6 June 2026' };
-      heading.innerHTML = '<i class="bi bi-calendar3"></i> Match Schedule &mdash; ' + (labels[date] || '');
+      heading.innerHTML = '<i class="bi bi-calendar3"></i> Match Schedule';
     }
   }
 
