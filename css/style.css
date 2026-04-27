@@ -531,7 +531,7 @@ body::after {
   font-weight: 800;
   letter-spacing: 2.5px;
   text-transform: uppercase;
-  color: var(--primary);
+  color: var(--gold);
   padding: 6px 8px 4px;
   margin-top: 4px;
   border-bottom: 1px solid rgba(59,107,235,0.15);
@@ -894,7 +894,7 @@ body::after {
   background: linear-gradient(135deg, rgba(255,255,255,0.1), transparent);
   pointer-events: none;
 }
-.pool-a .pool-header { background: linear-gradient(135deg, #1a2e6e, #2d4db5); }
+.pool-a .pool-header { background: linear-gradient(135deg, #8a3a0a, #e05a14); }
 .pool-b .pool-header { background: linear-gradient(135deg, #0a5c38, #0d8a56); }
 .pool-c .pool-header { background: linear-gradient(135deg, #6e0a20, #b01535); }
 .pool-d .pool-header { background: linear-gradient(135deg, #6e3d0a, #c07010); }
@@ -934,7 +934,7 @@ body::after {
   transition: background var(--transition), border-color var(--transition);
 }
 .pool-team-list li:hover { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.14); }
-.pool-a .pool-team-list li i { color: #7aa0f5; }
+.pool-a .pool-team-list li i { color: #ff7730; }
 .pool-b .pool-team-list li i { color: #34d88e; }
 .pool-c .pool-team-list li i { color: #f55; }
 .pool-d .pool-team-list li i { color: var(--gold); }
@@ -976,7 +976,7 @@ body::after {
   background: linear-gradient(135deg, rgba(255,255,255,0.1), transparent);
   pointer-events: none;
 }
-.pool-a .pool-card-header { background: linear-gradient(135deg, #1a2e6e, #2d4db5); }
+.pool-a .pool-card-header { background: linear-gradient(135deg, #8a3a0a, #e05a14); }
 .pool-b .pool-card-header { background: linear-gradient(135deg, #0a5c38, #0d8a56); }
 .pool-c .pool-card-header { background: linear-gradient(135deg, #6e0a20, #b01535); }
 .pool-d .pool-card-header { background: linear-gradient(135deg, #6e3d0a, #c07010); }
@@ -1026,7 +1026,7 @@ body::after {
   color: #fff;
   flex-shrink: 0;
 }
-.pool-a .team-num { background: #2d4db5; }
+.pool-a .team-num { background: #c04c10; }
 .pool-b .team-num { background: #0a7a4e; }
 .pool-c .team-num { background: #b01535; }
 .pool-d .team-num { background: #c07010; }
@@ -1215,16 +1215,28 @@ body::after {
   background: linear-gradient(90deg, transparent, var(--border), transparent);
 }
 .date-pill {
-  background: linear-gradient(135deg, var(--primary), #5b8af0);
+  background: linear-gradient(135deg, #1a4fd6 0%, #3b6beb 40%, #00c8ff 100%);
   color: #fff;
-  font-weight: 700;
+  font-weight: 800;
   font-size: 0.82em;
-  padding: 7px 22px;
+  padding: 8px 26px;
   border-radius: var(--radius-pill);
   white-space: nowrap;
-  box-shadow: 0 3px 14px var(--primary-glow);
-  letter-spacing: 1px;
+  box-shadow: 0 4px 20px rgba(59,107,235,0.55), 0 0 0 1px rgba(0,200,255,0.25);
+  letter-spacing: 1.5px;
   text-transform: uppercase;
+  text-shadow: 0 1px 8px rgba(0,0,0,0.4);
+  position: relative;
+  overflow: hidden;
+}
+.date-pill::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.18) 50%, transparent 100%);
+  background-size: 200% auto;
+  animation: shimmer 2.5s linear infinite;
+  border-radius: inherit;
 }
 .date-pill.ko  {
   background: linear-gradient(135deg, #a04000, var(--gold));
@@ -1284,35 +1296,39 @@ body::after {
 
 /* ── Pool gradient overlays on match cards ── */
 .match-card.pool-a {
-  background: linear-gradient(135deg, rgba(26,46,110,0.22) 0%, rgba(7,12,26,0.55) 100%);
-  border-color: rgba(45,77,181,0.28);
+  background: linear-gradient(135deg, rgba(180,80,20,0.42) 0%, rgba(224,90,20,0.18) 50%, rgba(7,12,26,0.75) 100%);
+  border-color: rgba(224,90,20,0.5);
+  box-shadow: var(--shadow-sm), inset 0 1px 0 rgba(255,160,80,0.12);
 }
-.match-card.pool-a::before { background: linear-gradient(180deg, #2d4db5, #7aa0f5); }
+.match-card.pool-a::before { background: linear-gradient(180deg, #e06010, #ff9040); width: 5px; }
 .match-card.pool-b {
-  background: linear-gradient(135deg, rgba(10,92,56,0.22) 0%, rgba(7,12,26,0.55) 100%);
-  border-color: rgba(13,138,86,0.28);
+  background: linear-gradient(135deg, rgba(10,110,62,0.42) 0%, rgba(13,138,86,0.18) 50%, rgba(7,12,26,0.75) 100%);
+  border-color: rgba(13,138,86,0.5);
+  box-shadow: var(--shadow-sm), inset 0 1px 0 rgba(52,216,142,0.12);
 }
-.match-card.pool-b::before { background: linear-gradient(180deg, #0d8a56, #34d88e); }
+.match-card.pool-b::before { background: linear-gradient(180deg, #0eaf6d, #3dffaa); width: 5px; }
 .match-card.pool-c {
-  background: linear-gradient(135deg, rgba(110,10,32,0.22) 0%, rgba(7,12,26,0.55) 100%);
-  border-color: rgba(176,21,53,0.28);
+  background: linear-gradient(135deg, rgba(150,14,42,0.42) 0%, rgba(176,21,53,0.18) 50%, rgba(7,12,26,0.75) 100%);
+  border-color: rgba(176,21,53,0.5);
+  box-shadow: var(--shadow-sm), inset 0 1px 0 rgba(255,85,119,0.12);
 }
-.match-card.pool-c::before { background: linear-gradient(180deg, #b01535, #ff5577); }
+.match-card.pool-c::before { background: linear-gradient(180deg, #d4173a, #ff7090); width: 5px; }
 .match-card.pool-d {
-  background: linear-gradient(135deg, rgba(110,61,10,0.22) 0%, rgba(7,12,26,0.55) 100%);
-  border-color: rgba(192,112,16,0.28);
+  background: linear-gradient(135deg, rgba(160,80,8,0.42) 0%, rgba(192,112,16,0.18) 50%, rgba(7,12,26,0.75) 100%);
+  border-color: rgba(192,112,16,0.5);
+  box-shadow: var(--shadow-sm), inset 0 1px 0 rgba(247,201,72,0.12);
 }
-.match-card.pool-d::before { background: linear-gradient(180deg, #c07010, #f7c948); }
+.match-card.pool-d::before { background: linear-gradient(180deg, #d4880f, #f7c948); width: 5px; }
 
 .match-card:hover {
   transform: translateY(-5px);
   box-shadow: var(--shadow-lg);
   border-color: rgba(59,107,235,0.35);
 }
-.match-card.pool-a:hover { border-color: rgba(45,77,181,0.55); box-shadow: var(--shadow-lg), 0 0 20px rgba(45,77,181,0.18); }
-.match-card.pool-b:hover { border-color: rgba(13,138,86,0.55); box-shadow: var(--shadow-lg), 0 0 20px rgba(13,138,86,0.18); }
-.match-card.pool-c:hover { border-color: rgba(176,21,53,0.55);  box-shadow: var(--shadow-lg), 0 0 20px rgba(176,21,53,0.18); }
-.match-card.pool-d:hover { border-color: rgba(192,112,16,0.55); box-shadow: var(--shadow-lg), 0 0 20px rgba(192,112,16,0.18); }
+.match-card.pool-a:hover { border-color: rgba(224,90,20,0.75); box-shadow: var(--shadow-lg), 0 0 28px rgba(180,80,20,0.35); }
+.match-card.pool-b:hover { border-color: rgba(13,175,109,0.75); box-shadow: var(--shadow-lg), 0 0 28px rgba(13,138,86,0.35); }
+.match-card.pool-c:hover { border-color: rgba(212,23,58,0.75);  box-shadow: var(--shadow-lg), 0 0 28px rgba(176,21,53,0.35); }
+.match-card.pool-d:hover { border-color: rgba(212,136,15,0.75); box-shadow: var(--shadow-lg), 0 0 28px rgba(192,112,16,0.35); }
 .match-card.ko:hover    { border-color: rgba(247,201,72,0.35); }
 .match-card.final:hover { border-color: rgba(232,51,77,0.35); }
 .match-header {
@@ -1333,6 +1349,11 @@ body::after {
 }
 .match-badge.ko    { background: rgba(247,201,72,0.15); color: var(--gold); }
 .match-badge.final { background: rgba(232,51,77,0.15); color: var(--accent); }
+/* Pool-coloured match badges for league cards */
+.match-card.pool-a .match-badge { background: rgba(224,90,20,0.28); color: #ffaa60; border: 1px solid rgba(224,90,20,0.35); }
+.match-card.pool-b .match-badge { background: rgba(13,138,86,0.28); color: #3dffaa; border: 1px solid rgba(13,175,109,0.35); }
+.match-card.pool-c .match-badge { background: rgba(176,21,53,0.28); color: #ff7090; border: 1px solid rgba(212,23,58,0.35); }
+.match-card.pool-d .match-badge { background: rgba(192,112,16,0.28); color: #f7c948; border: 1px solid rgba(212,136,15,0.35); }
 .match-ground {
   display: none; /* moved to footer as a tag */
 }
@@ -1410,7 +1431,7 @@ body::after {
   border-radius: var(--radius-pill);
   letter-spacing: 0.5px;
 }
-.tag-a { background: rgba(45,77,181,0.22); color: #7aa0f5; border: 1px solid rgba(45,77,181,0.35); }
+.tag-a { background: rgba(224,90,20,0.22); color: #ff9040; border: 1px solid rgba(224,90,20,0.35); }
 .tag-b { background: rgba(13,138,86,0.22); color: #34d88e; border: 1px solid rgba(13,138,86,0.35); }
 .tag-c { background: rgba(176,21,53,0.22); color: #ff5577; border: 1px solid rgba(176,21,53,0.35); }
 .tag-d { background: rgba(192,112,16,0.22); color: var(--gold); border: 1px solid rgba(192,112,16,0.35); }
