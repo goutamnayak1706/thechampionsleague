@@ -241,6 +241,20 @@ function filterByTeam(teamName) {
     card.style.display = teams.includes(teamName) ? '' : 'none';
   });
 
+  // Hide date-divider sections where no match cards are visible
+  document.querySelectorAll('.date-divider').forEach(divider => {
+    let sibling = divider.nextElementSibling;
+    let hasVisible = false;
+    while (sibling && !sibling.classList.contains('date-divider')) {
+      if (sibling.classList.contains('match-card') && sibling.style.display !== 'none') {
+        hasVisible = true;
+        break;
+      }
+      sibling = sibling.nextElementSibling;
+    }
+    divider.style.display = hasVisible ? '' : 'none';
+  });
+
   // Update heading
   if (heading) {
     heading.innerHTML = '<i class="bi bi-people-fill"></i> Matches &mdash; ' + teamName;
@@ -263,9 +277,12 @@ function clearTeamFilter(scroll) {
   if (banner)  banner.style.display = 'none';
   if (tabsBar) tabsBar.style.display = '';
 
-  // Reset all match cards visibility
+  // Reset all match cards and date-dividers visibility
   document.querySelectorAll('.match-card').forEach(card => {
     card.style.display = '';
+  });
+  document.querySelectorAll('.date-divider').forEach(divider => {
+    divider.style.display = '';
   });
 
   // Re-apply current active date tab
