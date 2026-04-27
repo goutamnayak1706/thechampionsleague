@@ -1592,7 +1592,102 @@ body::after {
 .dark-toggle:hover { background: var(--surface2); border-color: rgba(255,255,255,0.18); }
 
 /* ════════════════════════════════════════
-   TEAM FILTER BANNER
+   TEAM FILTER DROPDOWN
+   ════════════════════════════════════════ */
+.team-filter-wrap {
+  display: flex;
+  justify-content: center;
+  margin: 0 0 16px;
+}
+.team-filter-select-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-pill);
+  padding: 8px 20px;
+  backdrop-filter: blur(12px);
+  box-shadow: var(--shadow-sm);
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+.team-filter-select-row:focus-within {
+  border-color: rgba(59,107,235,0.5);
+  box-shadow: 0 0 0 3px rgba(59,107,235,0.15);
+}
+.team-filter-icon {
+  color: var(--gold);
+  font-size: 1em;
+  flex-shrink: 0;
+}
+.team-filter-select {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--text);
+  font-family: 'Poppins', system-ui, sans-serif;
+  font-size: 0.88em;
+  font-weight: 600;
+  cursor: pointer;
+  min-width: 220px;
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%238b9ab8' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 4px center;
+  padding-right: 22px;
+}
+.team-filter-select option,
+.team-filter-select optgroup {
+  background: #0d1428;
+  color: var(--text);
+}
+.team-filter-select optgroup {
+  font-weight: 700;
+  color: var(--gold);
+}
+
+/* Active filter banner */
+.team-filter-banner {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(135deg, rgba(59,107,235,0.18) 0%, rgba(232,51,77,0.12) 100%);
+  border: 1px solid rgba(59,107,235,0.35);
+  border-radius: var(--radius-pill);
+  padding: 9px 20px;
+  margin: 0 0 16px;
+  font-size: 0.88em;
+  font-weight: 600;
+  color: var(--text);
+  flex-wrap: wrap;
+}
+.team-filter-banner i { color: var(--primary); }
+.team-filter-banner strong { color: var(--gold); }
+.team-filter-clear-btn {
+  margin-left: auto;
+  background: rgba(232,51,77,0.15);
+  border: 1px solid rgba(232,51,77,0.3);
+  color: var(--accent);
+  border-radius: var(--radius-pill);
+  padding: 5px 14px;
+  font-family: 'Poppins', system-ui, sans-serif;
+  font-size: 0.78em;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: background var(--transition), border-color var(--transition);
+  white-space: nowrap;
+}
+.team-filter-clear-btn:hover {
+  background: rgba(232,51,77,0.28);
+  border-color: rgba(232,51,77,0.55);
+}
+
+/* ════════════════════════════════════════
+   TEAM FILTER BANNER (legacy)
    ════════════════════════════════════════ */
 #team-filter-banner {
   display: flex;

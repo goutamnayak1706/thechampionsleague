@@ -258,8 +258,57 @@
     <!-- ══ Schedule Section ══ -->
     <div id="schedule" class="section-heading reveal"><i class="bi bi-calendar3"></i> Match Schedule &mdash; 30 May 2026</div>
 
+    <!-- Team filter dropdown -->
+    <div class="team-filter-wrap reveal">
+      <div class="team-filter-select-row">
+        <i class="bi bi-funnel-fill team-filter-icon"></i>
+        <select id="teamFilterSelect" class="team-filter-select">
+          <option value="">Choose a team (optional)</option>
+          <optgroup label="Pool A">
+            <option value="Team A1">Team A1</option>
+            <option value="Team A2">Team A2</option>
+            <option value="Team A3">Team A3</option>
+            <option value="Team A4">Team A4</option>
+            <option value="Team A5">Team A5</option>
+            <option value="Team A6">Team A6</option>
+          </optgroup>
+          <optgroup label="Pool B">
+            <option value="Team B1">Team B1</option>
+            <option value="Team B2">Team B2</option>
+            <option value="Team B3">Team B3</option>
+            <option value="Team B4">Team B4</option>
+            <option value="Team B5">Team B5</option>
+            <option value="Team B6">Team B6</option>
+          </optgroup>
+          <optgroup label="Pool C">
+            <option value="Team C1">Team C1</option>
+            <option value="Team C2">Team C2</option>
+            <option value="Team C3">Team C3</option>
+            <option value="Team C4">Team C4</option>
+            <option value="Team C5">Team C5</option>
+            <option value="Team C6">Team C6</option>
+          </optgroup>
+          <optgroup label="Pool D">
+            <option value="Team D1">Team D1</option>
+            <option value="Team D2">Team D2</option>
+            <option value="Team D3">Team D3</option>
+            <option value="Team D4">Team D4</option>
+            <option value="Team D5">Team D5</option>
+            <option value="Team D6">Team D6</option>
+          </optgroup>
+        </select>
+      </div>
+    </div>
+
+    <!-- Active team filter banner -->
+    <div id="team-filter-banner" class="team-filter-banner" style="display:none">
+      <i class="bi bi-funnel-fill"></i>
+      Showing matches for <strong id="team-filter-name"></strong>
+      <button id="teamFilterClear" class="team-filter-clear-btn"><i class="bi bi-x-circle-fill"></i> Clear Filter</button>
+    </div>
+
     <!-- Date tab buttons bar -->
-    <div class="schedule-tabs-bar reveal">
+    <div class="schedule-tabs-bar reveal" id="schedule-tabs-bar">
       <button class="schedule-tab-btn active" data-date="may30"><i class="bi bi-calendar-event"></i> 30 May 2026</button>
       <button class="schedule-tab-btn" data-date="may31"><i class="bi bi-calendar-event"></i> 31 May 2026</button>
       <button class="schedule-tab-btn" data-date="jun6"><i class="bi bi-calendar-event"></i> 6 June 2026</button>
@@ -272,7 +321,7 @@
         <span class="date-pill"><i class="bi bi-flag-fill"></i>&nbsp; League Stage</span>
       </div>
       <div class="matches-grid-2col">
-        <div class="match-card pool-a">
+        <div class="match-card pool-a" data-teams="Team A1|Team A4">
           <div class="match-header">
             <span class="match-badge">Match 1</span>
             <span class="match-ground"><i class="bi bi-geo-alt"></i> Ground 1</span>
@@ -288,7 +337,7 @@
             <span class="match-pool-tag tag-a">Pool A</span>
           </div>
         </div>
-        <div class="match-card pool-a">
+        <div class="match-card pool-a" data-teams="Team A2|Team A5">
           <div class="match-header">
             <span class="match-badge">Match 2</span>
             <span class="match-ground"><i class="bi bi-geo-alt"></i> Ground 2</span>
@@ -307,7 +356,7 @@
       </div>
 
       <div class="matches-grid-2col">
-        <div class="match-card pool-b">
+        <div class="match-card pool-b" data-teams="Team B1|Team B4">
           <div class="match-header">
             <span class="match-badge">Match 3</span>
             <span class="match-ground"><i class="bi bi-geo-alt"></i> Ground 1</span>
@@ -323,7 +372,7 @@
             <span class="match-pool-tag tag-b">Pool B</span>
           </div>
         </div>
-        <div class="match-card pool-a">
+        <div class="match-card pool-a" data-teams="Team A1|Team A6">
           <div class="match-header">
             <span class="match-badge">Match 4</span>
             <span class="match-ground"><i class="bi bi-geo-alt"></i> Ground 2</span>
@@ -370,7 +419,7 @@
     <div class="schedule-tab-panel" id="panel-jun6">
 
       <div class="date-divider">
-        <span class="date-pill ko"><i class="bi bi-lightning-fill"></i>&nbsp; Quarter Finals &nbsp;&middot;&nbsp; 6 June 2026</span>
+        <span class="date-pill ko"><i class="bi bi-lightning-fill"></i>&nbsp; Quarter Finals &nbsp;</span>
       </div>
       <div class="matches-grid-2col">
         <div class="match-card ko">
@@ -496,6 +545,7 @@
           <div class="match-footer">
             <span class="match-time"><i class="bi bi-clock"></i> 5:30 pm &ndash; 6:45 pm</span>
             <span class="tag-ground tag-ground-2"><i class="bi bi-geo-alt-fill"></i> Ground 2</span>
+            <span class="match-pool-tag tag-ko">Third Place</span>
           </div>
         </div>
       </div>

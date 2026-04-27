@@ -255,8 +255,10 @@ function filterByTeam(teamName) {
 }
 
 function clearTeamFilter(scroll) {
-  const banner  = document.getElementById('team-filter-banner');
-  const tabsBar = document.getElementById('schedule-tabs-bar');
+  const banner     = document.getElementById('team-filter-banner');
+  const tabsBar    = document.getElementById('schedule-tabs-bar');
+  const teamSelect = document.getElementById('teamFilterSelect');
+  if (teamSelect) teamSelect.value = '';
 
   if (banner)  banner.style.display = 'none';
   if (tabsBar) tabsBar.style.display = '';
@@ -296,10 +298,26 @@ function clearTeamFilter(scroll) {
     });
   });
 
+  // Team filter select dropdown
+  const teamSelect = document.getElementById('teamFilterSelect');
+  if (teamSelect) {
+    teamSelect.addEventListener('change', () => {
+      const team = teamSelect.value;
+      if (team) {
+        filterByTeam(team);
+      } else {
+        clearTeamFilter(true);
+      }
+    });
+  }
+
   // Clear filter button
   const clearBtn = document.getElementById('teamFilterClear');
   if (clearBtn) {
-    clearBtn.addEventListener('click', () => clearTeamFilter(true));
+    clearBtn.addEventListener('click', () => {
+      clearTeamFilter(true);
+      if (teamSelect) teamSelect.value = '';
+    });
   }
 })();
 
