@@ -226,11 +226,11 @@ body::after {
 .teams-dropdown {
   display: none;
   position: absolute;
-  top: 100%;
+  top: calc(100% - 4px);
   right: 0;
   min-width: 260px;
   z-index: 2000;
-  padding-top: 8px;
+  padding-top: 12px;
   animation: fadeIn 0.18s ease both;
 }
 .nav-teams-item:hover .teams-dropdown,
@@ -1051,12 +1051,12 @@ body::after {
 .schedule-dropdown {
   display: none;
   position: absolute;
-  top: 100%;
+  top: calc(100% - 4px);
   left: 50%;
   transform: translateX(-50%);
   min-width: 220px;
   z-index: 2000;
-  padding-top: 8px;
+  padding-top: 12px;
   animation: fadeIn 0.18s ease both;
   animation: fadeIn 0.18s ease both;
 }
