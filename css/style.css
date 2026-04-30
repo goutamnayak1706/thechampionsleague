@@ -1417,6 +1417,12 @@ body::after {
 .match-card.pool-b:hover { border-color: rgba(13,175,109,0.75); box-shadow: var(--shadow-lg), 0 0 28px rgba(13,138,86,0.35); }
 .match-card.pool-c:hover { border-color: rgba(212,23,58,0.75);  box-shadow: var(--shadow-lg), 0 0 28px rgba(176,21,53,0.35); }
 .match-card.pool-d:hover { border-color: rgba(212,136,15,0.75); box-shadow: var(--shadow-lg), 0 0 28px rgba(192,112,16,0.35); }
+
+/* ── Per-team gradient accent bar (set via JS) ── */
+.match-card[style*="--team-a-color"]::before {
+  background: linear-gradient(180deg, var(--team-a-color), var(--team-b-color, var(--primary)));
+  width: 5px;
+}
 /* Pre-Quarters card hover */
 .match-card.pq {
   border-color: rgba(0,229,255,0.22);
@@ -1568,7 +1574,7 @@ body::after {
 .tag-d { background: rgba(192,112,16,0.22); color: var(--gold); border: 1px solid rgba(192,112,16,0.35); }
 .tag-e { background: rgba(80,32,200,0.22); color: #a07cf5; border: 1px solid rgba(80,32,200,0.35); }
 /* Pool tags for knockout rounds */
-.tag-pq    { background: rgba(0,229,255,0.13);  color: var(--pq-color); border: 1px solid rgba(0,229,255,0.35);  text-shadow: 0 0 6px rgba(0,229,255,0.5); }
+.tag-pq    { background: rgba(80,220,100,0.13); color: #4ddd6a;         border: 1px solid rgba(80,220,100,0.35); text-shadow: 0 0 6px rgba(80,220,100,0.5); }
 .tag-qf    { background: rgba(255,123,0,0.13);  color: var(--qf-color); border: 1px solid rgba(255,123,0,0.35);  text-shadow: 0 0 6px rgba(255,123,0,0.5); }
 .tag-ko    { background: rgba(255,0,128,0.13); color: var(--sf-color); border: 1px solid rgba(255,0,128,0.40); text-shadow: 0 0 8px rgba(255,0,128,0.70); }
 .tag-final { background: rgba(232,51,77,0.15); color: var(--accent); border: 1px solid rgba(232,51,77,0.3); }

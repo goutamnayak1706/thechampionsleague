@@ -351,6 +351,70 @@ function clearTeamFilter(scroll) {
   });
 })();
 
+/* ── Team-colour gradients on league match cards ── */
+(function () {
+  // Colors sourced from teams.html army-card --army-color values
+  const TEAM_COLORS = {
+    'Team A1': '#e63946',
+    'Team A2': '#f77f00',
+    'Team A3': '#fcbf49',
+    'Team A4': '#2dc653',
+    'Team A5': '#06aed5',
+    'Team A6': '#7b2d8b',
+    'Team B1': '#ff4d6d',
+    'Team B2': '#ff9500',
+    'Team B3': '#00b4d8',
+    'Team B4': '#80b918',
+    'Team B5': '#e040fb',
+    'Team B6': '#ff6b35',
+    'Team C1': '#3a86ff',
+    'Team C2': '#f72585',
+    'Team C3': '#4cc9f0',
+    'Team C4': '#f4d35e',
+    'Team C5': '#43aa8b',
+    'Team C6': '#ef233c',
+    'Team D1': '#ffd166',
+    'Team D2': '#06d6a0',
+    'Team D3': '#cb4154',
+    'Team D4': '#118ab2',
+    'Team D5': '#c77dff',
+    'Team D6': '#f4a261',
+  };
+
+  // Convert a hex colour to "r,g,b" string
+  function hexToRgb(hex) {
+    const n = parseInt(hex.replace('#', ''), 16);
+    return ((n >> 16) & 255) + ',' + ((n >> 8) & 255) + ',' + (n & 255);
+  }
+
+  // Only apply to league-stage match cards (those that have data-teams set)
+  document.querySelectorAll('.match-card[data-teams]').forEach(function (card) {
+    const parts  = (card.dataset.teams || '').split('|').map(function (t) { return t.trim(); });
+    const teamA  = parts[0];
+    const teamB  = parts[1];
+    const colorA = TEAM_COLORS[teamA];
+    const colorB = TEAM_COLORS[teamB];
+    if (!colorA || !colorB) return;
+
+    const rgbA = hexToRgb(colorA);
+    const rgbB = hexToRgb(colorB);
+
+    // Gradient: team-A colour bright on the left, fades to near-transparent dark centre,
+    // then team-B colour picks up and becomes bright on the right.
+    card.style.background =
+      'linear-gradient(to right,' +
+      ' rgba(' + rgbA + ',0.55) 0%,' +
+      ' rgba(' + rgbA + ',0.18) 28%,' +
+      ' rgba(7,12,26,0.82) 50%,' +
+      ' rgba(' + rgbB + ',0.18) 72%,' +
+      ' rgba(' + rgbB + ',0.55) 100%)';
+
+    // Also update the left accent bar to match team-A colour
+    card.style.setProperty('--team-a-color', colorA);
+    card.style.setProperty('--team-b-color', colorB);
+  });
+})();
+
 /* ── Mobile teams accordion toggle ── */
 (function () {
   const toggle = document.getElementById('mobileTeamsToggle');
