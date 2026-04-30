@@ -21,6 +21,13 @@
   --gold:           #f7c948;
   --gold-glow:      rgba(247,201,72,0.35);
   --green:          #22d98a;
+  /* ── Knockout stage colours ── */
+  --pq-color:       #00e5ff;   /* Pre-Quarters  – electric cyan   */
+  --pq-glow:        rgba(0,229,255,0.40);
+  --qf-color:       #ff7b00;   /* Quarter Finals – neon orange    */
+  --qf-glow:        rgba(255,123,0,0.40);
+  --sf-color:       #ff0080;   /* Semi Finals    – hot magenta     */
+  --sf-glow:        rgba(255,0,128,0.40);
   --border:         rgba(255,255,255,0.08);
   --shadow-sm:      0 2px 12px rgba(0,0,0,0.4);
   --shadow:         0 6px 28px rgba(0,0,0,0.55);
@@ -102,6 +109,44 @@ body::after {
   0%,100% { border-color: rgba(59,107,235,0.3);  }
   33%      { border-color: rgba(232,51,77,0.3);   }
   66%      { border-color: rgba(247,201,72,0.3);  }
+}
+@keyframes electricPulse {
+  0%,100% { opacity: 1;   }
+  50%      { opacity: 0.6; }
+}
+@keyframes pqGlow {
+  0%,100% { box-shadow: 0 0 18px rgba(0,229,255,0.55), 0 4px 20px rgba(0,229,255,0.35); }
+  50%      { box-shadow: 0 0 38px rgba(0,229,255,0.90), 0 4px 28px rgba(0,229,255,0.60); }
+}
+@keyframes qfGlow {
+  0%,100% { box-shadow: 0 0 18px rgba(255,123,0,0.55), 0 4px 20px rgba(255,123,0,0.35); }
+  50%      { box-shadow: 0 0 38px rgba(255,123,0,0.90), 0 4px 28px rgba(255,123,0,0.60); }
+}
+@keyframes sfGlow {
+  0%,100% { box-shadow: 0 0 18px rgba(255,0,128,0.60), 0 4px 20px rgba(255,0,128,0.40); }
+  50%      { box-shadow: 0 0 44px rgba(255,0,128,1.00), 0 4px 32px rgba(255,0,128,0.70), 0 0 80px rgba(255,0,128,0.30); }
+}
+@keyframes finalGlow {
+  0%,100% {
+    box-shadow:
+      0 0 24px rgba(232,51,77,0.70),
+      0 4px 24px rgba(232,51,77,0.50),
+      0 0 0 1px rgba(247,201,72,0.40);
+  }
+  33% {
+    box-shadow:
+      0 0 60px rgba(232,51,77,1.00),
+      0 4px 40px rgba(247,201,72,0.70),
+      0 0 120px rgba(232,51,77,0.45),
+      0 0 0 2px rgba(247,201,72,0.70);
+  }
+  66% {
+    box-shadow:
+      0 0 50px rgba(247,201,72,0.90),
+      0 4px 36px rgba(232,51,77,0.65),
+      0 0 100px rgba(247,201,72,0.40),
+      0 0 0 2px rgba(232,51,77,0.60);
+  }
 }
 @keyframes float {
   0%,100% { transform: translateY(0);    }
@@ -1242,13 +1287,38 @@ body::after {
   animation: shimmer 2.5s linear infinite;
   border-radius: inherit;
 }
-.date-pill.ko  {
-  background: linear-gradient(135deg, #a04000, var(--gold));
-  box-shadow: 0 3px 14px var(--gold-glow);
+/* Pre-Quarters pill – electric cyan */
+.date-pill.pq {
+  background: linear-gradient(135deg, #006080 0%, #00bcd4 40%, #00e5ff 70%, #80f8ff 100%);
+  box-shadow: 0 0 22px rgba(0,229,255,0.65), 0 4px 18px rgba(0,229,255,0.40), 0 0 0 1px rgba(0,229,255,0.30);
+  text-shadow: 0 0 12px rgba(0,229,255,0.9), 0 1px 4px rgba(0,0,0,0.5);
+  animation: shimmer 2.5s linear infinite, pqGlow 2.2s ease-in-out infinite;
 }
+
+/* Quarter Finals pill – neon orange */
+.date-pill.qf {
+  background: linear-gradient(135deg, #7a2e00 0%, #e05500 40%, #ff7b00 70%, #ffb347 100%);
+  box-shadow: 0 0 22px rgba(255,123,0,0.65), 0 4px 18px rgba(255,123,0,0.40), 0 0 0 1px rgba(255,123,0,0.30);
+  text-shadow: 0 0 12px rgba(255,160,0,0.9), 0 1px 4px rgba(0,0,0,0.5);
+  animation: shimmer 2.5s linear infinite, qfGlow 2.2s ease-in-out infinite;
+}
+
+/* Semi Finals pill – hot magenta (replaces .ko) */
+.date-pill.ko {
+  background: linear-gradient(135deg, #7a0040 0%, #cc0066 40%, #ff0080 70%, #ff80bf 100%);
+  box-shadow: 0 0 22px rgba(255,0,128,0.70), 0 4px 18px rgba(255,0,128,0.45), 0 0 0 1px rgba(255,0,128,0.35);
+  text-shadow: 0 0 12px rgba(255,0,128,1.0), 0 1px 4px rgba(0,0,0,0.5);
+  animation: shimmer 2.5s linear infinite, sfGlow 1.8s ease-in-out infinite;
+}
+
 .date-pill.fin {
-  background: linear-gradient(135deg, var(--accent), #8b0060);
-  box-shadow: 0 3px 14px var(--accent-glow);
+  background: linear-gradient(135deg, #7a0010 0%, #c4001a 30%, #e8334d 55%, #ff6b35 80%, #f7c948 100%);
+  box-shadow:
+    0 0 28px rgba(232,51,77,0.80),
+    0 4px 22px rgba(247,201,72,0.50),
+    0 0 0 1px rgba(247,201,72,0.40);
+  text-shadow: 0 0 16px rgba(255,120,60,1.0), 0 1px 4px rgba(0,0,0,0.6);
+  animation: shimmer 2.2s linear infinite, finalGlow 1.5s ease-in-out infinite;
 }
 
 /* ── Match Cards ── */
@@ -1295,7 +1365,21 @@ body::after {
   background: linear-gradient(180deg, var(--primary), #5b8af0);
   border-radius: 18px 0 0 18px;
 }
-.match-card.ko::before    { background: linear-gradient(180deg, var(--gold), #a04000); }
+/* Pre-Quarters card – cyan left bar */
+.match-card.pq::before {
+  background: linear-gradient(180deg, #00e5ff, #007090);
+  box-shadow: 0 0 12px rgba(0,229,255,0.7);
+}
+/* Quarter Finals card – orange left bar */
+.match-card.qf::before {
+  background: linear-gradient(180deg, #ff7b00, #7a2e00);
+  box-shadow: 0 0 12px rgba(255,123,0,0.7);
+}
+/* Semi Finals card – magenta left bar (reuses .ko) */
+.match-card.ko::before    {
+  background: linear-gradient(180deg, #ff0080, #7a0040);
+  box-shadow: 0 0 14px rgba(255,0,128,0.80);
+}
 .match-card.final::before { background: linear-gradient(180deg, var(--accent), #8b0060); }
 
 /* ── Pool gradient overlays on match cards ── */
@@ -1333,7 +1417,30 @@ body::after {
 .match-card.pool-b:hover { border-color: rgba(13,175,109,0.75); box-shadow: var(--shadow-lg), 0 0 28px rgba(13,138,86,0.35); }
 .match-card.pool-c:hover { border-color: rgba(212,23,58,0.75);  box-shadow: var(--shadow-lg), 0 0 28px rgba(176,21,53,0.35); }
 .match-card.pool-d:hover { border-color: rgba(212,136,15,0.75); box-shadow: var(--shadow-lg), 0 0 28px rgba(192,112,16,0.35); }
-.match-card.ko:hover    { border-color: rgba(247,201,72,0.35); }
+/* Pre-Quarters card hover */
+.match-card.pq {
+  border-color: rgba(0,229,255,0.22);
+}
+.match-card.pq:hover {
+  border-color: rgba(0,229,255,0.65);
+  box-shadow: var(--shadow-lg), 0 0 32px rgba(0,229,255,0.35);
+}
+/* Quarter Finals card hover */
+.match-card.qf {
+  border-color: rgba(255,123,0,0.22);
+}
+.match-card.qf:hover {
+  border-color: rgba(255,123,0,0.65);
+  box-shadow: var(--shadow-lg), 0 0 32px rgba(255,123,0,0.35);
+}
+/* Semi Finals card hover (uses .ko) */
+.match-card.ko {
+  border-color: rgba(255,0,128,0.22);
+}
+.match-card.ko:hover {
+  border-color: rgba(255,0,128,0.70);
+  box-shadow: var(--shadow-lg), 0 0 36px rgba(255,0,128,0.45);
+}
 .match-card.final:hover { border-color: rgba(232,51,77,0.35); }
 .match-header {
   display: flex;
@@ -1351,7 +1458,27 @@ body::after {
   padding: 3px 11px;
   border-radius: var(--radius-pill);
 }
-.match-badge.ko    { background: rgba(247,201,72,0.15); color: var(--gold); }
+/* Pre-Quarters badge – cyan */
+.match-badge.pq {
+  background: rgba(0,229,255,0.15);
+  color: var(--pq-color);
+  border: 1px solid rgba(0,229,255,0.35);
+  text-shadow: 0 0 8px rgba(0,229,255,0.6);
+}
+/* Quarter Finals badge – orange */
+.match-badge.qf {
+  background: rgba(255,123,0,0.15);
+  color: var(--qf-color);
+  border: 1px solid rgba(255,123,0,0.35);
+  text-shadow: 0 0 8px rgba(255,123,0,0.6);
+}
+/* Semi Finals badge – magenta */
+.match-badge.ko {
+  background: rgba(255,0,128,0.15);
+  color: var(--sf-color);
+  border: 1px solid rgba(255,0,128,0.40);
+  text-shadow: 0 0 10px rgba(255,0,128,0.80);
+}
 .match-badge.final { background: rgba(232,51,77,0.15); color: var(--accent); }
 /* Pool-coloured match badges for league cards */
 .match-card.pool-a .match-badge { background: rgba(224,90,20,0.28); color: #ffaa60; border: 1px solid rgba(224,90,20,0.35); }
@@ -1440,7 +1567,10 @@ body::after {
 .tag-c { background: rgba(176,21,53,0.22); color: #ff5577; border: 1px solid rgba(176,21,53,0.35); }
 .tag-d { background: rgba(192,112,16,0.22); color: var(--gold); border: 1px solid rgba(192,112,16,0.35); }
 .tag-e { background: rgba(80,32,200,0.22); color: #a07cf5; border: 1px solid rgba(80,32,200,0.35); }
-.tag-ko    { background: rgba(247,201,72,0.15); color: var(--gold); border: 1px solid rgba(247,201,72,0.3); }
+/* Pool tags for knockout rounds */
+.tag-pq    { background: rgba(0,229,255,0.13);  color: var(--pq-color); border: 1px solid rgba(0,229,255,0.35);  text-shadow: 0 0 6px rgba(0,229,255,0.5); }
+.tag-qf    { background: rgba(255,123,0,0.13);  color: var(--qf-color); border: 1px solid rgba(255,123,0,0.35);  text-shadow: 0 0 6px rgba(255,123,0,0.5); }
+.tag-ko    { background: rgba(255,0,128,0.13); color: var(--sf-color); border: 1px solid rgba(255,0,128,0.40); text-shadow: 0 0 8px rgba(255,0,128,0.70); }
 .tag-final { background: rgba(232,51,77,0.15); color: var(--accent); border: 1px solid rgba(232,51,77,0.3); }
 
 /* ── TBD placeholder ── */
