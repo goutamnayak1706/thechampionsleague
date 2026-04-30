@@ -226,10 +226,11 @@ body::after {
 .teams-dropdown {
   display: none;
   position: absolute;
-  top: calc(100% + 8px);
+  top: 100%;
   right: 0;
   min-width: 260px;
   z-index: 2000;
+  padding-top: 8px;
   animation: fadeIn 0.18s ease both;
 }
 .nav-teams-item:hover .teams-dropdown,
@@ -1050,11 +1051,13 @@ body::after {
 .schedule-dropdown {
   display: none;
   position: absolute;
-  top: calc(100% + 8px);
+  top: 100%;
   left: 50%;
   transform: translateX(-50%);
   min-width: 220px;
   z-index: 2000;
+  padding-top: 8px;
+  animation: fadeIn 0.18s ease both;
   animation: fadeIn 0.18s ease both;
 }
 .nav-schedule-item:hover .schedule-dropdown,
@@ -2088,7 +2091,7 @@ body::after {
 
 /* Subtitle */
 .champions-2025-subtitle {
-  font-size: 2rem;
+  font-size: 2%;
   font-weight: 600;
   letter-spacing: 3px;
   text-transform: uppercase;
