@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teams — The Champions League 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <a class="navbar-brand" href="index.html">
+      <img src="images/TCL.jpeg" alt="TCL Logo">
+      <div class="brand-text">
+        TCL 2026
+        <span>The Champions League</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html"><i class="bi bi-house-fill"></i> Home</a></li>
+      <li><a href="index.html#pools"><i class="bi bi-grid-fill"></i> Pools</a></li>
+      <li class="nav-schedule-item">
+        <a href="index.html#schedule" class="nav-schedule-link"><i class="bi bi-calendar3"></i> Schedule <i class="bi bi-chevron-down nav-chevron"></i></a>
+        <div class="schedule-dropdown">
+          <div class="schedule-dropdown-inner">
+            <div class="schedule-dropdown-title"><i class="bi bi-calendar3"></i> Match Days</div>
+            <ul class="schedule-dropdown-list">
+              <li><a href="index.html#schedule" class="schedule-date-navlink" data-date="may30"><i class="bi bi-calendar-event"></i> 30 May 2026</a></li>
+              <li><a href="index.html#schedule" class="schedule-date-navlink" data-date="may31"><i class="bi bi-calendar-event"></i> 31 May 2026</a></li>
+              <li><a href="index.html#schedule" class="schedule-date-navlink" data-date="jun6"><i class="bi bi-calendar-event"></i> 6 June 2026</a></li>
+            </ul>
+          </div>
+        </div>
+      </li>
+      <li><a href="rulebook.html"><i class="bi bi-book"></i> Rulebook</a></li>
+      <li><a href="gallery.html"><i class="bi bi-images"></i> Gallery</a></li>
+      <li><a href="teams.html" class="active"><i class="bi bi-people-fill"></i> Teams</a></li>
+    </ul>
+    <button class="hamburger" id="hamburgerBtn" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html"><i class="bi bi-house-fill"></i> Home</a>
+    <a href="index.html#pools"><i class="bi bi-grid-fill"></i> Pools</a>
+    <a href="index.html#schedule"><i class="bi bi-calendar3"></i> Schedule</a>
+    <a href="rulebook.html"><i class="bi bi-book"></i> Rulebook</a>
+    <a href="gallery.html"><i class="bi bi-images"></i> Gallery</a>
+    <a href="teams.html" class="active"><i class="bi bi-people-fill"></i> Teams</a>
+  </div>
+
+  <!-- ═══════ BATTLE HERO ═══════ -->
+  <div class="teams-battle-hero">
+    <div class="teams-battle-hero-bg"></div>
+    <div class="teams-battle-hero-content">
+      <div class="teams-battle-eyebrow"><i class="bi bi-slash-circle"></i>&nbsp; TCL 2026 &nbsp;<i class="bi bi-slash-circle"></i></div>
+      <h1 class="teams-battle-title">THE TEAMS</h1>
+      <div class="teams-battle-subtitle">24 Contenders. One Champion</div>
+      <div class="teams-battle-divider">
+        <span class="tbd-line"></span>
+        <i class="bi bi-shield-fill-check tbd-icon"></i>
+        <span class="tbd-line"></span>
+      </div>
+      <div class="teams-battle-count"></div>
+    </div>
+  </div>
+
+  <div class="main-container teams-main-container">
+
+    <div class="teams-battle-grid">
+
+      <!-- Team 1 -->
+      <div class="army-card" style="--army-color: #e63946;">
+        <div class="army-card-glow"></div>
+        <div class="army-card-inner">
+          <div class="army-card-body">
+            <div class="army-team-name">Team A1</div>
+            <div class="army-captain"><i class="bi bi-person-fill"></i> Captain A1</div>
+          </div>
+          <div class="army-number">01</div>
+        </div>
+      </div>
+
+      <!-- Team 2 -->
+      <div class="army-card" style="--army-color: #f77f00;">
+        <div class="army-card-glow"></div>
+        <div class="army-card-inner">
+          <div class="army-card-body">
+            <div class="army-team-name">Team A2</div>
+            <div class="army-captain"><i class="bi bi-person-fill"></i> Captain A2</div>
+          </div>
+          <div class="army-number">02</div>
+        </div>
+      </div>
+
+      <!-- Team 3 -->
+      <div class="army-card" style="--army-color: #fcbf49;">
+        <div class="army-card-glow"></div>
+        <div class="army-card-inner">
+          <div class="army-card-body">
+            <div class="army-team-name">Team A3</div>
+            <div class="army-captain"><i class="bi bi-person-fill"></i> Captain A3</div>
+          </div>
+          <div class="army-number">03</div>
+        </div>
+      </div>
+
+      <!-- Team 4 -->
+      <div class="army-card" style="--army-color: #2dc653;">
+        <div class="army-card-glow"></div>
+        <div class="army-card-inner">
+          <div class="army-card-body">
+            <div class="army-team-name">Team A4</div>
+            <div class="army-captain"><i class="bi bi-person-fill"></i> Captain A4</div>
+          </div>
+          <div class="army-number">04</div>
+        </div>
+      </div>
+
+      <!-- Team 5 -->
+      <div class="army-card" style="--army-color: #06aed5;">
+        <div class="army-card-glow"></div>
+        <div class="army-card-inner">
+          <div class="army-card-body">
+            <div class="army-team-name">Team A5</div>
+            <div class="army-captain"><i class="bi bi-person-fill"></i> Captain A5</div>
+          </div>
+          <div class="army-number">05</div>
+        </div>
+      </div>
+
+      <!-- Team 6 -->
+      <div class="army-card" style="--army-color: #7b2d8b;">
+        <div class="army-card-glow"></div>
+        <div class="army-card-inner">
+          <div class="army-card-body">
+            <div class="army-team-name">Team A6</div>
+            <div class="army-captain"><i class="bi bi-person-fill"></i> Captain A6</div>
+          </div>
+          <div class="army-number">06</div>
+        </div>
+      </div>
+
+      <!-- Team 7 -->
+      <div class="army-card" style="--army-color: #ff4d6d;">
+        <div class="army-card-glow"></div>
+        <div class="army-card-inner">
+          <div class="army-card-body">
+            <div class="army-team-name">Team B1</div>
+            <div class="army-captain"><i class="bi bi-person-fill"></i> Captain B1</div>
+          </div>
+          <div class="army-number">07</div>
+        </div>
+      </div>
+
+      <!-- Team 8 -->
+      <div class="army-card" style="--army-color: #ff9500;">
+        <div class="army-card-glow"></div>
+        <div class="army-card-inner">
+          <div class="army-card-body">
+            <div class="army-team-name">Team B2</div>
+            <div class="army-captain"><i class="bi bi-person-fill"></i> Captain B2</div>
+          </div>
+          <div class="army-number">08</div>
+        </div>
+      </div>
+
+      <!-- Team 9 -->
+      <div class="army-card" style="--army-color: #00b4d8;">
+        <div class="army-card-glow"></div>
+        <div class="army-card-inner">
+          <div class="army-card-body">
+            <div class="army-team-name">Team B3</div>
+            <div class="army-captain"><i class="bi bi-person-fill"></i> Captain B3</div>
+          </div>
+          <div class="army-number">09</div>
+        </div>
+      </div>
+
+      <!-- Team 10 -->
+      <div class="army-card" style="--army-color: #80b918;">
+        <div class="army-card-glow"></div>
+        <div class="army-card-inner">
+          <div class="army-card-body">
+            <div class="army-team-name">Team B4</div>
+            <div class="army-captain"><i class="bi bi-person-fill"></i> Captain B4</div>
+          </div>
+          <div class="army-number">10</div>
+        </div>
+      </div>
+
+      <!-- Team 11 -->
+      <div class="army-card" style="--army-color: #e040fb;">
+        <div class="army-card-glow"></div>
+        <div class="army-card-inner">
+          <div class="army-card-body">
+            <div class="army-team-name">Team B5</div>
+            <div class="army-captain"><i class="bi bi-person-fill"></i> Captain B5</div>
+          </div>
+          <div class="army-number">11</div>
+        </div>
+      </div>
+
+      <!-- Team 12 -->
+      <div class="army-card" style="--army-color: #ff6b35;">
+        <div class="army-card-glow"></div>
+        <div class="army-card-inner">
+          <div class="army-card-body">
+            <div class="army-team-name">Team B6</div>
+            <div class="army-captain"><i class="bi bi-person-fill"></i> Captain B6</div>
+          </div>
+          <div class="army-number">12</div>
+        </div>
+      </div>
+
+      <!-- Team 13 -->
+      <div class="army-card" style="--army-color: #3a86ff;">
+        <div class="army-card-glow"></div>
+        <div class="army-card-inner">
+          <div class="army-card-body">
+            <div class="army-team-name">Team C1</div>
+            <div class="army-captain"><i class="bi bi-person-fill"></i> Captain C1</div>
+          </div>
+          <div class="army-number">13</div>
+        </div>
+      </div>
+
+      <!-- Team 14 -->
+      <div class="army-card" style="--army-color: #f72585;">
+        <div class="army-card-glow"></div>
+        <div class="army-card-inner">
+          <div class="army-card-body">
+            <div class="army-team-name">Team C2</div>
+            <div class="army-captain"><i class="bi bi-person-fill"></i> Captain C2</div>
+          </div>
+          <div class="army-number">14</div>
+        </div>
+      </div>
+
+      <!-- Team 15 -->
+      <div class="army-card" style="--army-color: #4cc9f0;">
+        <div class="army-card-glow"></div>
+        <div class="army-card-inner">
+          <div class="army-card-body">
+            <div class="army-team-name">Team C3</div>
+            <div class="army-captain"><i class="bi bi-person-fill"></i> Captain C3</div>
+          </div>
+          <div class="army-number">15</div>
+        </div>
+      </div>
+
+      <!-- Team 16 -->
+      <div class="army-card" style="--army-color: #f4d35e;">
+        <div class="army-card-glow"></div>
+        <div class="army-card-inner">
+          <div class="army-card-body">
+            <div class="army-team-name">Team C4</div>
+            <div class="army-captain"><i class="bi bi-person-fill"></i> Captain C4</div>
+          </div>
+          <div class="army-number">16</div>
+        </div>
+      </div>
+
+      <!-- Team 17 -->
+      <div class="army-card" style="--army-color: #43aa8b;">
+        <div class="army-card-glow"></div>
+        <div class="army-card-inner">
+          <div class="army-card-body">
+            <div class="army-team-name">Team C5</div>
+            <div class="army-captain"><i class="bi bi-person-fill"></i> Captain C5</div>
+          </div>
+          <div class="army-number">17</div>
+        </div>
+      </div>
+
+      <!-- Team 18 -->
+      <div class="army-card" style="--army-color: #ef233c;">
+        <div class="army-card-glow"></div>
+        <div class="army-card-inner">
+          <div class="army-card-body">
+            <div class="army-team-name">Team C6</div>
+            <div class="army-captain"><i class="bi bi-person-fill"></i> Captain C6</div>
+          </div>
+          <div class="army-number">18</div>
+        </div>
+      </div>
+
+      <!-- Team 19 -->
+      <div class="army-card" style="--army-color: #ffd166;">
+        <div class="army-card-glow"></div>
+        <div class="army-card-inner">
+          <div class="army-card-body">
+            <div class="army-team-name">Team D1</div>
+            <div class="army-captain"><i class="bi bi-person-fill"></i> Captain D1</div>
+          </div>
+          <div class="army-number">19</div>
+        </div>
+      </div>
+
+      <!-- Team 20 -->
+      <div class="army-card" style="--army-color: #06d6a0;">
+        <div class="army-card-glow"></div>
+        <div class="army-card-inner">
+          <div class="army-card-body">
+            <div class="army-team-name">Team D2</div>
+            <div class="army-captain"><i class="bi bi-person-fill"></i> Captain D2</div>
+          </div>
+          <div class="army-number">20</div>
+        </div>
+      </div>
+
+      <!-- Team 21 -->
+      <div class="army-card" style="--army-color: #cb4154;">
+        <div class="army-card-glow"></div>
+        <div class="army-card-inner">
+          <div class="army-card-body">
+            <div class="army-team-name">Team D3</div>
+            <div class="army-captain"><i class="bi bi-person-fill"></i> Captain D3</div>
+          </div>
+          <div class="army-number">21</div>
+        </div>
+      </div>
+
+      <!-- Team 22 -->
+      <div class="army-card" style="--army-color: #118ab2;">
+        <div class="army-card-glow"></div>
+        <div class="army-card-inner">
+          <div class="army-card-body">
+            <div class="army-team-name">Team D4</div>
+            <div class="army-captain"><i class="bi bi-person-fill"></i> Captain D4</div>
+          </div>
+          <div class="army-number">22</div>
+        </div>
+      </div>
+
+      <!-- Team 23 -->
+      <div class="army-card" style="--army-color: #c77dff;">
+        <div class="army-card-glow"></div>
+        <div class="army-card-inner">
+          <div class="army-card-body">
+            <div class="army-team-name">Team D5</div>
+            <div class="army-captain"><i class="bi bi-person-fill"></i> Captain D5</div>
+          </div>
+          <div class="army-number">23</div>
+        </div>
+      </div>
+
+      <!-- Team 24 -->
+      <div class="army-card" style="--army-color: #f4a261;">
+        <div class="army-card-glow"></div>
+        <div class="army-card-inner">
+          <div class="army-card-body">
+            <div class="army-team-name">Team D6</div>
+            <div class="army-captain"><i class="bi bi-person-fill"></i> Captain D6</div>
+          </div>
+          <div class="army-number">24</div>
+        </div>
+      </div>
+
+    </div><!-- /teams-battle-grid -->
+
+    <div class="teams-battle-footer-banner reveal">
+      <i class="bi bi-trophy-fill"></i>&nbsp; May the best team win &nbsp;<i class="bi bi-trophy-fill"></i>
+    </div>
+
+  </div><!-- /main-container -->
+
+  <footer class="site-footer">
+    <div class="footer-logo">
+      <img src="images/TCL.jpeg" alt="TCL">
+      The Champions League 2026
+    </div>
+    <div class="footer-links">
+      <a href="index.html"><i class="bi bi-house-fill"></i> Home</a>
+      <a href="index.html#schedule"><i class="bi bi-calendar3"></i> Schedule</a>
+      <a href="rulebook.html"><i class="bi bi-book"></i> Rulebook</a>
+      <a href="gallery.html"><i class="bi bi-images"></i> Gallery</a>
+      <a href="teams.html"><i class="bi bi-people-fill"></i> Teams</a>
+      <a href="mailto:kalingawarriorsalmere@gmail.com"><i class="bi bi-envelope-fill"></i> Contact</a>
+      <a href="https://wa.me/+31659580699" target="_blank" rel="noopener noreferrer"><i class="bi bi-whatsapp"></i> WhatsApp</a>
+    </div>
+    <div class="footer-copy">
+      Created by <strong style="color:#9ab0d8">Goutam Nayak</strong> &nbsp;&middot;&nbsp;
+      &copy; The Champions League 2026. All rights reserved.
+    </div>
+  </footer>
+
+  <button id="scrollTop" aria-label="Back to top">
+    <i class="bi bi-arrow-up"></i>
+  </button>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

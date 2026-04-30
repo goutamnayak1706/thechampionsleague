@@ -2242,3 +2242,283 @@ body::after {
   .champions-2025-ribbon { font-size: 0.65rem; letter-spacing: 2px; padding: 6px 18px; }
 
 }
+
+/* ════════════════════════════════════════
+   TEAMS PAGE — BATTLE / ARMY THEME
+   ════════════════════════════════════════ */
+
+/* ── Battle Hero ── */
+.teams-battle-hero {
+  position: relative;
+  min-height: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  padding: 60px 20px 48px;
+}
+.teams-battle-hero-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 90% 70% at 50% 0%, rgba(232,51,77,0.18) 0%, transparent 60%),
+    radial-gradient(ellipse 70% 60% at 20% 80%, rgba(59,107,235,0.14) 0%, transparent 55%),
+    radial-gradient(ellipse 60% 60% at 80% 80%, rgba(247,201,72,0.10) 0%, transparent 55%),
+    linear-gradient(180deg, rgba(20,4,8,0.70) 0%, rgba(7,12,26,0.50) 100%);
+  pointer-events: none;
+}
+.teams-battle-hero-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 49px,
+      rgba(255,255,255,0.025) 49px,
+      rgba(255,255,255,0.025) 50px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 49px,
+      rgba(255,255,255,0.025) 49px,
+      rgba(255,255,255,0.025) 50px
+    );
+}
+.teams-battle-hero-content { position: relative; z-index: 1; }
+
+.teams-battle-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.68em;
+  font-weight: 700;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: var(--gold);
+  opacity: 0.8;
+  margin-bottom: 14px;
+  animation: fadeUp 0.5s ease both;
+}
+.teams-battle-title {
+  font-size: clamp(2.8em, 9vw, 5.5em);
+  font-weight: 800;
+  letter-spacing: 14px;
+  text-transform: uppercase;
+  line-height: 1;
+  background: linear-gradient(135deg, #fff 0%, var(--gold) 40%, var(--accent) 70%, #fff 100%);
+  background-size: 300% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: fadeUp 0.6s ease both 0.1s, shimmer 6s linear infinite 1s;
+  margin-bottom: 12px;
+}
+.teams-battle-subtitle {
+  font-size: clamp(0.85em, 2vw, 1.05em);
+  font-weight: 600;
+  color: var(--text-dim);
+  letter-spacing: 2px;
+  margin-bottom: 22px;
+  animation: fadeUp 0.65s ease both 0.2s;
+  text-transform: uppercase;
+}
+.teams-battle-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin: 0 auto 16px;
+  max-width: 280px;
+  animation: fadeUp 0.7s ease both 0.25s;
+}
+.tbd-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(232,51,77,0.55), transparent);
+}
+.tbd-icon {
+  font-size: 1.2rem;
+  color: var(--accent);
+  filter: drop-shadow(0 0 8px rgba(232,51,77,0.7));
+  flex-shrink: 0;
+}
+.teams-battle-count {
+  font-size: 0.9em;
+  font-weight: 700;
+  color: var(--text-dim);
+  letter-spacing: 1px;
+  animation: fadeUp 0.75s ease both 0.3s;
+}
+.teams-battle-count span {
+  color: var(--gold);
+  font-size: 1.15em;
+  font-weight: 800;
+}
+
+/* ── Teams Main Container ── */
+.teams-main-container { padding-top: 16px; }
+
+/* ── Army Card Grid ── */
+.teams-battle-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 48px;
+}
+@media (max-width: 960px) {
+  .teams-battle-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 680px) {
+  .teams-battle-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+}
+@media (max-width: 380px) {
+  .teams-battle-grid { grid-template-columns: 1fr; }
+}
+
+/* ── Army Card ── */
+.army-card {
+  position: relative;
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,0.07);
+  background:
+    linear-gradient(145deg,
+      color-mix(in srgb, var(--army-color) 18%, transparent),
+      rgba(7,12,26,0.88));
+  overflow: hidden;
+  cursor: default;
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+  animation: fadeUp 0.55s ease both;
+}
+.army-card:nth-child(1)  { animation-delay: 0.05s; }
+.army-card:nth-child(2)  { animation-delay: 0.08s; }
+.army-card:nth-child(3)  { animation-delay: 0.11s; }
+.army-card:nth-child(4)  { animation-delay: 0.14s; }
+.army-card:nth-child(5)  { animation-delay: 0.17s; }
+.army-card:nth-child(6)  { animation-delay: 0.20s; }
+.army-card:nth-child(7)  { animation-delay: 0.23s; }
+.army-card:nth-child(8)  { animation-delay: 0.26s; }
+.army-card:nth-child(9)  { animation-delay: 0.29s; }
+.army-card:nth-child(10) { animation-delay: 0.32s; }
+.army-card:nth-child(11) { animation-delay: 0.35s; }
+.army-card:nth-child(12) { animation-delay: 0.38s; }
+.army-card:nth-child(13) { animation-delay: 0.41s; }
+.army-card:nth-child(14) { animation-delay: 0.44s; }
+.army-card:nth-child(15) { animation-delay: 0.47s; }
+.army-card:nth-child(16) { animation-delay: 0.50s; }
+.army-card:nth-child(17) { animation-delay: 0.53s; }
+.army-card:nth-child(18) { animation-delay: 0.56s; }
+.army-card:nth-child(19) { animation-delay: 0.59s; }
+.army-card:nth-child(20) { animation-delay: 0.62s; }
+.army-card:nth-child(21) { animation-delay: 0.65s; }
+.army-card:nth-child(22) { animation-delay: 0.68s; }
+.army-card:nth-child(23) { animation-delay: 0.71s; }
+.army-card:nth-child(24) { animation-delay: 0.74s; }
+
+.army-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  border-color: var(--army-color);
+  box-shadow:
+    0 12px 36px rgba(0,0,0,0.55),
+    0 0 28px color-mix(in srgb, var(--army-color) 45%, transparent);
+}
+
+/* Glow top bar */
+.army-card-glow {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--army-color);
+  border-radius: 18px 18px 0 0;
+  box-shadow: 0 0 14px var(--army-color);
+  opacity: 0.9;
+}
+
+.army-card-inner {
+  padding: 20px 16px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  position: relative;
+}
+
+/* Shield icon */
+.army-shield-wrap {
+  font-size: 2.4em;
+  color: var(--army-color);
+  filter: drop-shadow(0 0 10px color-mix(in srgb, var(--army-color) 70%, transparent));
+  line-height: 1;
+  margin-bottom: 4px;
+  transition: transform var(--transition), filter var(--transition);
+}
+.army-card:hover .army-shield-wrap {
+  transform: scale(1.1) rotate(-4deg);
+  filter: drop-shadow(0 0 18px color-mix(in srgb, var(--army-color) 90%, transparent));
+}
+
+.army-card-body { flex: 1; }
+.army-team-name {
+  font-size: 1.25em;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: 0.5px;
+  line-height: 1.2;
+  margin-bottom: 5px;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+}
+.army-captain {
+  font-size: 0.78em;
+  font-weight: 600;
+  color: var(--text-dim);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  letter-spacing: 0.3px;
+}
+.army-captain i {
+  color: var(--army-color);
+  font-size: 0.9em;
+  flex-shrink: 0;
+}
+
+/* Big squad number (watermark) */
+.army-number {
+  position: absolute;
+  bottom: 8px;
+  right: 14px;
+  font-size: 2.8em;
+  font-weight: 900;
+  color: var(--army-color);
+  opacity: 0.12;
+  line-height: 1;
+  letter-spacing: -2px;
+  pointer-events: none;
+  user-select: none;
+  transition: opacity var(--transition);
+}
+.army-card:hover .army-number { opacity: 0.22; }
+
+/* ── Footer Banner ── */
+.teams-battle-footer-banner {
+  text-align: center;
+  font-size: 0.88em;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  padding: 18px 24px;
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius);
+  background: var(--glass);
+  backdrop-filter: blur(12px);
+  margin-bottom: 40px;
+}
+.teams-battle-footer-banner i {
+  color: var(--gold);
+  font-size: 1.1em;
+  vertical-align: -2px;
+}
