@@ -351,6 +351,17 @@ function clearTeamFilter(scroll) {
   });
 })();
 
+/* ── Mobile teams accordion toggle ── */
+(function () {
+  const toggle = document.getElementById('mobileTeamsToggle');
+  const list   = document.getElementById('mobileTeamsList');
+  if (!toggle || !list) return;
+  toggle.addEventListener('click', function () {
+    const open = list.classList.toggle('open');
+    toggle.classList.toggle('open', open);
+  });
+})();
+
 /* ── Active nav link highlight ── */
 (function () {
   const page = location.pathname.split('/').pop() || 'index.html';
