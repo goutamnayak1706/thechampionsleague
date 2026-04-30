@@ -1926,3 +1926,248 @@ body::after {
   margin: -12px 0 28px;
   font-weight: 500;
 }
+
+/* ════════════════════════════════════════
+   CHAMPIONS-2025 — Royal Showcase
+   ════════════════════════════════════════ */
+@keyframes goldShimmer {
+  0%   { background-position: -400% center; }
+  100% { background-position:  400% center; }
+}
+@keyframes crownPulse {
+  0%,100% { filter: drop-shadow(0 0 8px rgba(247,201,72,0.6)); transform: scale(1); }
+  50%      { filter: drop-shadow(0 0 22px rgba(247,201,72,1));  transform: scale(1.12); }
+}
+@keyframes starTwinkle {
+  0%,100% { opacity: 0.7; transform: scale(1) rotate(0deg); }
+  50%      { opacity: 1;   transform: scale(1.25) rotate(18deg); }
+}
+@keyframes champFrameGlow {
+  0%,100% { box-shadow: 0 0 40px rgba(247,201,72,0.25), 0 0 0 2px rgba(247,201,72,0.35), var(--shadow-lg); }
+  50%      { box-shadow: 0 0 80px rgba(247,201,72,0.55), 0 0 0 3px rgba(247,201,72,0.65), var(--shadow-lg); }
+}
+@keyframes ribbonSlide {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.champions-2025-section {
+  position: relative;
+  text-align: center;
+  margin: 48px auto 0;
+  padding: 52px 24px 56px;
+  max-width: 780px;
+  border-radius: 28px;
+  background:
+    linear-gradient(170deg,
+      rgba(40,28,6,0.92)   0%,
+      rgba(20,14,42,0.95)  40%,
+      rgba(10,8,28,0.97)   70%,
+      rgba(30,18,2,0.92)  100%);
+  border: 1px solid rgba(247,201,72,0.25);
+  box-shadow:
+    0 0 0 1px rgba(247,201,72,0.12),
+    0 32px 80px rgba(0,0,0,0.7),
+    inset 0 1px 0 rgba(247,201,72,0.15),
+    inset 0 -1px 0 rgba(247,201,72,0.08);
+  overflow: hidden;
+}
+
+/* Top shimmer bar */
+.champions-2025-section::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg,
+    transparent,
+    rgba(247,201,72,0.4) 15%,
+    #f7c948 35%,
+    #ffe87a 50%,
+    #f7c948 65%,
+    rgba(247,201,72,0.4) 85%,
+    transparent);
+  background-size: 300% auto;
+  animation: shimmer 4s linear infinite;
+}
+
+/* Corner ornament glow blobs */
+.champions-2025-section::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 28px;
+  background:
+    radial-gradient(ellipse 70% 40% at 50%  0%, rgba(247,201,72,0.10) 0%, transparent 65%),
+    radial-gradient(ellipse 50% 50% at 10% 90%, rgba(232,51,77,0.07)  0%, transparent 60%),
+    radial-gradient(ellipse 50% 50% at 90% 90%, rgba(59,107,235,0.07) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+/* Crown + stars row */
+.champions-2025-crown-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  margin-bottom: 14px;
+  position: relative;
+  z-index: 1;
+}
+.champ-trophy-icon {
+  font-size: 3rem;
+  color: var(--gold);
+  animation: crownPulse 2.8s ease-in-out infinite;
+  filter: drop-shadow(0 0 12px rgba(247,201,72,0.7));
+}
+.champ-star {
+  font-size: 1.1rem;
+  color: var(--gold);
+  animation: starTwinkle 2.2s ease-in-out infinite;
+  filter: drop-shadow(0 0 6px rgba(247,201,72,0.8));
+}
+.champ-star:last-child { animation-delay: 0.5s; }
+
+/* CHAMPIONS heading */
+.champions-2025-label {
+  font-size: clamp(2rem, 7vw, 3.4rem);
+  font-weight: 800;
+  letter-spacing: 12px;
+  text-transform: uppercase;
+  background: linear-gradient(120deg,
+    #c89520 0%,
+    #f7c948 25%,
+    #ffe87a 50%,
+    #f7c948 75%,
+    #c89520 100%);
+  background-size: 300% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: goldShimmer 5s linear infinite;
+  position: relative;
+  z-index: 1;
+  line-height: 1;
+  margin-bottom: 4px;
+  text-shadow: none;
+}
+
+/* 2025 year */
+.champions-2025-year {
+  font-size: clamp(1.1rem, 4vw, 1.7rem);
+  font-weight: 700;
+  letter-spacing: 8px;
+  color: rgba(247,201,72,0.65);
+  position: relative;
+  z-index: 1;
+  margin-bottom: 20px;
+}
+
+/* Ornamental divider */
+.champions-2025-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin: 0 auto 18px;
+  max-width: 360px;
+  position: relative;
+  z-index: 1;
+}
+.champ-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(247,201,72,0.55), transparent);
+}
+.champ-shield {
+  font-size: 1.3rem;
+  color: var(--gold);
+  filter: drop-shadow(0 0 8px rgba(247,201,72,0.7));
+  flex-shrink: 0;
+}
+
+/* Subtitle */
+.champions-2025-subtitle {
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(247,201,72,0.55);
+  margin-bottom: 32px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Photo frame wrapper */
+.champions-2025-frame-wrapper {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+
+/* Outer glow ring */
+.champions-2025-frame {
+  position: relative;
+  display: inline-block;
+  border-radius: 20px;
+  padding: 5px;
+  background: linear-gradient(135deg,
+    #9a6e00, #f7c948 30%, #ffe87a 50%, #f7c948 70%, #9a6e00);
+  animation: champFrameGlow 3s ease-in-out infinite;
+}
+
+.champions-2025-photo {
+  display: block;
+  width: min(540px, 88vw);
+  max-height: 420px;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow:
+    0 8px 40px rgba(0,0,0,0.65),
+    inset 0 0 0 1px rgba(255,255,255,0.06);
+  transition: transform 0.4s cubic-bezier(.4,0,.2,1);
+}
+.champions-2025-frame:hover .champions-2025-photo {
+  transform: scale(1.025);
+}
+
+/* Ribbon below photo */
+.champions-2025-ribbon {
+  position: absolute;
+  bottom: -1px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, #7a4e00, #c8960a 40%, #f7c948 60%, #c8960a 80%, #7a4e00);
+  color: #1a0e00;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  padding: 7px 28px;
+  border-radius: 0 0 14px 14px;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  box-shadow: 0 4px 18px rgba(247,201,72,0.4);
+  animation: ribbonSlide 0.6s ease both 0.4s;
+  z-index: 2;
+}
+
+/* Spacer below section */
+.champions-2025-spacer {
+  height: 52px;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .champions-2025-section {
+    padding: 36px 16px 44px;
+    border-radius: 20px;
+  }
+  .champions-2025-label { letter-spacing: 6px; }
+  .champions-2025-year  { letter-spacing: 4px; }
+  .champions-2025-ribbon { font-size: 0.65rem; letter-spacing: 2px; padding: 6px 18px; }
+
+}
