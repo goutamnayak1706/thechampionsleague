@@ -517,7 +517,7 @@ body::after {
 }
 .hero-badge i { color: var(--accent); }
 
-/* ── Hero "24 Teams" hover popover ── */
+/* ── Hero "22 Teams" hover popover ── */
 .hero-badge-teams-wrap {
   position: relative;
   display: inline-flex;

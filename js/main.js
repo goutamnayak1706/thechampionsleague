@@ -377,8 +377,6 @@ function clearTeamFilter(scroll) {
     'Team D2': '#06d6a0',
     'Team D3': '#cb4154',
     'Team D4': '#118ab2',
-    'Team D5': '#c77dff',
-    'Team D6': '#f4a261',
   };
 
   // Convert a hex colour to "r,g,b" string
