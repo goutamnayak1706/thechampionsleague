@@ -359,7 +359,7 @@ function clearTeamFilter(scroll) {
     'Minnal Blasters':         '#f77f00',
     'Maratha Challengers':     '#fcbf49',
     'Striker':                 '#2dc653',
-    'Hollane Capitals Oranje': '#06aed5',
+    ' Holland Capitals Oranje': '#06aed5',
     'PowerHitters':           '#7b2d8b',
     'Dutch Lords':             '#ff4d6d',
     'Orange Ashes Den Haag':        '#ff9500',
