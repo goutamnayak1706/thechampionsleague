@@ -60,7 +60,7 @@
     <img src="images/TCL.jpeg" alt="Champions League Poster" class="hero-poster reveal">
     <div class="hero-badges">
       <a href="https://www.google.com/maps/search/?api=1&query=Johann+Sebastiaan+Bachweg+3,+1323+BA,+Almere,+Netherlands" target="_blank" rel="noopener noreferrer" class="hero-badge"><i class="bi bi-geo-alt-fill"></i> Johann Sebastiaan Bachweg 3<br>1323 BA, Almere, Netherlands</a>
-      <a href="teams.html" class="hero-badge hero-badge-teams"><i class="bi bi-people-fill"></i> 22 Teams</a>
+      <a href="teams.html" class="hero-badge hero-badge-teams"><i class="bi bi-people-fill"></i> 24 Teams</a>
     </div>
   </div>
 
@@ -169,13 +169,15 @@
       <div class="pool-card pool-d">
         <div class="pool-header">
           <span class="pool-badge">Pool D</span>
-          <span class="pool-team-count"><i class="bi bi-people-fill"></i> 4 Teams</span>
+          <span class="pool-team-count"><i class="bi bi-people-fill"></i> 6 Teams</span>
         </div>
         <ul class="pool-team-list">
           <li><i class="bi bi-shield-fill"></i> Team D1</li>
           <li><i class="bi bi-shield-fill"></i> Team D2</li>
           <li><i class="bi bi-shield-fill"></i> Team D3</li>
           <li><i class="bi bi-shield-fill"></i> Team D4</li>
+          <li><i class="bi bi-shield-fill"></i> Team D5</li>
+          <li><i class="bi bi-shield-fill"></i> Team D6</li>
         </ul>
       </div>
 
@@ -219,6 +221,8 @@
             <option value="Team D2">Team D2</option>
             <option value="Team D3">Team D3</option>
             <option value="Team D4">Team D4</option>
+            <option value="Team D5">Team D5</option>
+            <option value="Team D6">Team D6</option>
           </optgroup>
         </select>
       </div>
@@ -597,85 +601,9 @@
 
       <!-- 08:30 – 09:30 -->
       <div class="matches-grid-2col">
-        <div class="match-card pool-d" data-teams="Team D1|Team D2">
-          <div class="match-header">
-            <span class="match-badge">Match 19</span>
-            <span class="match-ground"><i class="bi bi-geo-alt"></i> Ground 1</span>
-            <span class="match-date"><i class="bi bi-calendar-event"></i> 31 May 2026</span>
-          </div>
-          <div class="match-vs-row">
-            <span class="match-team">Team D1</span>
-            <span class="match-vs-badge">VS</span>
-            <span class="match-team right">Team D2</span>
-          </div>
-          <div class="match-footer">
-            <span class="match-time"><i class="bi bi-clock"></i> 8:30 am &ndash; 9:30 am</span>
-            <span class="tag-ground tag-ground-1"><i class="bi bi-geo-alt-fill"></i> Ground 1</span>
-            <span class="match-pool-tag tag-d">Pool D</span>
-          </div>
-        </div>
-        <div class="match-card pool-d" data-teams="Team D3|Team D4">
-          <div class="match-header">
-            <span class="match-badge">Match 20</span>
-            <span class="match-ground"><i class="bi bi-geo-alt"></i> Ground 2</span>
-            <span class="match-date"><i class="bi bi-calendar-event"></i> 31 May 2026</span>
-          </div>
-          <div class="match-vs-row">
-            <span class="match-team">Team D3</span>
-            <span class="match-vs-badge">VS</span>
-            <span class="match-team right">Team D4</span>
-          </div>
-          <div class="match-footer">
-            <span class="match-time"><i class="bi bi-clock"></i> 8:30 am &ndash; 9:30 am</span>
-            <span class="tag-ground tag-ground-2"><i class="bi bi-geo-alt-fill"></i> Ground 2</span>
-            <span class="match-pool-tag tag-d">Pool D</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- 09:30 – 10:30 -->
-      <div class="matches-grid-2col">
-        <div class="match-card pool-d" data-teams="Team D1|Team D3">
-          <div class="match-header">
-            <span class="match-badge">Match 21</span>
-            <span class="match-ground"><i class="bi bi-geo-alt"></i> Ground 1</span>
-            <span class="match-date"><i class="bi bi-calendar-event"></i> 31 May 2026</span>
-          </div>
-          <div class="match-vs-row">
-            <span class="match-team">Team D1</span>
-            <span class="match-vs-badge">VS</span>
-            <span class="match-team right">Team D3</span>
-          </div>
-          <div class="match-footer">
-            <span class="match-time"><i class="bi bi-clock"></i> 9:30 am &ndash; 10:30 am</span>
-            <span class="tag-ground tag-ground-1"><i class="bi bi-geo-alt-fill"></i> Ground 1</span>
-            <span class="match-pool-tag tag-d">Pool D</span>
-          </div>
-        </div>
-        <div class="match-card pool-d" data-teams="Team D2|Team D4">
-          <div class="match-header">
-            <span class="match-badge">Match 22</span>
-            <span class="match-ground"><i class="bi bi-geo-alt"></i> Ground 2</span>
-            <span class="match-date"><i class="bi bi-calendar-event"></i> 31 May 2026</span>
-          </div>
-          <div class="match-vs-row">
-            <span class="match-team">Team D2</span>
-            <span class="match-vs-badge">VS</span>
-            <span class="match-team right">Team D4</span>
-          </div>
-          <div class="match-footer">
-            <span class="match-time"><i class="bi bi-clock"></i> 9:30 am &ndash; 10:30 am</span>
-            <span class="tag-ground tag-ground-2"><i class="bi bi-geo-alt-fill"></i> Ground 2</span>
-            <span class="match-pool-tag tag-d">Pool D</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- 10:30 – 11:30 -->
-      <div class="matches-grid-2col">
         <div class="match-card pool-c" data-teams="Team C1|Team C4">
           <div class="match-header">
-            <span class="match-badge">Match 23</span>
+            <span class="match-badge">Match 19</span>
             <span class="match-ground"><i class="bi bi-geo-alt"></i> Ground 1</span>
             <span class="match-date"><i class="bi bi-calendar-event"></i> 31 May 2026</span>
           </div>
@@ -685,19 +613,95 @@
             <span class="match-team right">Team C4</span>
           </div>
           <div class="match-footer">
-            <span class="match-time"><i class="bi bi-clock"></i> 10:30 am &ndash; 11:30 am</span>
+            <span class="match-time"><i class="bi bi-clock"></i> 8:30 am &ndash; 9:30 am</span>
             <span class="tag-ground tag-ground-1"><i class="bi bi-geo-alt-fill"></i> Ground 1</span>
             <span class="match-pool-tag tag-c">Pool C</span>
           </div>
         </div>
         <div class="match-card pool-c" data-teams="Team C2|Team C5">
           <div class="match-header">
-            <span class="match-badge">Match 24</span>
+            <span class="match-badge">Match 20</span>
             <span class="match-ground"><i class="bi bi-geo-alt"></i> Ground 2</span>
             <span class="match-date"><i class="bi bi-calendar-event"></i> 31 May 2026</span>
           </div>
           <div class="match-vs-row">
             <span class="match-team">Team C2</span>
+            <span class="match-vs-badge">VS</span>
+            <span class="match-team right">Team C5</span>
+          </div>
+          <div class="match-footer">
+            <span class="match-time"><i class="bi bi-clock"></i> 8:30 am &ndash; 9:30 am</span>
+            <span class="tag-ground tag-ground-2"><i class="bi bi-geo-alt-fill"></i> Ground 2</span>
+            <span class="match-pool-tag tag-c">Pool C</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 09:30 – 10:30 -->
+      <div class="matches-grid-2col">
+        <div class="match-card pool-c" data-teams="Team C1|Team C6">
+          <div class="match-header">
+            <span class="match-badge">Match 21</span>
+            <span class="match-ground"><i class="bi bi-geo-alt"></i> Ground 1</span>
+            <span class="match-date"><i class="bi bi-calendar-event"></i> 31 May 2026</span>
+          </div>
+          <div class="match-vs-row">
+            <span class="match-team">Team C1</span>
+            <span class="match-vs-badge">VS</span>
+            <span class="match-team right">Team C6</span>
+          </div>
+          <div class="match-footer">
+            <span class="match-time"><i class="bi bi-clock"></i> 9:30 am &ndash; 10:30 am</span>
+            <span class="tag-ground tag-ground-1"><i class="bi bi-geo-alt-fill"></i> Ground 1</span>
+            <span class="match-pool-tag tag-c">Pool C</span>
+          </div>
+        </div>
+        <div class="match-card pool-c" data-teams="Team C3|Team C4">
+          <div class="match-header">
+            <span class="match-badge">Match 22</span>
+            <span class="match-ground"><i class="bi bi-geo-alt"></i> Ground 2</span>
+            <span class="match-date"><i class="bi bi-calendar-event"></i> 31 May 2026</span>
+          </div>
+          <div class="match-vs-row">
+            <span class="match-team">Team C3</span>
+            <span class="match-vs-badge">VS</span>
+            <span class="match-team right">Team C4</span>
+          </div>
+          <div class="match-footer">
+            <span class="match-time"><i class="bi bi-clock"></i> 9:30 am &ndash; 10:30 am</span>
+            <span class="tag-ground tag-ground-2"><i class="bi bi-geo-alt-fill"></i> Ground 2</span>
+            <span class="match-pool-tag tag-c">Pool C</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 10:30 – 11:30 -->
+      <div class="matches-grid-2col">
+        <div class="match-card pool-c" data-teams="Team C2|Team C6">
+          <div class="match-header">
+            <span class="match-badge">Match 23</span>
+            <span class="match-ground"><i class="bi bi-geo-alt"></i> Ground 1</span>
+            <span class="match-date"><i class="bi bi-calendar-event"></i> 31 May 2026</span>
+          </div>
+          <div class="match-vs-row">
+            <span class="match-team">Team C2</span>
+            <span class="match-vs-badge">VS</span>
+            <span class="match-team right">Team C6</span>
+          </div>
+          <div class="match-footer">
+            <span class="match-time"><i class="bi bi-clock"></i> 10:30 am &ndash; 11:30 am</span>
+            <span class="tag-ground tag-ground-1"><i class="bi bi-geo-alt-fill"></i> Ground 1</span>
+            <span class="match-pool-tag tag-c">Pool C</span>
+          </div>
+        </div>
+        <div class="match-card pool-c" data-teams="Team C3|Team C5">
+          <div class="match-header">
+            <span class="match-badge">Match 24</span>
+            <span class="match-ground"><i class="bi bi-geo-alt"></i> Ground 2</span>
+            <span class="match-date"><i class="bi bi-calendar-event"></i> 31 May 2026</span>
+          </div>
+          <div class="match-vs-row">
+            <span class="match-team">Team C3</span>
             <span class="match-vs-badge">VS</span>
             <span class="match-team right">Team C5</span>
           </div>
@@ -711,9 +715,85 @@
 
       <!-- 11:30 – 12:30 -->
       <div class="matches-grid-2col">
-        <div class="match-card pool-d" data-teams="Team D1|Team D4">
+        <div class="match-card pool-c" data-teams="Team C1|Team C5">
           <div class="match-header">
             <span class="match-badge">Match 25</span>
+            <span class="match-ground"><i class="bi bi-geo-alt"></i> Ground 1</span>
+            <span class="match-date"><i class="bi bi-calendar-event"></i> 31 May 2026</span>
+          </div>
+          <div class="match-vs-row">
+            <span class="match-team">Team C1</span>
+            <span class="match-vs-badge">VS</span>
+            <span class="match-team right">Team C5</span>
+          </div>
+          <div class="match-footer">
+            <span class="match-time"><i class="bi bi-clock"></i> 11:30 am &ndash; 12:30 pm</span>
+            <span class="tag-ground tag-ground-1"><i class="bi bi-geo-alt-fill"></i> Ground 1</span>
+            <span class="match-pool-tag tag-c">Pool C</span>
+          </div>
+        </div>
+        <div class="match-card pool-c" data-teams="Team C2|Team C4">
+          <div class="match-header">
+            <span class="match-badge">Match 26</span>
+            <span class="match-ground"><i class="bi bi-geo-alt"></i> Ground 2</span>
+            <span class="match-date"><i class="bi bi-calendar-event"></i> 31 May 2026</span>
+          </div>
+          <div class="match-vs-row">
+            <span class="match-team">Team C2</span>
+            <span class="match-vs-badge">VS</span>
+            <span class="match-team right">Team C4</span>
+          </div>
+          <div class="match-footer">
+            <span class="match-time"><i class="bi bi-clock"></i> 11:30 am &ndash; 12:30 pm</span>
+            <span class="tag-ground tag-ground-2"><i class="bi bi-geo-alt-fill"></i> Ground 2</span>
+            <span class="match-pool-tag tag-c">Pool C</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 12:30 – 13:30 -->
+      <div class="matches-grid-2col">
+        <div class="match-card pool-c" data-teams="Team C3|Team C6">
+          <div class="match-header">
+            <span class="match-badge">Match 27</span>
+            <span class="match-ground"><i class="bi bi-geo-alt"></i> Ground 1</span>
+            <span class="match-date"><i class="bi bi-calendar-event"></i> 31 May 2026</span>
+          </div>
+          <div class="match-vs-row">
+            <span class="match-team">Team C3</span>
+            <span class="match-vs-badge">VS</span>
+            <span class="match-team right">Team C6</span>
+          </div>
+          <div class="match-footer">
+            <span class="match-time"><i class="bi bi-clock"></i> 12:30 pm &ndash; 1:30 pm</span>
+            <span class="tag-ground tag-ground-1"><i class="bi bi-geo-alt-fill"></i> Ground 1</span>
+            <span class="match-pool-tag tag-c">Pool C</span>
+          </div>
+        </div>
+        <div class="match-card pool-d" data-teams="Team D3|Team D6">
+          <div class="match-header">
+            <span class="match-badge">Match 28</span>
+            <span class="match-ground"><i class="bi bi-geo-alt"></i> Ground 2</span>
+            <span class="match-date"><i class="bi bi-calendar-event"></i> 31 May 2026</span>
+          </div>
+          <div class="match-vs-row">
+            <span class="match-team">Team D3</span>
+            <span class="match-vs-badge">VS</span>
+            <span class="match-team right">Team D6</span>
+          </div>
+          <div class="match-footer">
+            <span class="match-time"><i class="bi bi-clock"></i> 12:30 pm &ndash; 1:30 pm</span>
+            <span class="tag-ground tag-ground-2"><i class="bi bi-geo-alt-fill"></i> Ground 2</span>
+            <span class="match-pool-tag tag-d">Pool D</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 13:30 – 14:30 -->
+      <div class="matches-grid-2col">
+        <div class="match-card pool-d" data-teams="Team D1|Team D4">
+          <div class="match-header">
+            <span class="match-badge">Match 29</span>
             <span class="match-ground"><i class="bi bi-geo-alt"></i> Ground 1</span>
             <span class="match-date"><i class="bi bi-calendar-event"></i> 31 May 2026</span>
           </div>
@@ -723,161 +803,140 @@
             <span class="match-team right">Team D4</span>
           </div>
           <div class="match-footer">
-            <span class="match-time"><i class="bi bi-clock"></i> 11:30 am &ndash; 12:30 pm</span>
-            <span class="tag-ground tag-ground-1"><i class="bi bi-geo-alt-fill"></i> Ground 1</span>
-            <span class="match-pool-tag tag-d">Pool D</span>
-          </div>
-        </div>
-        <div class="match-card pool-d" data-teams="Team D2|Team D3">
-          <div class="match-header">
-            <span class="match-badge">Match 26</span>
-            <span class="match-ground"><i class="bi bi-geo-alt"></i> Ground 2</span>
-            <span class="match-date"><i class="bi bi-calendar-event"></i> 31 May 2026</span>
-          </div>
-          <div class="match-vs-row">
-            <span class="match-team">Team D2</span>
-            <span class="match-vs-badge">VS</span>
-            <span class="match-team right">Team D3</span>
-          </div>
-          <div class="match-footer">
-            <span class="match-time"><i class="bi bi-clock"></i> 11:30 am &ndash; 12:30 pm</span>
-            <span class="tag-ground tag-ground-2"><i class="bi bi-geo-alt-fill"></i> Ground 2</span>
-            <span class="match-pool-tag tag-d">Pool D</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- 12:30 – 13:30 -->
-      <div class="matches-grid-2col">
-        <div class="match-card pool-c" data-teams="Team C1|Team C6">
-          <div class="match-header">
-            <span class="match-badge">Match 27</span>
-            <span class="match-ground"><i class="bi bi-geo-alt"></i> Ground 1</span>
-            <span class="match-date"><i class="bi bi-calendar-event"></i> 31 May 2026</span>
-          </div>
-          <div class="match-vs-row">
-            <span class="match-team">Team C1</span>
-            <span class="match-vs-badge">VS</span>
-            <span class="match-team right">Team C6</span>
-          </div>
-          <div class="match-footer">
-            <span class="match-time"><i class="bi bi-clock"></i> 12:30 pm &ndash; 1:30 pm</span>
-            <span class="tag-ground tag-ground-1"><i class="bi bi-geo-alt-fill"></i> Ground 1</span>
-            <span class="match-pool-tag tag-c">Pool C</span>
-          </div>
-        </div>
-        <div class="match-card pool-c" data-teams="Team C3|Team C4">
-          <div class="match-header">
-            <span class="match-badge">Match 28</span>
-            <span class="match-ground"><i class="bi bi-geo-alt"></i> Ground 2</span>
-            <span class="match-date"><i class="bi bi-calendar-event"></i> 31 May 2026</span>
-          </div>
-          <div class="match-vs-row">
-            <span class="match-team">Team C3</span>
-            <span class="match-vs-badge">VS</span>
-            <span class="match-team right">Team C4</span>
-          </div>
-          <div class="match-footer">
-            <span class="match-time"><i class="bi bi-clock"></i> 12:30 pm &ndash; 1:30 pm</span>
-            <span class="tag-ground tag-ground-2"><i class="bi bi-geo-alt-fill"></i> Ground 2</span>
-            <span class="match-pool-tag tag-c">Pool C</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- 13:30 – 14:30 -->
-      <div class="matches-grid-2col">
-        <div class="match-card pool-c" data-teams="Team C1|Team C5">
-          <div class="match-header">
-            <span class="match-badge">Match 29</span>
-            <span class="match-ground"><i class="bi bi-geo-alt"></i> Ground 1</span>
-            <span class="match-date"><i class="bi bi-calendar-event"></i> 31 May 2026</span>
-          </div>
-          <div class="match-vs-row">
-            <span class="match-team">Team C1</span>
-            <span class="match-vs-badge">VS</span>
-            <span class="match-team right">Team C5</span>
-          </div>
-          <div class="match-footer">
             <span class="match-time"><i class="bi bi-clock"></i> 1:30 pm &ndash; 2:30 pm</span>
             <span class="tag-ground tag-ground-1"><i class="bi bi-geo-alt-fill"></i> Ground 1</span>
-            <span class="match-pool-tag tag-c">Pool C</span>
+            <span class="match-pool-tag tag-d">Pool D</span>
           </div>
         </div>
-        <div class="match-card pool-c" data-teams="Team C2|Team C4">
+        <div class="match-card pool-d" data-teams="Team D2|Team D5">
           <div class="match-header">
             <span class="match-badge">Match 30</span>
             <span class="match-ground"><i class="bi bi-geo-alt"></i> Ground 2</span>
             <span class="match-date"><i class="bi bi-calendar-event"></i> 31 May 2026</span>
           </div>
           <div class="match-vs-row">
-            <span class="match-team">Team C2</span>
+            <span class="match-team">Team D2</span>
             <span class="match-vs-badge">VS</span>
-            <span class="match-team right">Team C4</span>
+            <span class="match-team right">Team D5</span>
           </div>
           <div class="match-footer">
             <span class="match-time"><i class="bi bi-clock"></i> 1:30 pm &ndash; 2:30 pm</span>
             <span class="tag-ground tag-ground-2"><i class="bi bi-geo-alt-fill"></i> Ground 2</span>
-            <span class="match-pool-tag tag-c">Pool C</span>
+            <span class="match-pool-tag tag-d">Pool D</span>
           </div>
         </div>
       </div>
 
       <!-- 14:30 – 15:30 -->
       <div class="matches-grid-2col">
-        <div class="match-card pool-c" data-teams="Team C2|Team C6">
+        <div class="match-card pool-d" data-teams="Team D1|Team D6">
           <div class="match-header">
             <span class="match-badge">Match 31</span>
             <span class="match-ground"><i class="bi bi-geo-alt"></i> Ground 1</span>
             <span class="match-date"><i class="bi bi-calendar-event"></i> 31 May 2026</span>
           </div>
           <div class="match-vs-row">
-            <span class="match-team">Team C2</span>
+            <span class="match-team">Team D1</span>
             <span class="match-vs-badge">VS</span>
-            <span class="match-team right">Team C6</span>
+            <span class="match-team right">Team D6</span>
           </div>
           <div class="match-footer">
             <span class="match-time"><i class="bi bi-clock"></i> 2:30 pm &ndash; 3:30 pm</span>
             <span class="tag-ground tag-ground-1"><i class="bi bi-geo-alt-fill"></i> Ground 1</span>
-            <span class="match-pool-tag tag-c">Pool C</span>
+            <span class="match-pool-tag tag-d">Pool D</span>
           </div>
         </div>
-        <div class="match-card pool-c" data-teams="Team C3|Team C5">
+        <div class="match-card pool-d" data-teams="Team D3|Team D4">
           <div class="match-header">
             <span class="match-badge">Match 32</span>
             <span class="match-ground"><i class="bi bi-geo-alt"></i> Ground 2</span>
             <span class="match-date"><i class="bi bi-calendar-event"></i> 31 May 2026</span>
           </div>
           <div class="match-vs-row">
-            <span class="match-team">Team C3</span>
+            <span class="match-team">Team D3</span>
             <span class="match-vs-badge">VS</span>
-            <span class="match-team right">Team C5</span>
+            <span class="match-team right">Team D4</span>
           </div>
           <div class="match-footer">
             <span class="match-time"><i class="bi bi-clock"></i> 2:30 pm &ndash; 3:30 pm</span>
             <span class="tag-ground tag-ground-2"><i class="bi bi-geo-alt-fill"></i> Ground 2</span>
-            <span class="match-pool-tag tag-c">Pool C</span>
+            <span class="match-pool-tag tag-d">Pool D</span>
           </div>
         </div>
       </div>
 
       <!-- 15:30 – 16:30 -->
       <div class="matches-grid-2col">
-        <div class="match-card pool-c" data-teams="Team C3|Team C6">
+        <div class="match-card pool-d" data-teams="Team D2|Team D6">
           <div class="match-header">
             <span class="match-badge">Match 33</span>
             <span class="match-ground"><i class="bi bi-geo-alt"></i> Ground 1</span>
             <span class="match-date"><i class="bi bi-calendar-event"></i> 31 May 2026</span>
           </div>
           <div class="match-vs-row">
-            <span class="match-team">Team C3</span>
+            <span class="match-team">Team D2</span>
             <span class="match-vs-badge">VS</span>
-            <span class="match-team right">Team C6</span>
+            <span class="match-team right">Team D6</span>
           </div>
           <div class="match-footer">
             <span class="match-time"><i class="bi bi-clock"></i> 3:30 pm &ndash; 4:30 pm</span>
             <span class="tag-ground tag-ground-1"><i class="bi bi-geo-alt-fill"></i> Ground 1</span>
-            <span class="match-pool-tag tag-c">Pool C</span>
+            <span class="match-pool-tag tag-d">Pool D</span>
+          </div>
+        </div>
+        <div class="match-card pool-d" data-teams="Team D3|Team D5">
+          <div class="match-header">
+            <span class="match-badge">Match 34</span>
+            <span class="match-ground"><i class="bi bi-geo-alt"></i> Ground 2</span>
+            <span class="match-date"><i class="bi bi-calendar-event"></i> 31 May 2026</span>
+          </div>
+          <div class="match-vs-row">
+            <span class="match-team">Team D3</span>
+            <span class="match-vs-badge">VS</span>
+            <span class="match-team right">Team D5</span>
+          </div>
+          <div class="match-footer">
+            <span class="match-time"><i class="bi bi-clock"></i> 3:30 pm &ndash; 4:30 pm</span>
+            <span class="tag-ground tag-ground-2"><i class="bi bi-geo-alt-fill"></i> Ground 2</span>
+            <span class="match-pool-tag tag-d">Pool D</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 16:30 – 17:30 -->
+      <div class="matches-grid-2col">
+        <div class="match-card pool-d" data-teams="Team D1|Team D5">
+          <div class="match-header">
+            <span class="match-badge">Match 35</span>
+            <span class="match-ground"><i class="bi bi-geo-alt"></i> Ground 1</span>
+            <span class="match-date"><i class="bi bi-calendar-event"></i> 31 May 2026</span>
+          </div>
+          <div class="match-vs-row">
+            <span class="match-team">Team D1</span>
+            <span class="match-vs-badge">VS</span>
+            <span class="match-team right">Team D5</span>
+          </div>
+          <div class="match-footer">
+            <span class="match-time"><i class="bi bi-clock"></i> 4:30 pm &ndash; 5:30 pm</span>
+            <span class="tag-ground tag-ground-1"><i class="bi bi-geo-alt-fill"></i> Ground 1</span>
+            <span class="match-pool-tag tag-d">Pool D</span>
+          </div>
+        </div>
+        <div class="match-card pool-d" data-teams="Team D2|Team D4">
+          <div class="match-header">
+            <span class="match-badge">Match 36</span>
+            <span class="match-ground"><i class="bi bi-geo-alt"></i> Ground 2</span>
+            <span class="match-date"><i class="bi bi-calendar-event"></i> 31 May 2026</span>
+          </div>
+          <div class="match-vs-row">
+            <span class="match-team">Team D2</span>
+            <span class="match-vs-badge">VS</span>
+            <span class="match-team right">Team D4</span>
+          </div>
+          <div class="match-footer">
+            <span class="match-time"><i class="bi bi-clock"></i> 4:30 pm &ndash; 5:30 pm</span>
+            <span class="tag-ground tag-ground-2"><i class="bi bi-geo-alt-fill"></i> Ground 2</span>
+            <span class="match-pool-tag tag-d">Pool D</span>
           </div>
         </div>
       </div>
