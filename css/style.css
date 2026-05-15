@@ -558,6 +558,23 @@ body::after {
 }
 .hero-badge i { color: var(--accent); }
 
+/* ── Parking badges row ── */
+.hero-badges-parking {
+  margin-top: 10px;
+}
+.hero-badge-parking {
+  background: rgba(34,217,138,0.12);
+  border-color: rgba(34,217,138,0.35);
+  color: var(--text);
+  box-shadow: var(--shadow-sm), 0 0 14px rgba(34,217,138,0.12);
+}
+.hero-badge-parking:hover {
+  background: rgba(34,217,138,0.22);
+  border-color: rgba(34,217,138,0.6);
+  box-shadow: var(--shadow), 0 0 20px rgba(34,217,138,0.22);
+}
+.hero-badge-parking i { color: var(--green); }
+
 /* ── Hero "22 Teams" hover popover ── */
 .hero-badge-teams-wrap {
   position: relative;
@@ -838,6 +855,112 @@ body::after {
   border-radius: 10px;
   object-fit: cover;
   background: #fff;
+}
+
+/* ════════════════════════════════════════
+   PARKING BANNER
+   ════════════════════════════════════════ */
+.parking-banner {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  background: linear-gradient(135deg, rgba(5,40,20,0.75) 0%, rgba(8,30,10,0.85) 50%, rgba(10,30,5,0.80) 100%);
+  border: 1px solid rgba(34,217,138,0.3);
+  border-radius: var(--radius);
+  padding: 20px 28px;
+  margin: 18px auto 32px;
+  max-width: 680px;
+  backdrop-filter: blur(12px);
+  box-shadow: var(--shadow), 0 0 30px rgba(34,217,138,0.10);
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+.parking-banner:hover {
+  border-color: rgba(34,217,138,0.55);
+  box-shadow: var(--shadow-lg), 0 0 40px rgba(34,217,138,0.18);
+}
+.parking-banner-icon {
+  font-size: 2.4em;
+  color: var(--green);
+  flex-shrink: 0;
+  line-height: 1;
+  filter: drop-shadow(0 0 10px rgba(34,217,138,0.55));
+}
+.parking-banner-content {
+  flex: 1;
+  min-width: 0;
+}
+.parking-banner-label {
+  font-size: 0.65em;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--green);
+  opacity: 0.85;
+  margin-bottom: 2px;
+}
+.parking-banner-title {
+  font-size: 1.05em;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: 0.5px;
+  line-height: 1.2;
+}
+.parking-banner-sub {
+  font-size: 0.78em;
+  color: var(--text-dim);
+  font-weight: 500;
+  margin-top: 3px;
+}
+.parking-banner-actions {
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+.parking-banner-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 0.82em;
+  font-weight: 700;
+  padding: 9px 18px;
+  border-radius: var(--radius-pill);
+  white-space: nowrap;
+  text-decoration: none;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.parking-banner-btn:hover {
+  transform: translateY(-2px);
+  text-decoration: none;
+  color: #fff;
+}
+.parking-banner-btn-map {
+  background: linear-gradient(135deg, #0e7a50, #22d98a);
+  color: #fff;
+  box-shadow: 0 4px 16px rgba(34,217,138,0.35);
+}
+.parking-banner-btn-map:hover {
+  box-shadow: 0 6px 24px rgba(34,217,138,0.55);
+}
+.parking-banner-btn-rules {
+  background: linear-gradient(135deg, var(--primary), #5b8af0);
+  color: #fff;
+  box-shadow: 0 4px 16px var(--primary-glow);
+}
+.parking-banner-btn-rules:hover {
+  box-shadow: 0 6px 24px var(--primary-glow);
+}
+@media (max-width: 600px) {
+  .parking-banner {
+    flex-direction: column;
+    text-align: center;
+    gap: 12px;
+    padding: 18px 20px;
+  }
+  .parking-banner-actions {
+    justify-content: center;
+  }
 }
 
 /* ════════════════════════════════════════
