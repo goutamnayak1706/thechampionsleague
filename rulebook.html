@@ -107,6 +107,11 @@
     <div class="rb-hero-title">The Champions League Rulebook</div>
     <div class="rb-hero-sub">Rules &middot; Format &middot; Scoring &middot; Guidelines &mdash; Everything you need to know</div>
     <img src="images/TCL.jpeg" alt="Champions League" class="rb-hero-img">
+    <div style="margin-top:28px;animation:fadeUp .9s ease both .45s">
+      <button id="pdf-download-btn" onclick="downloadRulebookPDF()" style="display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,var(--accent),#c4001a);color:#fff;border:none;border-radius:var(--radius-pill);padding:12px 28px;font-family:'Poppins',system-ui,sans-serif;font-size:.9em;font-weight:700;letter-spacing:.5px;cursor:pointer;box-shadow:0 4px 20px rgba(232,51,77,.45);transition:transform .25s,box-shadow .25s" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 8px 28px rgba(232,51,77,.6)'" onmouseout="this.style.transform='';this.style.boxShadow='0 4px 20px rgba(232,51,77,.45)'">
+        <i class="bi bi-file-earmark-pdf-fill" style="font-size:1.1em"></i> Download as PDF
+      </button>
+    </div>
   </div>
 
   <div class="main-container">
@@ -614,16 +619,20 @@
       <ol>
         <li>
     <strong>LBW and Leg Byes:</strong><br>
-    The LBW rule is not applicable in this tournament; therefore, leg byes will not be permitted. Deliveries that would otherwise qualify as leg byes will be counted as legal balls but not as dead balls.
+    The LBW rule is not applicable in this tournament; therefore, leg byes will not be permitted. Deliveries that would otherwise qualify as leg byes will be counted as legal balls.
+  </li>
+  <li>
+    <strong>Byes:</strong><br>
+    Byes are allowed , and players can attempt runs on byes.
   </li>
   <li>
     <strong>End Change:</strong><br>
     Only the batsmen will change ends at the completion of each over. Batting will occur from one designated end on each ground throughout the match.
   </li>
   <li>
-    <strong>Run Out on Leg-Byes or Byes:</strong><br>
+    <strong>Run Out on Leg-Byes:</strong><br>
     <strong style="color: rgb(231, 226, 226);">
-  A batsman cannot be run out while attempting a run off a leg-bye or a bye. Any such appeal will be rejected by the umpires, as the ball is considered “no longer in play” in such a case. However stumpings are still possible.
+  A batsman cannot be run out while attempting a run off a leg-bye. Any such appeal will be rejected by the umpires, as the ball is considered “no longer in play” in such a case.
 </strong><br>
 <div style="
     background: #ffdddd;
@@ -634,7 +643,7 @@
     font-weight: bold;
     font-size: 1.1em;
 ">
-  ⚠️ Stumpings shall still remain a valid mode of dismissal on deliveries resulting in byes or leg byes. If, during the course of a bye or leg bye, the striker is out of his/her crease and not attempting a run, and the wicketkeeper puts down the wicket in accordance with the Laws of Cricket, the striker shall be given out stumped. ⚠️ 
+  ⚠️ Stumpings shall still remain a valid mode of dismissal on deliveries resulting in byes. If, during the course of a bye the striker is out of his/her crease and not attempting a run, and the wicketkeeper puts down the wicket in accordance with the Laws of Cricket, the striker shall be given out stumped. ⚠️ 
 </div>
   </li>
   <h3>Special Rules for Playing on the Hockey Ground</h3>
@@ -774,5 +783,35 @@
   </footer>
 
   <script src="js/main.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <script>
+    function downloadRulebookPDF() {
+      const btn = document.getElementById('pdf-download-btn');
+      const originalText = btn.innerHTML;
+      btn.innerHTML = '<i class="bi bi-hourglass-split"></i> Generating PDF…';
+      btn.disabled = true;
+
+      const element = document.querySelector('.main-container');
+      const opt = {
+        margin:       [10, 8, 10, 8],
+        filename:     'TCL-2026-Rulebook.pdf',
+        image:        { type: 'jpeg', quality: 0.97 },
+        html2canvas:  {
+          scale: 2,
+          useCORS: true,
+          backgroundColor: '#070c1a',
+          scrollY: 0,
+          windowWidth: 1100
+        },
+        jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' },
+        pagebreak:    { mode: ['avoid-all', 'css', 'legacy'] }
+      };
+
+      html2pdf().set(opt).from(element).save().then(function() {
+        btn.innerHTML = originalText;
+        btn.disabled = false;
+      });
+    }
+  </script>
 </body>
 </html>
