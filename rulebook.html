@@ -59,6 +59,48 @@
     .rb-contact a{color:#7aa0f5;text-decoration:none;font-weight:700}
     .rb-contact a:hover{color:var(--gold)}
     @media(max-width:768px){.rb-section{padding:22px 16px}.rb-toc{padding:20px 16px}.rb-table th,.rb-table td{padding:9px 10px;font-size:.86em}}
+    @media print{
+      *{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}
+      body{background:#fff!important;color:#111!important;margin:0;padding:0}
+      .navbar,.mobile-menu,.site-footer,#pdf-download-btn,.rb-hero-eyebrow,.rb-hero-img{display:none!important}
+      .rb-hero{padding:20px 0 10px;background:#fff!important}
+      .rb-hero::before{display:none}
+      .rb-hero-title{font-size:2em!important;background:none!important;-webkit-text-fill-color:#1a1a2e!important;color:#1a1a2e!important}
+      .rb-hero-sub{color:#444!important}
+      .main-container{max-width:100%!important;padding:0 16px!important;margin:0 auto!important}
+      .rb-divider{background:#ccc!important}
+      .rb-toc{background:#f5f7ff!important;border:1px solid #c0cce8!important;backdrop-filter:none!important;box-shadow:none!important;page-break-inside:avoid}
+      .rb-toc-title{color:#1a3a8f!important}
+      .rb-toc ol{color:#222!important}
+      .rb-toc a{color:#1a3a8f!important}
+      .rb-section{background:#fff!important;border:1px solid #d0d8ee!important;backdrop-filter:none!important;box-shadow:none!important;padding:20px 24px!important;margin-bottom:16px!important;page-break-inside:avoid}
+      .rb-section h2{color:#1a1a2e!important;border-bottom-color:#ccc!important}
+      .rb-section-num{background:#1a3a8f!important;color:#fff!important;box-shadow:none!important}
+      .rb-section h3{color:#1a3a8f!important}
+      .rb-section h3::before{background:#1a3a8f!important}
+      .rb-section p,.rb-section ol,.rb-section ul,.rb-section li{color:#222!important}
+      .rb-section li strong{color:#000!important}
+      .rb-section a{color:#1a3a8f!important}
+      .rb-note{backdrop-filter:none!important;page-break-inside:avoid}
+      .rb-note-info{background:#e8f0ff!important;border-left-color:#1a3a8f!important;color:#1a3a8f!important}
+      .rb-note-info i{color:#1a3a8f!important}
+      .rb-note-warning{background:#fffbe6!important;border-left-color:#c89000!important;color:#7a5800!important}
+      .rb-note-warning i{color:#c89000!important}
+      .rb-note-danger{background:#fff0f0!important;border-left-color:#cc2233!important;color:#8a0011!important}
+      .rb-note-danger i{color:#cc2233!important}
+      .rb-note-success{background:#f0fff8!important;border-left-color:#008855!important;color:#004422!important}
+      .rb-note-success i{color:#008855!important}
+      .rb-table-wrap{border-color:#c0cce8!important;page-break-inside:avoid}
+      .rb-table{color:#111!important}
+      .rb-table th{background:#1a3a8f!important;color:#fff!important}
+      .rb-table td{background:#fff!important;border-bottom-color:#ddd!important;color:#111!important}
+      .rb-table tr:nth-child(even) td{background:#f0f4ff!important}
+      .rb-stage-badge{background:#fffbe6!important;border-color:#c89000!important;color:#7a5800!important}
+      .rb-contact{background:#f5f7ff!important;border-color:#c0cce8!important}
+      .rb-contact-title{color:#1a3a8f!important}
+      .rb-contact p{color:#222!important}
+      h2,h3{page-break-after:avoid}
+    }
   </style>
 </head>
 <body>
@@ -174,7 +216,7 @@
 
     <!-- A. TERMS AND CONDITIONS -->
     <div class="rb-section reveal" id="terms-and-conditions">
-      <h2><span class="rb-section-num">A</span> Terms and Conditions</h2>
+      <h2><span class="rb-section-num">A</span> Terms and Conditions v2</h2>
       <ol>
         <li>Unless specified otherwise in this document, all ICC cricket rules shall be followed. The rules and guidelines established by the TCL committee are considered final, and any modifications will be made solely at the committee's discretion.</li>
         <li>The decisions made by the umpire(s) shall be considered final. Umpires are entrusted with upholding the spirit of the game and may ask a player to leave the match in cases of inappropriate conduct. For any necessary clarifications, only the captains of the respective teams may approach the umpires.</li>
@@ -783,44 +825,9 @@
   </footer>
 
   <script src="js/main.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
   <script>
     function downloadRulebookPDF() {
-      const btn = document.getElementById('pdf-download-btn');
-      const originalText = btn.innerHTML;
-      btn.innerHTML = '<i class="bi bi-hourglass-split"></i> Generating PDF…';
-      btn.disabled = true;
-
-      const element = document.querySelector('.main-container');
-      const opt = {
-        margin:       [10, 10, 10, 10],
-        filename:     'TCL-2026-Rulebook.pdf',
-        image:        { type: 'jpeg', quality: 0.97 },
-        html2canvas:  {
-          scale: 2,
-          useCORS: true,
-          backgroundColor: '#070c1a',
-          scrollY: 0,
-          windowWidth: 794,
-          onclone: function(doc) {
-            doc.querySelectorAll("*").forEach(function(el) {
-              var s = el.style;
-              s.backdropFilter = "none";
-              s.webkitBackdropFilter = "none";
-              if (window.getComputedStyle(el).webkitTextFillColor === "transparent") {
-                s.webkitTextFillColor = window.getComputedStyle(el).color || "#ffffff";
-              }
-            });
-          }
-        },
-        jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' },
-        pagebreak:    { mode: ['avoid-all', 'css', 'legacy'] }
-      };
-
-      html2pdf().set(opt).from(element).save().then(function() {
-        btn.innerHTML = originalText;
-        btn.disabled = false;
-      });
+      window.print();
     }
   </script>
 </body>
