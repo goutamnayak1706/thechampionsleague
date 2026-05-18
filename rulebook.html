@@ -801,7 +801,17 @@
           useCORS: true,
           backgroundColor: '#070c1a',
           scrollY: 0,
-          windowWidth: 794
+          windowWidth: 794,
+          onclone: function(doc) {
+            doc.querySelectorAll("*").forEach(function(el) {
+              var s = el.style;
+              s.backdropFilter = "none";
+              s.webkitBackdropFilter = "none";
+              if (window.getComputedStyle(el).webkitTextFillColor === "transparent") {
+                s.webkitTextFillColor = window.getComputedStyle(el).color || "#ffffff";
+              }
+            });
+          }
         },
         jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' },
         pagebreak:    { mode: ['avoid-all', 'css', 'legacy'] }
