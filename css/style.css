@@ -700,15 +700,15 @@ body::after {
    COUNTDOWN TIMER
    ════════════════════════════════════════ */
 .countdown-wrap {
-  margin: 36px auto;
-  max-width: 560px;
-  padding: 0 16px;
+  margin: 18px auto;
+  max-width: 480px;
+  padding: 0 8px;
   animation: fadeUp 0.8s ease both 0.5s;
 }
 .countdown-box {
   position: relative;
-  border-radius: 24px;
-  padding: 28px 32px 24px;
+  border-radius: 14px;
+  padding: 14px 16px 12px;
   overflow: hidden;
   background: linear-gradient(135deg, #0b1330 0%, #120826 50%, #1a0810 100%);
   border: 1px solid var(--glass-border);
@@ -742,22 +742,22 @@ body::after {
   text-transform: uppercase;
   color: var(--gold);
   opacity: 0.8;
-  margin-bottom: 18px;
+  margin-bottom: 9px;
 }
 .countdown-digits {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  gap: 10px;
-  flex-wrap: wrap;
+  gap: 5px;
+  flex-wrap: nowrap;
 }
 .cd-unit {
   text-align: center;
-  min-width: 74px;
+  min-width: 38px;
   background: rgba(255,255,255,0.05);
   border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 16px;
-  padding: 14px 10px 10px;
+  border-radius: 9px;
+  padding: 7px 6px 5px;
   position: relative;
   overflow: hidden;
 }
@@ -769,7 +769,7 @@ body::after {
   background: rgba(0,0,0,0.4);
 }
 .cd-num {
-  font-size: 2.8em;
+  font-size: 1.4em;
   font-weight: 800;
   line-height: 1;
   display: block;
@@ -788,15 +788,15 @@ body::after {
   color: var(--gold);
 }
 .cd-sep {
-  font-size: 2.4em;
+  font-size: 1.2em;
   font-weight: 800;
   opacity: 0.25;
   line-height: 1;
-  padding-top: 14px;
+  padding-top: 7px;
   color: var(--gold);
 }
 .countdown-target {
-  margin-top: 16px;
+  margin-top: 8px;
   font-size: 0.75em;
   opacity: 0.5;
   font-weight: 600;
@@ -2143,9 +2143,9 @@ body::after {
   .matches-grid-single { grid-template-columns: 1fr; }
   .hero-title { font-size: clamp(1.8em, 7vw, 2.8em); }
   .section-heading { font-size: 1.1em; padding: 14px 22px; }
-  .countdown-box { padding: 20px 16px 16px; }
-  .cd-unit { min-width: 58px; }
-  .cd-num { font-size: 2.2em; }
+  .countdown-box { padding: 12px 12px 10px; }
+  .cd-unit { min-width: 34px; }
+  .cd-num { font-size: 1.2em; }
   .navbar { padding: 0 18px; }
 }
 @media (max-width: 480px) {
