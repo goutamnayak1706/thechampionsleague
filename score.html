@@ -65,6 +65,8 @@
     .noball-strip.visible{display:flex}
     .wide-strip{display:none;align-items:center;justify-content:center;gap:10px;background:linear-gradient(135deg,rgba(255,160,40,.22),rgba(247,100,20,.15));border:1px solid rgba(255,160,40,.5);border-radius:var(--radius-sm);padding:10px 18px;margin-bottom:12px;font-size:.85em;font-weight:700;color:#ffaa40;animation:electricPulse 1s ease infinite}
     .wide-strip.visible{display:flex}
+    .wicket-strip{display:none;align-items:center;justify-content:center;gap:10px;background:linear-gradient(135deg,rgba(232,51,77,.28),rgba(180,20,50,.15));border:1px solid rgba(232,51,77,.6);border-radius:var(--radius-sm);padding:10px 18px;margin-bottom:12px;font-size:.85em;font-weight:700;color:var(--accent);animation:electricPulse 1s ease infinite}
+    .wicket-strip.visible{display:flex}
     .wide-ans-btn{margin-left:12px;padding:9px 24px;border-radius:var(--radius-pill);font-family:'Poppins',sans-serif;font-size:.95em;font-weight:800;cursor:pointer;transition:all var(--transition)}
     .wide-ans-btn.yes{border:1px solid rgba(34,217,138,.7);background:rgba(34,217,138,.2);color:var(--green)}
     .wide-ans-btn.yes:hover{background:rgba(34,217,138,.45);box-shadow:0 0 16px rgba(34,217,138,.4)}
@@ -197,6 +199,17 @@
 
   <!-- SETUP SCREEN -->
   <div class="setup-screen" id="setupScreen">
+    <div class="restore-banner" id="restoreBanner" style="display:none;align-items:center;gap:14px;background:linear-gradient(135deg,rgba(247,201,72,.18),rgba(59,107,235,.15));border:1px solid rgba(247,201,72,.4);border-radius:var(--radius-sm);padding:16px 20px;margin-bottom:20px;flex-wrap:wrap">
+      <i class="bi bi-arrow-counterclockwise" style="font-size:1.5em;color:var(--gold);filter:drop-shadow(0 0 8px rgba(247,201,72,.7));flex-shrink:0"></i>
+      <div style="flex:1;min-width:160px">
+        <div style="font-size:.88em;font-weight:800;color:#fff;margin-bottom:2px">Match in progress found!</div>
+        <div style="font-size:.75em;color:var(--text-dim);font-weight:500" id="restoreBannerSub">A previously saved match was detected.</div>
+      </div>
+      <div style="display:flex;gap:8px;flex-shrink:0">
+        <button id="restoreYesBtn" style="padding:9px 18px;border-radius:var(--radius-pill);font-family:'Poppins',sans-serif;font-size:.82em;font-weight:700;cursor:pointer;background:linear-gradient(135deg,var(--gold),#f5a623);color:#111;border:none;box-shadow:0 3px 14px rgba(247,201,72,.4)"><i class="bi bi-play-fill"></i> Resume</button>
+        <button id="restoreNoBtn" style="padding:9px 18px;border-radius:var(--radius-pill);font-family:'Poppins',sans-serif;font-size:.82em;font-weight:700;cursor:pointer;background:rgba(255,255,255,.07);border:1px solid var(--glass-border);color:var(--text-dim)"><i class="bi bi-x-lg"></i> Discard</button>
+      </div>
+    </div>
     <div class="setup-card">
       <div class="setup-card-header">
         <i class="bi bi-cricket setup-icon"></i>
@@ -269,6 +282,13 @@
             <button class="wide-ans-btn yes" id="wideYesBtn"><i class="bi bi-check-lg"></i> Yes</button>
             <button class="wide-ans-btn no" id="wideNoBtn"><i class="bi bi-x-lg"></i> No</button>
           </span>
+        </div>
+        <div class="wicket-strip" id="wicketStrip">
+          <span id="wicketMsgRO" style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;font-size:1.05em;font-weight:800;color:#fff"><i class="bi bi-person-running" style="color:var(--accent)"></i> Is it a Run Out?
+            <button class="wide-ans-btn yes" id="wicketRunOutYesBtn"><i class="bi bi-check-lg"></i> Yes</button>
+            <button class="wide-ans-btn no" id="wicketRunOutNoBtn"><i class="bi bi-x-lg"></i> No</button>
+          </span>
+          <span id="wicketMsgRuns" style="display:none;font-size:1.05em;font-weight:800;color:#fff"><i class="bi bi-123" style="color:var(--accent)"></i> Number of Runs Scored? (tap below)</span>
         </div>
         <div class="innings-banner" id="inningsBanner">
           <i class="bi bi-trophy-fill innings-banner-icon"></i>
@@ -375,6 +395,8 @@
       nbRuns: 0,
       wideStep: 0,
       wideByes: 0,
+      wicketStep: 0,
+      wicketRunoutRuns: 0,
       isTargetMode: false,
       targetRuns: 0,
       inningsOver: false,
@@ -404,6 +426,9 @@
     var wideStrip     = $('wideStrip');
     var wideMsgByes   = $('wideMsgByes');
     var wideMsgWkt    = $('wideMsgWkt');
+    var wicketStrip   = $('wicketStrip');
+    var wicketMsgRO   = $('wicketMsgRO');
+    var wicketMsgRuns = $('wicketMsgRuns');
 
     function finaliseWide(wicketOnWide) {
       pushHistory();
@@ -472,6 +497,22 @@
     $('wideYesBtn').addEventListener('click', function () { finaliseWide(true); });
     $('wideNoBtn').addEventListener('click', function () { finaliseWide(false); });
 
+    $('wicketRunOutYesBtn').addEventListener('click', function () { state.wicketStep = 2; renderAll(); });
+    $('wicketRunOutNoBtn').addEventListener('click', function () { finaliseWicket(0); });
+
+    function finaliseWicket(runsScored) {
+      var ov = state.overs[state.overNo];
+      state.runs += runsScored;
+      state.wickets++;
+      ov.balls.push('W');
+      state.wicketStep = 0; state.wicketRunoutRuns = 0;
+      state.ballNo++;
+      if (state.ballNo > 6) { state.ballNo = 1; state.overNo++; if (state.overNo <= state.maxOvers) { state.overs[state.overNo] = { balls: [], extras: 0 }; } }
+      if (state.wickets >= state.maxWickets || state.overNo > state.maxOvers) state.inningsOver = true;
+      if (state.inningsNo === 2 && state.isTargetMode && state.runs >= state.targetRuns) state.inningsOver = true;
+      renderAll(); showBfx('W');
+    }
+
     addBtnListener('btnDot',  function () { playBall('D'); });
     addBtnListener('btn1',    function () { playBall('1'); });
     addBtnListener('btn2',    function () { playBall('2'); });
@@ -508,6 +549,8 @@
       state.nbRuns      = 0;
       state.wideStep    = 0;
       state.wideByes    = 0;
+      state.wicketStep  = 0;
+      state.wicketRunoutRuns = 0;
       state.inningsOver = false;
       state.inningsNo   = 2;
       state.overs       = [null, { balls: [], extras: 0 }];
@@ -578,10 +621,12 @@
       if (state.wideStep > 0 && (type === 'NB' || type === 'W' || type === 'Wd')) return;
       // Guard: while NB run-out question is showing, block all except run buttons
       if (state.nbStep === 2 && (type === 'NB' || type === 'W' || type === 'Wd')) return;
+      if (state.wicketStep > 0 && (type === 'NB' || type === 'W' || type === 'Wd')) return;
 
+      if (state.wicketStep === 2) { var roRuns = (type === 'D') ? 0 : (parseInt(type)||0); finaliseWicket(roRuns); return; }
+      if (type === 'W') { state.wicketStep = 1; renderAll(); return; }
       var runsScored = 0;
       if (type === 'D') runsScored = 0;
-      else if (type === 'W') runsScored = 0;
       else runsScored = parseInt(type) || 0;
 
       // NB step 1: runs entered — store, move to run-out question (runs already added to score in NB block)
@@ -611,7 +656,6 @@
       }
 
       ov.balls.push(type);
-      if (type === 'W') state.wickets++;
 
       state.ballNo++;
       if (state.ballNo > 6) {
@@ -631,7 +675,7 @@
       }
 
       renderAll();
-      if (type === '4' || type === '6' || type === 'W') showBfx(type);
+      if (type === '4' || type === '6') showBfx(type);
     }
 
     // Undo
@@ -639,7 +683,7 @@
       state.history.push(JSON.stringify({
         runs: state.runs, wickets: state.wickets,
         overNo: state.overNo, ballNo: state.ballNo,
-        isNoBall: state.isNoBall, nbStep: state.nbStep, nbRuns: state.nbRuns, wideStep: state.wideStep, wideByes: state.wideByes, isTargetMode: state.isTargetMode,
+        isNoBall: state.isNoBall, nbStep: state.nbStep, nbRuns: state.nbRuns, wideStep: state.wideStep, wideByes: state.wideByes, wicketStep: state.wicketStep, wicketRunoutRuns: state.wicketRunoutRuns, isTargetMode: state.isTargetMode,
         targetRuns: state.targetRuns, inningsOver: state.inningsOver,
         inningsNo: state.inningsNo,
         firstInningsScore: state.firstInningsScore,
@@ -655,7 +699,7 @@
       var snap = JSON.parse(state.history.pop());
       state.runs = snap.runs; state.wickets = snap.wickets;
       state.overNo = snap.overNo; state.ballNo = snap.ballNo;
-      state.isNoBall = snap.isNoBall; state.nbStep = snap.nbStep; state.nbRuns = snap.nbRuns; state.wideStep = snap.wideStep; state.wideByes = snap.wideByes; state.isTargetMode = snap.isTargetMode;
+      state.isNoBall = snap.isNoBall; state.nbStep = snap.nbStep; state.nbRuns = snap.nbRuns; state.wideStep = snap.wideStep; state.wideByes = snap.wideByes; state.wicketStep = snap.wicketStep||0; state.wicketRunoutRuns = snap.wicketRunoutRuns||0; state.isTargetMode = snap.isTargetMode;
       state.targetRuns = snap.targetRuns; state.inningsOver = snap.inningsOver;
       state.inningsNo = snap.inningsNo;
       state.firstInningsScore = snap.firstInningsScore;
@@ -696,19 +740,16 @@
         nbMsgRO.style.display   = state.nbStep === 2 ? '' : 'none';
       }
       wideStrip.classList.toggle('visible', state.wideStep > 0);
-      if (state.nbStep === 2 || state.wideStep === 2) {
-        // Waiting for Yes/No — disable ALL run buttons
-        if (state.wideStep === 1) { wideMsgByes.style.display = ''; wideMsgWkt.style.display = 'none'; }
-        else if (state.wideStep === 2) { wideMsgByes.style.display = 'none'; wideMsgWkt.style.display = ''; }
-        else { wideMsgByes.style.display = ''; wideMsgWkt.style.display = 'none'; }
+      if (state.wideStep === 2) { wideMsgByes.style.display = 'none'; wideMsgWkt.style.display = ''; } else { wideMsgByes.style.display = ''; wideMsgWkt.style.display = 'none'; }
+      wicketStrip.classList.toggle('visible', state.wicketStep > 0);
+      if (state.wicketStep === 1) { wicketMsgRO.style.display = 'flex'; wicketMsgRuns.style.display = 'none'; } else if (state.wicketStep === 2) { wicketMsgRO.style.display = 'none'; wicketMsgRuns.style.display = ''; }
+      if (state.nbStep === 2 || state.wideStep === 2 || state.wicketStep === 1) {
         setAllRunBtnsDisabled(true);
+      } else if (state.wicketStep === 2) {
+        setRunBtnsDisabled(['btn4', 'btn6', 'btnW', 'btnWide', 'btnNB']);
       } else if (state.wideStep === 1) {
-        wideMsgByes.style.display = '';
-        wideMsgWkt.style.display = 'none';
         setRunBtnsDisabled(['btnW', 'btnWide', 'btnNB']);
       } else {
-        wideMsgByes.style.display = '';
-        wideMsgWkt.style.display = 'none';
         setRunBtnsDisabled((state.wideStep > 0 || state.isNoBall) ? ['btnW', 'btnWide', 'btnNB'] : []);
       }
 
@@ -755,17 +796,12 @@
         setAllRunBtnsDisabled(true);
       } else {
         inningsBanner.classList.remove('visible');
-        if (state.nbStep === 2 || state.wideStep === 2) {
-          setAllRunBtnsDisabled(true);
-        } else {
-          setAllRunBtnsDisabled(false);
-          setRunBtnsDisabled((state.wideStep > 0 || state.isNoBall) ? ['btnW', 'btnWide', 'btnNB'] : []);
-        }
       }
 
       if (state.isTargetMode) updateTargetBar();
 
       renderScoreboard();
+      saveToStorage();
     }
 
     function dotClass(v) {
@@ -861,10 +897,92 @@
         o.className = 'b-overlay';
       }, 780);
     }
-    function resetState() {
+    var STORAGE_KEY = 'tcl_score_state';
+    function saveToStorage() {
+      try {
+        var snap = {
+          runs: state.runs, wickets: state.wickets,
+          overNo: state.overNo, ballNo: state.ballNo,
+          isNoBall: state.isNoBall, nbStep: state.nbStep, nbRuns: state.nbRuns,
+          wideStep: state.wideStep, wideByes: state.wideByes,
+          wicketStep: state.wicketStep, wicketRunoutRuns: state.wicketRunoutRuns,
+          isTargetMode: state.isTargetMode, targetRuns: state.targetRuns,
+          inningsOver: state.inningsOver, inningsNo: state.inningsNo,
+          firstInningsScore: state.firstInningsScore,
+          firstInningsWickets: state.firstInningsWickets,
+          battingTeam: state.battingTeam, bowlingTeam: state.bowlingTeam,
+          teamA: state.teamA, teamB: state.teamB,
+          maxOvers: state.maxOvers, maxWickets: state.maxWickets,
+          overs: state.overs
+        };
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(snap));
+      } catch(e) {}
+    }
+    function clearStorage() { try { localStorage.removeItem(STORAGE_KEY); } catch(e) {} }
+
+    function loadFromStorage() {
+      try {
+        var raw = localStorage.getItem(STORAGE_KEY);
+        if (!raw) return null;
+        return JSON.parse(raw);
+      } catch (e) { return null; }
+    }
+
+    // ── Check for saved match on page load ──
+    (function checkRestore() {
+      var saved = loadFromStorage();
+      if (!saved || !saved.battingTeam) return;
+      var banner = document.getElementById('restoreBanner');
+      var sub    = document.getElementById('restoreBannerSub');
+      if (!banner) return;
+      var innings = saved.inningsNo === 2 ? '2nd innings' : '1st innings';
+      sub.textContent = saved.battingTeam + ' vs ' + saved.bowlingTeam +
+        ' — ' + saved.runs + '/' + saved.wickets +
+        ' (' + (saved.overNo - 1) + '.' + (saved.ballNo - 1) + ' ov) · ' + innings;
+      banner.style.display = 'flex';
+
+      document.getElementById('restoreYesBtn').addEventListener('click', function () {
+        banner.style.display = 'none';
+        state.runs = saved.runs; state.wickets = saved.wickets;
+        state.overNo = saved.overNo; state.ballNo = saved.ballNo;
+        state.isNoBall = saved.isNoBall; state.nbStep = saved.nbStep; state.nbRuns = saved.nbRuns;
+        state.wideStep = saved.wideStep; state.wideByes = saved.wideByes;
+        state.wicketStep = saved.wicketStep || 0; state.wicketRunoutRuns = saved.wicketRunoutRuns || 0;
+        state.isTargetMode = saved.isTargetMode; state.targetRuns = saved.targetRuns;
+        state.inningsOver = saved.inningsOver; state.inningsNo = saved.inningsNo;
+        state.firstInningsScore = saved.firstInningsScore;
+        state.firstInningsWickets = saved.firstInningsWickets;
+        state.battingTeam = saved.battingTeam; state.bowlingTeam = saved.bowlingTeam;
+        state.teamA = saved.teamA; state.teamB = saved.teamB;
+        state.maxOvers = saved.maxOvers; state.maxWickets = saved.maxWickets;
+        state.overs = saved.overs;
+        state.history = [];
+        infoTeamA.textContent = state.battingTeam;
+        infoTeamB.textContent = state.bowlingTeam;
+        if (state.isTargetMode) targetBar.classList.add('visible');
+        setupScreen.style.display = 'none';
+        scorerScreen.style.display = 'block';
+        renderAll();
+      });
+
+      document.getElementById('restoreNoBtn').addEventListener('click', function () {
+        clearStorage();
+        banner.style.display = 'none';
+      });
+    })();
+
+    // ── beforeunload warning ──
+    window.addEventListener('beforeunload', function (e) {
+      if (scorerScreen.style.display !== 'none' && !state.inningsOver) {
+        e.preventDefault();
+        e.returnValue = '';
+      }
+    });
+
+        function resetState() {
       state.runs = 0; state.wickets = 0;
       state.overNo = 1; state.ballNo = 1;
-      state.isNoBall = false; state.nbStep = 0; state.nbRuns = 0; state.wideStep = 0; state.wideByes = 0; state.isTargetMode = false;
+      state.isNoBall = false; state.nbStep = 0; state.nbRuns = 0; state.wideStep = 0; state.wideByes = 0; state.wicketStep = 0; state.wicketRunoutRuns = 0; state.isTargetMode = false;
       state.targetRuns = 0; state.inningsOver = false;
       state.inningsNo = 1;
       state.firstInningsScore = 0;
@@ -876,6 +994,7 @@
       targetBar.classList.remove('visible');
       inningsBanner.classList.remove('visible');
       $('startInnings2Btn').style.display = 'none';
+      clearStorage();
     }
 
   })();
