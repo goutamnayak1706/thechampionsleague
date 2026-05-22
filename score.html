@@ -882,6 +882,7 @@
         var ovRuns = ov.extras;
         ov.balls.forEach(function (b) {
           var n = parseInt(b); if (!isNaN(n)) ovRuns += n;
+          else if (b.indexOf('W+') === 0) { var wr = parseInt(b.slice(2)); if (!isNaN(wr)) ovRuns += wr; }
         });
         cumRuns += ovRuns;
         var ballsStr = ov.balls.map(function (b) { return b === 'D' ? '•' : b; }).join(', ');
