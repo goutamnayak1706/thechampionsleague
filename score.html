@@ -515,7 +515,8 @@
       var ov = state.overs[state.overNo];
       state.runs += runsScored;
       state.wickets++;
-      ov.balls.push('W');
+      var wkLabel = runsScored > 0 ? 'W+' + runsScored : 'W';
+      ov.balls.push(wkLabel);
       state.wicketStep = 0; state.wicketRunoutRuns = 0;
       state.ballNo++;
       if (state.ballNo > 6) { state.ballNo = 1; state.overNo++; if (state.overNo <= state.maxOvers) { state.overs[state.overNo] = { balls: [], extras: 0 }; } }
@@ -816,7 +817,7 @@
 
     function dotClass(v) {
       if (v === 'D')  return 'dot';
-      if (v === 'W')  return 'wicket';
+      if (v === 'W' || v.indexOf('W+') === 0) return 'wicket';
       if (v === '4')  return 'run4';
       if (v === '6')  return 'run6';
       if (v.indexOf('Wd') === 0) return 'wide';
@@ -827,7 +828,7 @@
     }
     function dotLabel(v) {
       if (v === 'D')  return '0';
-      if (v === 'W')  return 'W';
+      if (v === 'W' || v.indexOf('W+') === 0) return v;
       return v;
     }
 
@@ -881,9 +882,10 @@
         var ovRuns = ov.extras;
         ov.balls.forEach(function (b) {
           var n = parseInt(b); if (!isNaN(n)) ovRuns += n;
+          else if (b.indexOf('W+') === 0) { var wr = parseInt(b.slice(2)); if (!isNaN(wr)) ovRuns += wr; }
         });
         cumRuns += ovRuns;
-        var ballsStr = ov.balls.map(function (b) { return b === 'D' ? '•' : b; }).join(' ');
+        var ballsStr = ov.balls.map(function (b) { return b === 'D' ? '•' : b; }).join(', ');
         rows += '<tr>' +
           '<td class="sb-over-num">Ov ' + i + '</td>' +
           '<td class="sb-balls-cell">' + (ballsStr || '—') + '</td>' +
