@@ -40,7 +40,7 @@
     .score-main{display:flex;align-items:baseline;justify-content:center;line-height:1;margin-bottom:4px}
     .score-runs{font-size:clamp(2.8em,12vw,5em);font-weight:800;letter-spacing:-2px;background:linear-gradient(120deg,#fff 0%,var(--gold) 40%,#fff 70%);background-size:250% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimmer 5s linear infinite}
     .score-sep{font-size:clamp(1.8em,9vw,3.5em);font-weight:300;color:rgba(255,255,255,.3);padding:0 4px}
-    .score-wickets{font-size:clamp(3.8em,16vw,7em);font-weight:900;letter-spacing:-2px;color:#fff;text-shadow:0 0 20px rgba(232,51,77,1),0 0 50px rgba(232,51,77,.7)}
+    .score-wickets{font-size:clamp(2.8em,12vw,5em);font-weight:800;letter-spacing:-2px;color:var(--accent);text-shadow:0 0 32px rgba(232,51,77,.5)}
     .score-over{font-size:clamp(1.1em,5vw,1.7em);font-weight:700;color:var(--text-dim);letter-spacing:2px;margin-bottom:6px}
     .score-over span{color:var(--text)}
     .crr-badge{display:inline-flex;align-items:center;gap:6px;font-size:.78em;font-weight:700;color:var(--green);background:rgba(34,217,138,.12);border:1px solid rgba(34,217,138,.3);border-radius:var(--radius-pill);padding:4px 14px}
@@ -88,22 +88,22 @@
     .target-bar-msg{width:100%;font-size:.9em;font-weight:800;color:var(--gold);text-align:center;padding-top:4px}
     .ball-dots-wrap{background:var(--glass);border:1px solid var(--glass-border);border-radius:var(--radius-sm);padding:14px 18px 12px;margin-bottom:14px;backdrop-filter:blur(10px)}
     .ball-dots-label{font-size:.65em;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--text-dim);margin-bottom:10px;display:flex;align-items:center;justify-content:space-between}
-    .ball-dots-row{display:flex;gap:8px;align-items:center;justify-content:center}
-    .ball-dot{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.82em;font-weight:800;border:2px solid rgba(255,255,255,.1);background:rgba(255,255,255,.04);color:var(--text-dim);transition:all .2s ease;letter-spacing:-.5px}
+    .ball-dots-row{display:flex;gap:5px;align-items:center;justify-content:center;flex-wrap:wrap}
+    .ball-dot{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.65em;font-weight:800;border:2px solid rgba(255,255,255,.1);background:rgba(255,255,255,.04);color:var(--text-dim);transition:all .2s ease;letter-spacing:-.5px}
     .ball-dot.current{border-color:rgba(59,107,235,.7);background:rgba(59,107,235,.12);animation:pulse 1.5s ease infinite}
-    .ball-dot.dot{background:rgba(255,255,255,.07);color:var(--text-dim);border-color:rgba(255,255,255,.15)}
-    .ball-dot.run1{background:rgba(59,107,235,.2);color:#8ab4ff;border-color:rgba(59,107,235,.5)}
-    .ball-dot.run2{background:rgba(59,107,235,.28);color:#7aabff;border-color:rgba(59,107,235,.6)}
-    .ball-dot.run3{background:rgba(59,107,235,.36);color:#6aa0ff;border-color:rgba(59,107,235,.7)}
+    .ball-dot.dot{background:rgba(255,255,255,.07);color:#fff;border-color:rgba(255,255,255,.85)}
+    .ball-dot.run1{background:rgba(125,211,252,.2);color:#7dd3fc;border-color:rgba(125,211,252,.6)}
+    .ball-dot.run2{background:rgba(244,114,182,.2);color:#f472b6;border-color:rgba(244,114,182,.6)}
+    .ball-dot.run3{background:rgba(167,139,250,.2);color:#a78bfa;border-color:rgba(167,139,250,.6)}
     .ball-dot.run4{background:rgba(34,217,138,.25);color:var(--green);border-color:rgba(34,217,138,.6)}
     .ball-dot.run6{background:rgba(247,201,72,.25);color:var(--gold);border-color:rgba(247,201,72,.65);box-shadow:0 0 12px rgba(247,201,72,.4)}
     .ball-dot.wicket{background:rgba(232,51,77,.25);color:var(--accent);border-color:rgba(232,51,77,.65);box-shadow:0 0 12px rgba(232,51,77,.45)}
-    .ball-dot.wide{background:rgba(255,160,40,.2);color:#ffaa40;border-color:rgba(255,160,40,.5);font-size:.65em}
-    .ball-dot.noball{background:rgba(255,80,40,.2);color:#ff8060;border-color:rgba(255,80,40,.5);font-size:.65em}
+    .ball-dot.wide{background:rgba(255,160,40,.2);color:#ffaa40;border-color:rgba(255,160,40,.5);font-size:.55em;width:auto;min-width:38px;height:38px;border-radius:8px;padding:0 5px}
+    .ball-dot.noball{background:rgba(255,80,40,.2);color:#ff8060;border-color:rgba(255,80,40,.5);font-size:.55em;width:auto;min-width:38px;height:38px;border-radius:8px;padding:0 5px}
     .run-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px}
     .run-btn{position:relative;padding:0;border:1px solid var(--glass-border);border-radius:14px;background:var(--glass);backdrop-filter:blur(10px);cursor:pointer;font-family:'Poppins',sans-serif;font-weight:800;color:var(--text);transition:transform .12s ease,box-shadow .15s ease,border-color .15s ease,background .15s ease;overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;aspect-ratio:1.4;min-height:64px}
     .run-btn:active{transform:scale(.93)}.run-btn:hover{transform:translateY(-3px)}.run-btn:disabled{opacity:.35;cursor:not-allowed;transform:none!important}
-    .run-btn .btn-val{font-size:clamp(1.1em,4vw,1.5em);line-height:1}
+    .run-btn .btn-val{font-size:clamp(1.6em,6vw,2.2em);line-height:1}
     .run-btn .btn-lbl{font-size:.6em;font-weight:600;opacity:.65;letter-spacing:.5px;margin-top:2px}
     .run-btn.btn-dot:hover{border-color:rgba(255,255,255,.28);background:rgba(255,255,255,.09)}
     .run-btn.btn-wide{border-color:rgba(255,160,40,.35);color:#ffaa40}
@@ -111,8 +111,12 @@
     .run-btn.btn-nb{border-color:rgba(255,80,40,.35);color:#ff8060}
     .run-btn.btn-nb:hover{background:rgba(255,80,40,.12);border-color:rgba(255,80,40,.6);box-shadow:0 4px 18px rgba(255,80,40,.25)}
     .run-btn.btn-nb.active{background:rgba(255,80,40,.25);border-color:rgba(255,80,40,.8);box-shadow:0 0 20px rgba(255,80,40,.5)}
-    .run-btn.btn-1,.run-btn.btn-2,.run-btn.btn-3{border-color:rgba(59,107,235,.3);color:#8ab4ff}
-    .run-btn.btn-1:hover,.run-btn.btn-2:hover,.run-btn.btn-3:hover{background:rgba(59,107,235,.14);border-color:rgba(59,107,235,.6);box-shadow:0 4px 16px var(--primary-glow)}
+    .run-btn.btn-1{border-color:rgba(125,211,252,.4);color:#7dd3fc}
+    .run-btn.btn-2{border-color:rgba(244,114,182,.4);color:#f472b6}
+    .run-btn.btn-3{border-color:rgba(167,139,250,.4);color:#a78bfa}
+    .run-btn.btn-1:hover{background:rgba(125,211,252,.14);border-color:rgba(125,211,252,.7);box-shadow:0 4px 16px rgba(125,211,252,.3)}
+    .run-btn.btn-2:hover{background:rgba(244,114,182,.14);border-color:rgba(244,114,182,.7);box-shadow:0 4px 16px rgba(244,114,182,.3)}
+    .run-btn.btn-3:hover{background:rgba(167,139,250,.14);border-color:rgba(167,139,250,.7);box-shadow:0 4px 16px rgba(167,139,250,.3)}
     .run-btn.btn-4{border-color:rgba(34,217,138,.35);color:var(--green)}
     .run-btn.btn-4:hover{background:rgba(34,217,138,.14);border-color:rgba(34,217,138,.65);box-shadow:0 4px 18px rgba(34,217,138,.3)}
     .run-btn.btn-4::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(34,217,138,.08),transparent 70%);pointer-events:none}
@@ -302,20 +306,13 @@
         </div>
         <div class="ball-dots-wrap">
           <div class="ball-dots-label"><span><i class="bi bi-circle-fill" style="color:var(--primary);margin-right:5px"></i> This Over</span><span id="overLabel">Over 1</span></div>
-          <div class="ball-dots-row" id="ballDotsRow">
-            <div class="ball-dot current" id="bd1"></div>
-            <div class="ball-dot" id="bd2"></div>
-            <div class="ball-dot" id="bd3"></div>
-            <div class="ball-dot" id="bd4"></div>
-            <div class="ball-dot" id="bd5"></div>
-            <div class="ball-dot" id="bd6"></div>
-          </div>
+          <div class="ball-dots-row" id="ballDotsRow"></div>
         </div>
       </div>
 
       <div class="controls-col">
         <div class="run-grid">
-          <button class="run-btn btn-dot" id="btnDot"><span class="btn-val">•</span><span class="btn-lbl">Dot</span></button>
+          <button class="run-btn btn-dot" id="btnDot"><span class="btn-val">0</span><span class="btn-lbl">Dot</span></button>
           <button class="run-btn btn-wide" id="btnWide"><span class="btn-val">Wd</span><span class="btn-lbl">Wide</span></button>
           <button class="run-btn btn-nb" id="btnNB"><span class="btn-val">NB</span><span class="btn-lbl">No Ball</span></button>
           <button class="run-btn btn-1" id="btn1"><span class="btn-val">1</span><span class="btn-lbl">Run</span></button>
@@ -323,7 +320,7 @@
           <button class="run-btn btn-3" id="btn3"><span class="btn-val">3</span><span class="btn-lbl">Runs</span></button>
           <button class="run-btn btn-4" id="btn4"><span class="btn-val">4</span><span class="btn-lbl">Boundary</span></button>
           <button class="run-btn btn-6" id="btn6"><span class="btn-val">6</span><span class="btn-lbl">Six!</span></button>
-          <button class="run-btn btn-wicket" id="btnW"><span class="btn-val"><i class="bi bi-x-lg"></i></span><span class="btn-lbl">Wicket</span></button>
+          <button class="run-btn btn-wicket" id="btnW"><span class="btn-lbl" style="font-size:clamp(1.1em,4.5vw,1.5em);font-weight:800;opacity:1;letter-spacing:.5px">Wicket</span></button>
         </div>
         <div class="utility-bar">
           <button class="util-btn btn-undo" id="btnUndo"><i class="bi bi-arrow-counterclockwise"></i> Undo</button>
@@ -440,6 +437,11 @@
       state.runs += state.wideByes;
       ov.extras += state.wideByes;
       if (wicketOnWide) state.wickets++;
+      // Build label: Wd, Wd+1, Wd+W, Wd+1+W etc.
+      var wdLabel = 'Wd';
+      if (state.wideByes > 0) wdLabel += '+' + state.wideByes;
+      if (wicketOnWide) wdLabel += '+W';
+      ov.balls.push(wdLabel);
       // wide does NOT consume a legal ball
       state.wideStep = 0;
       state.wideByes = 0;
@@ -456,7 +458,7 @@
     var tbBalls       = $('tbBalls');
     var tbRRR         = $('tbRRR');
     var targetBarMsg  = $('targetBarMsg');
-    var bdEls         = [null, $('bd1'), $('bd2'), $('bd3'), $('bd4'), $('bd5'), $('bd6')];
+    var ballDotsRowEl = $('ballDotsRow');
 
     // Setup
     $('startMatchBtn').addEventListener('click', function () {
@@ -485,6 +487,11 @@
       var ov = state.overs[state.overNo];
       ov.extras += state.nbRuns;
       if (runOut) state.wickets++;
+      // Build label: NB, NB+1, NB+W, NB+1+W etc.
+      var nbLabel = 'NB';
+      if (state.nbRuns > 0) nbLabel += '+' + state.nbRuns;
+      if (runOut) nbLabel += '+W';
+      ov.balls.push(nbLabel);
       // NB does NOT consume a legal ball
       state.isNoBall = false;
       state.nbStep = 0;
@@ -755,17 +762,18 @@
       }
 
       var curOv = state.overs[state.overNo] || { balls: [], extras: 0 };
-      for (var i = 1; i <= 6; i++) {
-        var el  = bdEls[i];
-        var val = curOv.balls[i - 1];
-        el.className = 'ball-dot';
-        el.textContent = '';
-        if (val === undefined) {
-          if (i === state.ballNo) el.classList.add('current');
-        } else {
-          el.classList.add(dotClass(val));
-          el.textContent = dotLabel(val);
-        }
+      ballDotsRowEl.innerHTML = '';
+      curOv.balls.forEach(function(val) {
+        var el = document.createElement('div');
+        el.className = 'ball-dot ' + dotClass(val);
+        el.textContent = dotLabel(val);
+        ballDotsRowEl.appendChild(el);
+      });
+      // Add current ball placeholder
+      if (!state.inningsOver) {
+        var cur = document.createElement('div');
+        cur.className = 'ball-dot current';
+        ballDotsRowEl.appendChild(cur);
       }
 
       if (state.inningsOver) {
@@ -809,17 +817,17 @@
     function dotClass(v) {
       if (v === 'D')  return 'dot';
       if (v === 'W')  return 'wicket';
-      if (v === 'Wd') return 'wide';
       if (v === '4')  return 'run4';
       if (v === '6')  return 'run6';
+      if (v.indexOf('Wd') === 0) return 'wide';
+      if (v.indexOf('NB') === 0) return 'noball';
       var n = parseInt(v);
       if (n >= 1 && n <= 3) return 'run' + n;
       return 'dot';
     }
     function dotLabel(v) {
-      if (v === 'D')  return '•';
+      if (v === 'D')  return '0';
       if (v === 'W')  return 'W';
-      if (v === 'Wd') return 'Wd';
       return v;
     }
 
