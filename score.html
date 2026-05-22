@@ -38,9 +38,9 @@
     .score-display-wrap{position:relative;text-align:center;padding:24px 20px 18px;background:linear-gradient(160deg,rgba(30,50,120,.35),rgba(7,12,26,.8));border:1px solid var(--glass-border);border-radius:var(--radius);margin-bottom:14px;overflow:hidden;backdrop-filter:blur(12px)}
     .score-display-wrap::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--primary),var(--accent),var(--gold));background-size:300% auto;animation:shimmer 3s linear infinite}
     .score-main{display:flex;align-items:baseline;justify-content:center;line-height:1;margin-bottom:4px}
-    .score-runs{font-size:clamp(4.5em,22vw,8em);font-weight:800;letter-spacing:-2px;background:linear-gradient(120deg,#fff 0%,var(--gold) 40%,#fff 70%);background-size:250% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimmer 5s linear infinite}
-    .score-sep{font-size:clamp(3em,15vw,6em);font-weight:300;color:rgba(255,255,255,.3);padding:0 4px}
-    .score-wickets{font-size:clamp(4.5em,22vw,8em);font-weight:800;letter-spacing:-2px;color:var(--accent);text-shadow:0 0 32px rgba(232,51,77,.5)}
+    .score-runs{font-size:clamp(2.8em,12vw,5em);font-weight:800;letter-spacing:-2px;background:linear-gradient(120deg,#fff 0%,var(--gold) 40%,#fff 70%);background-size:250% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimmer 5s linear infinite}
+    .score-sep{font-size:clamp(1.8em,9vw,3.5em);font-weight:300;color:rgba(255,255,255,.3);padding:0 4px}
+    .score-wickets{font-size:clamp(3.8em,16vw,7em);font-weight:900;letter-spacing:-2px;color:#fff;text-shadow:0 0 20px rgba(232,51,77,1),0 0 50px rgba(232,51,77,.7)}
     .score-over{font-size:clamp(1.1em,5vw,1.7em);font-weight:700;color:var(--text-dim);letter-spacing:2px;margin-bottom:6px}
     .score-over span{color:var(--text)}
     .crr-badge{display:inline-flex;align-items:center;gap:6px;font-size:.78em;font-weight:700;color:var(--green);background:rgba(34,217,138,.12);border:1px solid rgba(34,217,138,.3);border-radius:var(--radius-pill);padding:4px 14px}
@@ -72,15 +72,17 @@
     .wide-ans-btn.yes:hover{background:rgba(34,217,138,.45);box-shadow:0 0 16px rgba(34,217,138,.4)}
     .wide-ans-btn.no{border:1px solid rgba(232,51,77,.7);background:rgba(232,51,77,.2);color:var(--accent)}
     .wide-ans-btn.no:hover{background:rgba(232,51,77,.45);box-shadow:0 0 16px rgba(232,51,77,.4)}
-    .target-bar{display:none;align-items:center;gap:8px;background:linear-gradient(135deg,rgba(59,107,235,.2),rgba(30,10,80,.3));border:1px solid rgba(59,107,235,.4);border-radius:var(--radius-sm);padding:12px 18px;margin-bottom:12px;font-size:.85em;font-weight:600;color:var(--text);flex-wrap:wrap}
-    .target-bar.visible{display:flex}
-    .target-bar-stat{text-align:center}
-    .target-bar-num{font-size:1.6em;font-weight:800;display:block;line-height:1}
-    .target-bar-lbl{font-size:.68em;color:var(--text-dim);letter-spacing:1px;text-transform:uppercase}
-    .target-bar-num.runs{color:var(--gold);text-shadow:0 0 12px var(--gold-glow)}
-    .target-bar-num.balls{color:var(--pq-color);text-shadow:0 0 10px var(--pq-glow)}
-    .target-bar-num.rrr{color:var(--accent);text-shadow:0 0 10px var(--accent-glow)}
-    .target-bar-divider{width:1px;height:38px;background:var(--border);flex-shrink:0}
+    .target-bar-inner{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:10px;padding-top:8px;border-top:1px solid rgba(255,255,255,.08)}
+    .target-bar-inner .target-bar-stat{text-align:center}
+    .target-bar-inner .target-bar-num{font-size:1.3em;font-weight:800;display:block;line-height:1}
+    .target-bar-inner .target-bar-lbl{font-size:.65em;color:var(--text-dim);letter-spacing:1px;text-transform:uppercase}
+    .target-bar-inner .target-bar-num.runs{color:var(--gold);text-shadow:0 0 12px var(--gold-glow)}
+    .target-bar-inner .target-bar-num.balls{color:var(--pq-color);text-shadow:0 0 10px var(--pq-glow)}
+    .target-bar-inner .target-bar-num.rrr{color:var(--accent);text-shadow:0 0 10px var(--accent-glow)}
+    .target-bar-inner .target-bar-divider{width:1px;height:30px;background:var(--border);flex-shrink:0}
+    .target-bar-inner .target-bar-msg{font-size:.88em;font-weight:800;color:var(--gold);text-align:center}
+    .target-bar{display:none;margin-top:8px}
+    .target-bar.visible{display:block}
     .target-bar-close{margin-left:auto;background:none;border:1px solid rgba(232,51,77,.3);color:var(--accent);border-radius:var(--radius-pill);padding:4px 12px;font-size:.78em;font-weight:700;cursor:pointer;font-family:'Poppins',sans-serif;transition:background var(--transition)}
     .target-bar-close:hover{background:rgba(232,51,77,.15)}
     .target-bar-msg{width:100%;font-size:.9em;font-weight:800;color:var(--gold);text-align:center;padding-top:4px}
@@ -259,16 +261,18 @@
           <div class="score-over">Ov <span id="scoreOver">0.0</span></div>
           <span class="crr-badge" id="crrBadge"><i class="bi bi-graph-up"></i> CRR: 0.00</span>
           <span class="pred-badge" id="predBadge"><i class="bi bi-bullseye"></i> Predicted Score: —</span>
+          <div class="target-bar" id="targetBar">
+            <div class="target-bar-inner">
+              <div class="target-bar-stat"><span class="target-bar-num runs" id="tbRuns">-</span><span class="target-bar-lbl">Need</span></div>
+              <div class="target-bar-divider"></div>
+              <div class="target-bar-stat"><span class="target-bar-num balls" id="tbBalls">-</span><span class="target-bar-lbl">Balls</span></div>
+              <div class="target-bar-divider"></div>
+              <div class="target-bar-stat"><span class="target-bar-num rrr" id="tbRRR">-</span><span class="target-bar-lbl">RRR</span></div>
+              <div class="target-bar-msg" id="targetBarMsg" style="display:none"></div>
+            </div>
+          </div>
         </div>
-        <div class="target-bar" id="targetBar">
-          <div class="target-bar-stat"><span class="target-bar-num runs" id="tbRuns">-</span><span class="target-bar-lbl">Need</span></div>
-          <div class="target-bar-divider"></div>
-          <div class="target-bar-stat"><span class="target-bar-num balls" id="tbBalls">-</span><span class="target-bar-lbl">Balls</span></div>
-          <div class="target-bar-divider"></div>
-          <div class="target-bar-stat"><span class="target-bar-num rrr" id="tbRRR">-</span><span class="target-bar-lbl">RRR</span></div>
-          <button class="target-bar-close" id="targetBarClose"><i class="bi bi-x"></i></button>
-          <div class="target-bar-msg" id="targetBarMsg" style="display:none"></div>
-        </div>
+
         <div class="noball-strip" id="noballStrip">
           <span class="nb-msg" id="nbMsgRuns"><i class="bi bi-exclamation-triangle-fill"></i> No Ball! Tap runs scored off this delivery.</span>
           <span class="nb-msg" id="nbMsgRO" style="display:none;font-size:1.05em;font-weight:800;color:#fff;gap:10px;flex-wrap:wrap"><i class="bi bi-person-running" style="color:var(--accent)"></i> Any run out on this No-Ball?
@@ -585,10 +589,7 @@
       targetBar.classList.add('visible');
       updateTargetBar();
     });
-    $('targetBarClose').addEventListener('click', function () {
-      state.isTargetMode = false;
-      targetBar.classList.remove('visible');
-    });
+    // target-bar close button removed (bar is now inside score display)
     function closeTargetModal() { $('targetModal').classList.remove('open'); }
 
     // Core play logic
@@ -798,6 +799,7 @@
         inningsBanner.classList.remove('visible');
       }
 
+      targetBar.classList.toggle('visible', state.isTargetMode);
       if (state.isTargetMode) updateTargetBar();
 
       renderScoreboard();
