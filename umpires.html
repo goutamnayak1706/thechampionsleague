@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Umpiring Schedule – The Champions League 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* ── Umpires page specific styles ── */
+    .umpires-hero {
+      text-align: center;
+      padding: 7rem 1.5rem 3rem;
+      background: linear-gradient(160deg, #0d1b2a 0%, #1a2d45 60%, #0d1b2a 100%);
+      border-bottom: 1px solid rgba(154,176,216,0.12);
+    }
+    .umpires-hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(255,200,0,0.10);
+      border: 1px solid rgba(255,200,0,0.25);
+      color: #ffc800;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.35rem 1.1rem;
+      border-radius: 999px;
+      margin-bottom: 1.1rem;
+    }
+    .umpires-hero-title {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 800;
+      color: #fff;
+      line-height: 1.15;
+      margin-bottom: 0.6rem;
+    }
+    .umpires-hero-sub {
+      color: #9ab0d8;
+      font-size: 1rem;
+      margin-bottom: 0;
+    }
+
+    /* ── Tab bar (reuse schedule-tabs-bar style, local override if needed) ── */
+    .umpire-tabs-bar {
+      display: flex;
+      gap: 0.5rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 2.5rem auto 0;
+      max-width: 900px;
+      padding: 0 1rem;
+    }
+    .umpire-tab-btn {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(154,176,216,0.18);
+      color: #9ab0d8;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 600;
+      padding: 0.6rem 1.5rem;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s, border-color 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .umpire-tab-btn:hover {
+      background: rgba(255,200,0,0.10);
+      border-color: rgba(255,200,0,0.35);
+      color: #ffc800;
+    }
+    .umpire-tab-btn.active {
+      background: linear-gradient(135deg, #ffc800, #ff9800);
+      border-color: #ffc800;
+      color: #0d1b2a;
+    }
+
+    /* ── Tab panels ── */
+    .umpire-tab-panel { display: none; }
+    .umpire-tab-panel.active { display: block; }
+
+    /* ── Umpire table card ── */
+    .umpire-table-wrap {
+      max-width: 960px;
+      margin: 2rem auto 3rem;
+      padding: 0 1rem;
+    }
+    .umpire-ground-label {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #9ab0d8;
+      margin: 2rem 0 0.7rem;
+    }
+    .umpire-ground-label .ground-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .ground-dot-1 { background: #3b9eff; }
+    .ground-dot-2 { background: #ff7043; }
+
+    .umpire-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(154,176,216,0.12);
+      border-radius: 14px;
+      overflow: hidden;
+      font-size: 0.9rem;
+    }
+    .umpire-table thead {
+      background: rgba(255,200,0,0.08);
+      border-bottom: 1px solid rgba(255,200,0,0.2);
+    }
+    .umpire-table thead th {
+      padding: 0.75rem 1rem;
+      text-align: left;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: #ffc800;
+    }
+    .umpire-table tbody tr {
+      border-bottom: 1px solid rgba(154,176,216,0.07);
+      transition: background 0.15s;
+    }
+    .umpire-table tbody tr:last-child {
+      border-bottom: none;
+    }
+    .umpire-table tbody tr:hover {
+      background: rgba(255,255,255,0.04);
+    }
+    .umpire-table td {
+      padding: 0.75rem 1rem;
+      color: #c8d8f0;
+      vertical-align: middle;
+    }
+    .umpire-table td.row-num {
+      color: #4a6a9a;
+      font-size: 0.78rem;
+      font-weight: 600;
+      width: 36px;
+      text-align: center;
+    }
+    .match-vs-cell {
+      font-weight: 600;
+      color: #e8f0ff;
+    }
+    .match-vs-cell .vs-badge {
+      display: inline-block;
+      background: rgba(255,200,0,0.12);
+      color: #ffc800;
+      font-size: 0.68rem;
+      font-weight: 700;
+      padding: 0.1rem 0.4rem;
+      border-radius: 4px;
+      margin: 0 0.35rem;
+      letter-spacing: 0.04em;
+      vertical-align: middle;
+    }
+    .umpire-name {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+    .umpire-name i {
+      color: #3b9eff;
+      font-size: 0.85rem;
+    }
+    .umpire-empty {
+      color: #4a6a9a;
+      font-style: italic;
+      font-size: 0.82rem;
+    }
+    .ground-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 0.2rem 0.65rem;
+      border-radius: 999px;
+    }
+    .ground-tag-1 {
+      background: rgba(59,158,255,0.12);
+      color: #3b9eff;
+      border: 1px solid rgba(59,158,255,0.25);
+    }
+    .ground-tag-2 {
+      background: rgba(255,112,67,0.12);
+      color: #ff7043;
+      border: 1px solid rgba(255,112,67,0.25);
+    }
+    .note-org {
+      color: #9ab0d8;
+      font-style: italic;
+      font-size: 0.82rem;
+    }
+
+    .umpire-time {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      font-size: 0.82rem;
+      color: #9ab0d8;
+      white-space: nowrap;
+    }
+    .umpire-time i {
+      color: #ffc800;
+      font-size: 0.8rem;
+    }
+    /* Hide Ground col on very small screens, keep Time col */
+    @media (max-width: 500px) {
+      .umpire-table thead th:nth-child(3),
+      .umpire-table td:nth-child(3) { display: none; }
+    }
+    /* Responsive table */
+    @media (max-width: 640px) {
+      .umpire-table thead th:nth-child(3),
+      .umpire-table td:nth-child(3) { display: none; }
+      .umpire-table { font-size: 0.82rem; }
+      .umpire-table td, .umpire-table thead th { padding: 0.6rem 0.6rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a class="navbar-brand" href="index.html">
+      <img src="images/TCL.jpeg" alt="TCL Logo">
+      <div class="brand-text">
+        TCL 2026
+        <span>The Champions League</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html"><i class="bi bi-house-fill"></i> Home</a></li>
+      <li><a href="index.html#pools"><i class="bi bi-grid-fill"></i> Pools</a></li>
+      <li class="nav-schedule-item">
+        <a href="index.html#schedule" class="nav-schedule-link"><i class="bi bi-calendar3"></i> Schedule <i class="bi bi-chevron-down nav-chevron"></i></a>
+        <div class="schedule-dropdown">
+          <div class="schedule-dropdown-inner">
+            <div class="schedule-dropdown-title"><i class="bi bi-calendar3"></i> Match Days</div>
+            <ul class="schedule-dropdown-list">
+              <li><a href="index.html#schedule" class="schedule-date-navlink" data-date="may30"><i class="bi bi-calendar-event"></i> 30 May 2026</a></li>
+              <li><a href="index.html#schedule" class="schedule-date-navlink" data-date="may31"><i class="bi bi-calendar-event"></i> 31 May 2026</a></li>
+              <li><a href="index.html#schedule" class="schedule-date-navlink" data-date="jun6"><i class="bi bi-calendar-event"></i> 6 June 2026</a></li>
+            </ul>
+          </div>
+        </div>
+      </li>
+      <li><a href="rulebook.html"><i class="bi bi-book"></i> Rulebook</a></li>
+      <li><a href="gallery.html"><i class="bi bi-images"></i> Gallery</a></li>
+      <li><a href="teams.html"><i class="bi bi-people-fill"></i> Teams</a></li>
+      <li><a href="score.html"><i class="bi bi-calculator-fill"></i> Scorebook</a></li>
+      <li><a href="umpires.html" class="active"><i class="bi bi-person-badge-fill"></i> Umpires</a></li>
+    </ul>
+    <button class="hamburger" id="hamburgerBtn" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html"><i class="bi bi-house-fill"></i> Home</a>
+    <a href="index.html#pools"><i class="bi bi-grid-fill"></i> Pools</a>
+    <a href="index.html#schedule"><i class="bi bi-calendar3"></i> Schedule</a>
+    <a href="rulebook.html"><i class="bi bi-book"></i> Rulebook</a>
+    <a href="gallery.html"><i class="bi bi-images"></i> Gallery</a>
+    <a href="teams.html"><i class="bi bi-people-fill"></i> Teams</a>
+    <a href="score.html"><i class="bi bi-calculator-fill"></i> Scorebook</a>
+    <a href="umpires.html"><i class="bi bi-person-badge-fill"></i> Umpires</a>
+  </div>
+
+  <!-- Hero -->
+  <div class="umpires-hero">
+    <div class="umpires-hero-eyebrow"><i class="bi bi-person-badge-fill"></i> Officials</div>
+    <div class="umpires-hero-title">Umpiring Schedule</div>
+    <div class="umpires-hero-sub">Match officials assigned for each game across all league stage days</div>
+
+    <!-- Date Tab Buttons -->
+    <div class="umpire-tabs-bar">
+      <button class="umpire-tab-btn active" data-tab="may30">
+        <i class="bi bi-calendar-event"></i> 30 May 2026
+      </button>
+      <button class="umpire-tab-btn" data-tab="may31">
+        <i class="bi bi-calendar-event"></i> 31 May 2026
+      </button>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       TAB: 30 MAY 2026
+  ════════════════════════════════════════════ -->
+  <div class="umpire-tab-panel active" id="tab-may30">
+    <div class="umpire-table-wrap">
+
+      <!-- Ground 1 -->
+      <div class="umpire-ground-label">
+        <span class="ground-dot ground-dot-1"></span>
+        Ground 1
+      </div>
+      <table class="umpire-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th><i class="bi bi-clock"></i> Time</th>
+            <th>Match</th>
+            <th>Ground</th>
+            <th><i class="bi bi-person-fill"></i> Umpire 1</th>
+            <th><i class="bi bi-person-fill"></i> Umpire 2</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="row-num">1</td>
+            <td><span class="umpire-time"><i class="bi bi-clock"></i> 8:30 &ndash; 9:30 am</span></td>
+            <td class="match-vs-cell">Asian Tigers <span class="vs-badge">VS</span> Strikers</td>
+            <td><span class="ground-tag ground-tag-1">1</span></td>
+            <td><span class="umpire-name"><i class="bi bi-person-badge-fill"></i> Ashwin</span></td>
+            <td><span class="umpire-name"><i class="bi bi-person-badge-fill"></i> Ujwal</span></td>
+          </tr>
+          <tr>
+            <td class="row-num">2</td>
+            <td><span class="umpire-time"><i class="bi bi-clock"></i> 9:30 &ndash; 10:30 am</span></td>
+            <td class="match-vs-cell">Asian Tigers <span class="vs-badge">VS</span> Powerhitters</td>
+            <td><span class="ground-tag ground-tag-1">1</span></td>
+            <td><span class="umpire-name"><i class="bi bi-person-badge-fill"></i> Goutam</span></td>
+            <td><span class="umpire-name"><i class="bi bi-person-badge-fill"></i> Ashwin</span></td>
+          </tr>
+          <tr>
+            <td class="row-num">3</td>
+            <td><span class="umpire-time"><i class="bi bi-clock"></i> 10:30 &ndash; 11:30 am</span></td>
+            <td class="match-vs-cell">Minnal Blasters <span class="vs-badge">VS</span> Powerhitters</td>
+            <td><span class="ground-tag ground-tag-1">1</span></td>
+            <td><span class="umpire-name"><i class="bi bi-person-badge-fill"></i> Chinmay</span></td>
+            <td><span class="umpire-name"><i class="bi bi-person-badge-fill"></i> Sharad</span></td>
+          </tr>
+          <tr>
+            <td class="row-num">4</td>
+            <td><span class="umpire-time"><i class="bi bi-clock"></i> 11:30 am &ndash; 12:30 pm</span></td>
+            <td class="match-vs-cell">Asian Tigers <span class="vs-badge">VS</span> Holland Capitals Oranje</td>
+            <td><span class="ground-tag ground-tag-1">1</span></td>
+            <td><span class="umpire-name"><i class="bi bi-person-badge-fill"></i> Chinmay</span></td>
+            <td><span class="umpire-name"><i class="bi bi-person-badge-fill"></i> Ujwal</span></td>
+          </tr>
+          <tr>
+            <td class="row-num">5</td>
+            <td><span class="umpire-time"><i class="bi bi-clock"></i> 12:30 &ndash; 1:30 pm</span></td>
+            <td class="match-vs-cell">Maratha Challengers <span class="vs-badge">VS</span> Powerhitters</td>
+            <td><span class="ground-tag ground-tag-1">1</span></td>
+            <td><span class="umpire-name"><i class="bi bi-person-badge-fill"></i> Goutam</span></td>
+            <td><span class="umpire-name"><i class="bi bi-person-badge-fill"></i> Sharad</span></td>
+          </tr>
+          <tr>
+            <td class="row-num">6</td>
+            <td><span class="umpire-time"><i class="bi bi-clock"></i> 1:30 &ndash; 2:30 pm</span></td>
+            <td class="match-vs-cell">Dutch Lords <span class="vs-badge">VS</span> Holland Capitals</td>
+            <td><span class="ground-tag ground-tag-1">1</span></td>
+            <td><span class="umpire-name"><i class="bi bi-person-badge-fill"></i> Goutam</span></td>
+            <td><span class="umpire-name"><i class="bi bi-person-badge-fill"></i> Abhishek Jain</span></td>
+          </tr>
+          <tr>
+            <td class="row-num">7</td>
+            <td><span class="umpire-time"><i class="bi bi-clock"></i> 2:30 &ndash; 3:30 pm</span></td>
+            <td class="match-vs-cell">Dutch Lords <span class="vs-badge">VS</span> Dutch Royals</td>
+            <td><span class="ground-tag ground-tag-1">1</span></td>
+            <td><span class="umpire-name"><i class="bi bi-person-badge-fill"></i> Chinmay</span></td>
+            <td><span class="umpire-name"><i class="bi bi-person-badge-fill"></i> Ujwal</span></td>
+          </tr>
+          <tr>
+            <td class="row-num">8</td>
+            <td><span class="umpire-time"><i class="bi bi-clock"></i> 3:30 &ndash; 4:30 pm</span></td>
+            <td class="match-vs-cell">Orange Ashes Den Haag <span class="vs-badge">VS</span> Dutch Royals</td>
+            <td><span class="ground-tag ground-tag-1">1</span></td>
+            <td><span class="umpire-name"><i class="bi bi-person-badge-fill"></i> Goutam</span></td>
+            <td><span class="umpire-name"><i class="bi bi-person-badge-fill"></i> Abhishek Jain</span></td>
+          </tr>
+          <tr>
+            <td class="row-num">9</td>
+            <td><span class="umpire-time"><i class="bi bi-clock"></i> 4:30 &ndash; 5:30 pm</span></td>
+            <td class="match-vs-cell">Dutch Lords <span class="vs-badge">VS</span> Kombanz</td>
+            <td><span class="ground-tag ground-tag-1">1</span></td>
+            <td><span class="umpire-name"><i class="bi bi-person-badge-fill"></i> Goutam</span></td>
+            <td><span class="umpire-empty">—</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- Ground 2 -->
+      <div class="umpire-ground-label">
+        <span class="ground-dot ground-dot-2"></span>
+        Ground 2
+      </div>
+      <table class="umpire-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th><i class="bi bi-clock"></i> Time</th>
+            <th>Match</th>
+            <th>Ground</th>
+            <th><i class="bi bi-person-fill"></i> Umpire 1</th>
+            <th><i class="bi bi-person-fill"></i> Umpire 2</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="row-num">1</td>
+            <td><span class="umpire-time"><i class="bi bi-clock"></i> 8:30 &ndash; 9:30 am</span></td>
+            <td class="match-vs-cell">Minnal Blasters <span class="vs-badge">VS</span> Holland Capitals Oranje</td>
+            <td><span class="ground-tag ground-tag-2">2</span></td>
+            <td><span class="umpire-name"><i class="bi bi-person-badge-fill"></i> Sunny</span></td>
+            <td><span class="umpire-name"><i class="bi bi-person-badge-fill"></i> Sandeep</span></td>
+          </tr>
+          <tr>
+            <td class="row-num">2</td>
+            <td><span class="umpire-time"><i class="bi bi-clock"></i> 9:30 &ndash; 10:30 am</span></td>
+            <td class="match-vs-cell">Maratha Challengers <span class="vs-badge">VS</span> Strikers</td>
+            <td><span class="ground-tag ground-tag-2">2</span></td>
+            <td><span class="umpire-name"><i class="bi bi-person-badge-fill"></i> Ashish</span></td>
+            <td><span class="umpire-name"><i class="bi bi-person-badge-fill"></i> Jay</span></td>
+          </tr>
+          <tr>
+            <td class="row-num">3</td>
+            <td><span class="umpire-time"><i class="bi bi-clock"></i> 10:30 &ndash; 11:30 am</span></td>
+            <td class="match-vs-cell">Maratha Challengers <span class="vs-badge">VS</span> Holland Capitals Oranje</td>
+            <td><span class="ground-tag ground-tag-2">2</span></td>
+            <td><span class="umpire-name"><i class="bi bi-person-badge-fill"></i> Rocky</span></td>
+            <td><span class="umpire-empty">—</span></td>
+          </tr>
+          <tr>
+            <td class="row-num">4</td>
+            <td><span class="umpire-time"><i class="bi bi-clock"></i> 11:30 am &ndash; 12:30 pm</span></td>
+            <td class="match-vs-cell">Minnal Blasters <span class="vs-badge">VS</span> Strikers</td>
+            <td><span class="ground-tag ground-tag-2">2</span></td>
+            <td><span class="umpire-name"><i class="bi bi-person-badge-fill"></i> Ashish</span></td>
+            <td><span class="umpire-name"><i class="bi bi-person-badge-fill"></i> Parth</span></td>
+          </tr>
+          <tr>
+            <td class="row-num">5</td>
+            <td><span class="umpire-time"><i class="bi bi-clock"></i> 12:30 &ndash; 1:30 pm</span></td>
+            <td class="match-vs-cell">GLADIATORS XI <span class="vs-badge">VS</span> Dutch Royals</td>
+            <td><span class="ground-tag ground-tag-2">2</span></td>
+            <td><span class="umpire-name"><i class="bi bi-person-badge-fill"></i> Sandeep</span></td>
+            <td><span class="umpire-empty">—</span></td>
+          </tr>
+          <tr>
+            <td class="row-num">6</td>
+            <td><span class="umpire-time"><i class="bi bi-clock"></i> 1:30 &ndash; 2:30 pm</span></td>
+            <td class="match-vs-cell">Orange Ashes Den Haag <span class="vs-badge">VS</span> Kombanz</td>
+            <td><span class="ground-tag ground-tag-2">2</span></td>
+            <td><span class="umpire-name"><i class="bi bi-person-badge-fill"></i> Sunny</span></td>
+            <td><span class="umpire-name"><i class="bi bi-person-badge-fill"></i> Parth</span></td>
+          </tr>
+          <tr>
+            <td class="row-num">7</td>
+            <td><span class="umpire-time"><i class="bi bi-clock"></i> 2:30 &ndash; 3:30 pm</span></td>
+            <td class="match-vs-cell">GLADIATORS XI <span class="vs-badge">VS</span> Holland Capitals</td>
+            <td><span class="ground-tag ground-tag-2">2</span></td>
+            <td><span class="umpire-name"><i class="bi bi-person-badge-fill"></i> Jay</span></td>
+            <td><span class="umpire-name"><i class="bi bi-person-badge-fill"></i> Parth</span></td>
+          </tr>
+          <tr>
+            <td class="row-num">8</td>
+            <td><span class="umpire-time"><i class="bi bi-clock"></i> 3:30 &ndash; 4:30 pm</span></td>
+            <td class="match-vs-cell">GLADIATORS XI <span class="vs-badge">VS</span> Kombanz</td>
+            <td><span class="ground-tag ground-tag-2">2</span></td>
+            <td><span class="umpire-name"><i class="bi bi-person-badge-fill"></i> Dutch Lords</span></td>
+            <td><span class="umpire-name"><i class="bi bi-person-badge-fill"></i> Holland Capitals</span></td>
+          </tr>
+          <tr>
+            <td class="row-num">9</td>
+            <td><span class="umpire-time"><i class="bi bi-clock"></i> 4:30 &ndash; 5:30 pm</span></td>
+            <td class="match-vs-cell">Orange Ashes Den Haag <span class="vs-badge">VS</span> Holland Capitals</td>
+            <td><span class="ground-tag ground-tag-2">2</span></td>
+            <td><span class="umpire-name"><i class="bi bi-person-badge-fill"></i> Sandeep</span></td>
+            <td><span class="umpire-name"><i class="bi bi-person-badge-fill"></i> Rocky</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+  </div><!-- /tab-may30 -->
+
+
+  <!-- ═══════════════════════════════════════════
+       TAB: 31 MAY 2026
+  ════════════════════════════════════════════ -->
+  <div class="umpire-tab-panel" id="tab-may31">
+    <div class="umpire-table-wrap">
+
+      <!-- Ground 1 -->
+      <div class="umpire-ground-label">
+        <span class="ground-dot ground-dot-1"></span>
+        Ground 1
+      </div>
+      <table class="umpire-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th><i class="bi bi-clock"></i> Time</th>
+            <th>Match</th>
+            <th>Ground</th>
+            <th><i class="bi bi-person-fill"></i> Umpire 1</th>
+            <th><i class="bi bi-person-fill"></i> Umpire 2</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="row-num">1</td>
+            <td><span class="umpire-time"><i class="bi bi-clock"></i> 8:30 &ndash; 9:30 am</span></td>
+            <td class="match-vs-cell">Wild Jaguars <span class="vs-badge">VS</span> Kalinga Warriors</td>
+            <td><span class="ground-tag ground-tag-1">1</span></td>
+            <td><span class="umpire-name"><i class="bi bi-person-badge-fill"></i> Minnal 1 (Sree)</span></td>
+            <td><span class="umpire-name"><i class="bi bi-person-badge-fill"></i> Minnal (?)</span></td>
+          </tr>
+          <tr>
+            <td class="row-num">2</td>
+            <td><span class="umpire-time"><i class="bi bi-clock"></i> 9:30 &ndash; 10:30 am</span></td>
+            <td class="match-vs-cell">Holland Hellfire <span class="vs-badge">VS</span> Titans Elite XI</td>
+            <td><span class="ground-tag ground-tag-1">1</span></td>
+            <td><span class="umpire-name"><i class="bi bi-person-badge-fill"></i> Goutam</span></td>
+            <td><span class="umpire-name"><i class="bi bi-person-badge-fill"></i> Ujwal</span></td>
+          </tr>
+          <tr>
+            <td class="row-num">3</td>
+            <td><span class="umpire-time"><i class="bi bi-clock"></i> 10:30 &ndash; 11:30 am</span></td>
+            <td class="match-vs-cell">Wild Jaguars <span class="vs-badge">VS</span> Titans Elite XI</td>
+            <td><span class="ground-tag ground-tag-1">1</span></td>
+            <td><span class="umpire-name"><i class="bi bi-person-badge-fill"></i> Goutam</span></td>
+            <td><span class="umpire-name"><i class="bi bi-person-badge-fill"></i> Ujwal</span></td>
+          </tr>
+          <tr>
+            <td class="row-num">4</td>
+            <td><span class="umpire-time"><i class="bi bi-clock"></i> 11:30 am &ndash; 12:30 pm</span></td>
+            <td class="match-vs-cell">Holland Hellfire <span class="vs-badge">VS</span> Kalinga Warriors</td>
+            <td><span class="ground-tag ground-tag-1">1</span></td>
+            <td><span class="umpire-name"><i class="bi bi-person-badge-fill"></i> Minnal 1 (Sree)</span></td>
+            <td><span class="umpire-name"><i class="bi bi-person-badge-fill"></i> Minnal (?)</span></td>
+          </tr>
+          <tr>
+            <td class="row-num">5</td>
+            <td><span class="umpire-time"><i class="bi bi-clock"></i> 12:30 &ndash; 1:30 pm</span></td>
+            <td class="match-vs-cell">Hoysala <span class="vs-badge">VS</span> Titans Elite XI</td>
+            <td><span class="ground-tag ground-tag-1">1</span></td>
+            <td><span class="umpire-name"><i class="bi bi-person-badge-fill"></i> Goutam</span></td>
+            <td><span class="umpire-name"><i class="bi bi-person-badge-fill"></i> Priya</span></td>
+          </tr>
+          <tr>
+            <td class="row-num">6</td>
+            <td><span class="umpire-time"><i class="bi bi-clock"></i> 1:30 &ndash; 2:30 pm</span></td>
+            <td class="match-vs-cell">Minnal Rockers <span class="vs-badge">VS</span> Titans XI</td>
+            <td><span class="ground-tag ground-tag-1">1</span></td>
+            <td><span class="umpire-name"><i class="bi bi-person-badge-fill"></i> Chinmay</span></td>
+            <td><span class="umpire-name"><i class="bi bi-person-badge-fill"></i> Arsh</span></td>
+          </tr>
+          <tr>
+            <td class="row-num">7</td>
+            <td><span class="umpire-time"><i class="bi bi-clock"></i> 2:30 &ndash; 3:30 pm</span></td>
+            <td class="match-vs-cell">Minnal Rockers <span class="vs-badge">VS</span> Arnhem Super Kings</td>
+            <td><span class="ground-tag ground-tag-1">1</span></td>
+            <td><span class="umpire-name"><i class="bi bi-person-badge-fill"></i> Shashank</span></td>
+            <td><span class="umpire-name"><i class="bi bi-person-badge-fill"></i> Hoysala</span></td>
+          </tr>
+          <tr>
+            <td class="row-num">8</td>
+            <td><span class="umpire-time"><i class="bi bi-clock"></i> 3:30 &ndash; 4:30 pm</span></td>
+            <td class="match-vs-cell">Smashers XI <span class="vs-badge">VS</span> Arnhem Super Kings</td>
+            <td><span class="ground-tag ground-tag-1">1</span></td>
+            <td><span class="note-org"><i class="bi bi-people-fill"></i> Organizing Team</span></td>
+            <td><span class="note-org"><i class="bi bi-people-fill"></i> Organizing Team</span></td>
+          </tr>
+          <tr>
+            <td class="row-num">9</td>
+            <td><span class="umpire-time"><i class="bi bi-clock"></i> 4:30 &ndash; 5:30 pm</span></td>
+            <td class="match-vs-cell">Minnal Rockers <span class="vs-badge">VS</span> Nieuwegein Sunrisers</td>
+            <td><span class="ground-tag ground-tag-1">1</span></td>
+            <td><span class="note-org"><i class="bi bi-people-fill"></i> Organizing Team</span></td>
+            <td><span class="note-org"><i class="bi bi-people-fill"></i> Organizing Team</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- Ground 2 -->
+      <div class="umpire-ground-label">
+        <span class="ground-dot ground-dot-2"></span>
+        Ground 2
+      </div>
+      <table class="umpire-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th><i class="bi bi-clock"></i> Time</th>
+            <th>Match</th>
+            <th>Ground</th>
+            <th><i class="bi bi-person-fill"></i> Umpire 1</th>
+            <th><i class="bi bi-person-fill"></i> Umpire 2</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="row-num">1</td>
+            <td><span class="umpire-time"><i class="bi bi-clock"></i> 8:30 &ndash; 9:30 am</span></td>
+            <td class="match-vs-cell">Holland Hellfire <span class="vs-badge">VS</span> Utrecht Challengers</td>
+            <td><span class="ground-tag ground-tag-2">2</span></td>
+            <td><span class="umpire-name"><i class="bi bi-person-badge-fill"></i> Goutam</span></td>
+            <td><span class="umpire-name"><i class="bi bi-person-badge-fill"></i> Sunny</span></td>
+          </tr>
+          <tr>
+            <td class="row-num">2</td>
+            <td><span class="umpire-time"><i class="bi bi-clock"></i> 9:30 &ndash; 10:30 am</span></td>
+            <td class="match-vs-cell">Hoysala <span class="vs-badge">VS</span> Utrecht Challengers</td>
+            <td><span class="ground-tag ground-tag-2">2</span></td>
+            <td><span class="umpire-name"><i class="bi bi-person-badge-fill"></i> Minnal 1 (Sree)</span></td>
+            <td><span class="umpire-name"><i class="bi bi-person-badge-fill"></i> Minnal (?)</span></td>
+          </tr>
+          <tr>
+            <td class="row-num">3</td>
+            <td><span class="umpire-time"><i class="bi bi-clock"></i> 10:30 &ndash; 11:30 am</span></td>
+            <td class="match-vs-cell">Hoysala <span class="vs-badge">VS</span> Kalinga Warriors</td>
+            <td><span class="ground-tag ground-tag-2">2</span></td>
+            <td><span class="umpire-name"><i class="bi bi-person-badge-fill"></i> Minnal 1 (Sree)</span></td>
+            <td><span class="umpire-name"><i class="bi bi-person-badge-fill"></i> Minnal (?)</span></td>
+          </tr>
+          <tr>
+            <td class="row-num">4</td>
+            <td><span class="umpire-time"><i class="bi bi-clock"></i> 11:30 am &ndash; 12:30 pm</span></td>
+            <td class="match-vs-cell">Wild Jaguars <span class="vs-badge">VS</span> Utrecht Challengers</td>
+            <td><span class="ground-tag ground-tag-2">2</span></td>
+            <td><span class="note-org"><i class="bi bi-people-fill"></i> Organizing Team</span></td>
+            <td><span class="note-org"><i class="bi bi-people-fill"></i> Organizing Team</span></td>
+          </tr>
+          <tr>
+            <td class="row-num">5</td>
+            <td><span class="umpire-time"><i class="bi bi-clock"></i> 12:30 &ndash; 1:30 pm</span></td>
+            <td class="match-vs-cell">CB11 <span class="vs-badge">VS</span> Arnhem Super Kings</td>
+            <td><span class="ground-tag ground-tag-2">2</span></td>
+            <td><span class="note-org"><i class="bi bi-people-fill"></i> Organizing Team</span></td>
+            <td><span class="note-org"><i class="bi bi-people-fill"></i> Organizing Team</span></td>
+          </tr>
+          <tr>
+            <td class="row-num">6</td>
+            <td><span class="umpire-time"><i class="bi bi-clock"></i> 1:30 &ndash; 2:30 pm</span></td>
+            <td class="match-vs-cell">Smashers XI <span class="vs-badge">VS</span> Nieuwegein Sunrisers</td>
+            <td><span class="ground-tag ground-tag-2">2</span></td>
+            <td><span class="note-org"><i class="bi bi-people-fill"></i> Organizing Team</span></td>
+            <td><span class="note-org"><i class="bi bi-people-fill"></i> Organizing Team</span></td>
+          </tr>
+          <tr>
+            <td class="row-num">7</td>
+            <td><span class="umpire-time"><i class="bi bi-clock"></i> 2:30 &ndash; 3:30 pm</span></td>
+            <td class="match-vs-cell">CB11 <span class="vs-badge">VS</span> Titans XI</td>
+            <td><span class="ground-tag ground-tag-2">2</span></td>
+            <td><span class="note-org"><i class="bi bi-people-fill"></i> Organizing Team</span></td>
+            <td><span class="note-org"><i class="bi bi-people-fill"></i> Organizing Team</span></td>
+          </tr>
+          <tr>
+            <td class="row-num">8</td>
+            <td><span class="umpire-time"><i class="bi bi-clock"></i> 3:30 &ndash; 4:30 pm</span></td>
+            <td class="match-vs-cell">CB11 <span class="vs-badge">VS</span> Nieuwegein Sunrisers</td>
+            <td><span class="ground-tag ground-tag-2">2</span></td>
+            <td><span class="note-org"><i class="bi bi-people-fill"></i> Organizing Team</span></td>
+            <td><span class="note-org"><i class="bi bi-people-fill"></i> Organizing Team</span></td>
+          </tr>
+          <tr>
+            <td class="row-num">9</td>
+            <td><span class="umpire-time"><i class="bi bi-clock"></i> 4:30 &ndash; 5:30 pm</span></td>
+            <td class="match-vs-cell">Smashers XI <span class="vs-badge">VS</span> Titans XI</td>
+            <td><span class="ground-tag ground-tag-2">2</span></td>
+            <td><span class="note-org"><i class="bi bi-people-fill"></i> Organizing Team</span></td>
+            <td><span class="note-org"><i class="bi bi-people-fill"></i> Organizing Team</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+  </div><!-- /tab-may31 -->
+
+  <footer class="site-footer">
+    <div class="footer-logo">
+      <img src="images/TCL.jpeg" alt="TCL">
+      The Champions League 2026
+    </div>
+    <div class="footer-links">
+      <a href="index.html"><i class="bi bi-house-fill"></i> Home</a>
+      <a href="index.html#schedule"><i class="bi bi-calendar3"></i> Schedule</a>
+      <a href="rulebook.html"><i class="bi bi-book"></i> Rulebook</a>
+      <a href="mailto:kalingawarriorsalmere@gmail.com"><i class="bi bi-envelope-fill"></i> Contact</a>
+      <a href="https://chat.whatsapp.com/IC3eAdm6Y2BIVJqKjn7jkZ" target="_blank" rel="noopener noreferrer"><i class="bi bi-whatsapp"></i> WhatsApp</a>
+    </div>
+    <div class="footer-copy">
+      Created by : <span style="color:#ffffff">Goutam Nayak</span> &nbsp;&middot;&nbsp;
+      &copy; The Champions League 2026. All rights reserved.
+    </div>
+  </footer>
+
+  <button id="scrollTop" aria-label="Back to top">
+    <i class="bi bi-arrow-up"></i>
+  </button>
+
+  <script src="js/main.js"></script>
+  <script>
+    // Umpire tab switching
+    document.querySelectorAll('.umpire-tab-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.umpire-tab-btn').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.umpire-tab-panel').forEach(p => p.classList.remove('active'));
+        btn.classList.add('active');
+        document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>
