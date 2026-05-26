@@ -32,19 +32,20 @@
       .scorer-layout{max-width:100%;display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start;padding:12px 16px 40px}
       .score-col{grid-column:1}.controls-col{grid-column:2}
     }
-    .match-info-bar{display:flex;align-items:center;justify-content:space-between;gap:10px;background:var(--glass);border:1px solid var(--glass-border);border-radius:var(--radius-pill);padding:9px 18px;margin-bottom:14px;font-size:.82em;font-weight:700;backdrop-filter:blur(12px);flex-wrap:wrap}
-    .match-info-batting{color:var(--gold);display:flex;align-items:center;gap:7px}
-    .match-info-bowling{color:var(--text-dim);display:flex;align-items:center;gap:7px}
-    .score-display-wrap{position:relative;text-align:center;padding:24px 20px 18px;background:linear-gradient(160deg,rgba(30,50,120,.35),rgba(7,12,26,.8));border:1px solid var(--glass-border);border-radius:var(--radius);margin-bottom:14px;overflow:hidden;backdrop-filter:blur(12px)}
+    .score-display-wrap{position:relative;text-align:center;padding:24px 20px 18px;background:linear-gradient(160deg,#dce8ff,#eef3ff);border:2px solid rgba(59,107,235,.3);border-radius:var(--radius);margin-bottom:14px;overflow:hidden;box-shadow:0 4px 20px rgba(59,107,235,.12)}
+    .score-teams-row{display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:14px;flex-wrap:wrap}
+    .score-team-batting{color:#92400e;font-size:.88em;font-weight:700;display:flex;align-items:center;gap:6px}
+    .score-team-bowling{color:#374151;font-size:.88em;font-weight:700;display:flex;align-items:center;gap:6px}
+    .score-teams-vs{color:rgba(30,58,138,.4);font-size:.75em;font-weight:600}
     .score-display-wrap::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--primary),var(--accent),var(--gold))}
     .score-main{display:flex;align-items:baseline;justify-content:center;line-height:1;margin-bottom:4px}
-    .score-runs{font-size:clamp(2.8em,12vw,5em);font-weight:800;letter-spacing:-2px;background:linear-gradient(120deg,#fff 0%,var(--gold) 40%,#fff 70%);background-size:250% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimmer 5s linear infinite}
-    .score-sep{font-size:clamp(1.8em,9vw,3.5em);font-weight:300;color:rgba(255,255,255,.3);padding:0 4px}
-    .score-wickets{font-size:clamp(2.8em,12vw,5em);font-weight:800;letter-spacing:-2px;color:var(--accent);text-shadow:0 0 32px rgba(232,51,77,.5)}
-    .score-over{font-size:clamp(1.1em,5vw,1.7em);font-weight:700;color:var(--text-dim);letter-spacing:2px;margin-bottom:6px}
-    .score-over span{color:var(--text)}
-    .crr-badge{display:inline-flex;align-items:center;gap:6px;font-size:.78em;font-weight:700;color:var(--green);background:rgba(34,217,138,.12);border:1px solid rgba(34,217,138,.3);border-radius:var(--radius-pill);padding:4px 14px}
-    .pred-badge{display:none;align-items:center;gap:6px;font-size:.78em;font-weight:700;color:#a78bfa;background:rgba(167,139,250,.12);border:1px solid rgba(167,139,250,.3);border-radius:var(--radius-pill);padding:4px 14px;margin-left:6px}
+    .score-runs{font-size:clamp(2.8em,12vw,5em);font-weight:800;letter-spacing:-2px;color:#111827;background:none;-webkit-text-fill-color:#111827}
+    .score-sep{font-size:clamp(1.8em,9vw,3.5em);font-weight:300;color:rgba(30,58,138,.35);padding:0 4px}
+    .score-wickets{font-size:clamp(2.8em,12vw,5em);font-weight:800;letter-spacing:-2px;color:#b91c1c;text-shadow:none}
+    .score-over{font-size:clamp(1.1em,5vw,1.7em);font-weight:700;color:#374151;letter-spacing:2px;margin-bottom:6px}
+    .score-over span{color:#111827}
+    .crr-badge{position:absolute;top:10px;left:14px;display:inline-flex;align-items:center;gap:4px;font-size:.6em;font-weight:700;color:#065f46;background:rgba(16,185,129,.2);border:1px solid rgba(16,185,129,.5);border-radius:var(--radius-pill);padding:3px 10px}
+    .pred-badge{position:absolute;top:10px;right:14px;display:none;align-items:center;gap:4px;font-size:.6em;font-weight:700;color:#5b21b6;background:rgba(124,58,237,.12);border:1px solid rgba(124,58,237,.4);border-radius:var(--radius-pill);padding:3px 10px}
     .pred-badge.visible{display:inline-flex}
     @keyframes scoreFlash{0%,100%{transform:scale(1)}40%{transform:scale(1.08)}}
     @keyframes wicketFlash{0%,100%{text-shadow:0 0 32px rgba(232,51,77,.5)}40%{text-shadow:0 0 60px rgba(232,51,77,1),0 0 100px rgba(232,51,77,.6)}}
@@ -61,45 +62,37 @@
     .b-overlay.six .b-lbl{font-size:clamp(4em,18vw,7em);color:var(--gold);text-shadow:0 0 40px rgba(247,201,72,.9),0 0 80px rgba(247,201,72,.4)}
     .b-overlay.wicket .b-bg{background:radial-gradient(ellipse at 50% 50%,rgba(232,51,77,.5) 0%,transparent 65%);opacity:1}
     .b-overlay.wicket .b-lbl{font-size:clamp(4em,18vw,7em);color:var(--accent);text-shadow:0 0 40px rgba(232,51,77,1),0 0 80px rgba(232,51,77,.6)}
-    .noball-strip{display:none;align-items:center;justify-content:center;gap:10px;background:linear-gradient(135deg,rgba(232,51,77,.25),rgba(247,100,20,.2));border:1px solid rgba(232,51,77,.5);border-radius:var(--radius-sm);padding:10px 18px;margin-bottom:12px;font-size:.85em;font-weight:700;color:var(--accent);animation:electricPulse 1s ease infinite}
+    .noball-strip{display:none;align-items:center;justify-content:center;gap:12px;background:linear-gradient(135deg,#c0392b,#e74c3c);border:3px solid #922b21;border-radius:var(--radius-sm);padding:16px 22px;margin-bottom:12px;font-size:1.05em;font-weight:800;color:#fff;box-shadow:0 4px 20px rgba(192,57,43,.5);animation:electricPulse 1s ease infinite;flex-wrap:wrap}
     .noball-strip.visible{display:flex}
-    .wide-strip{display:none;align-items:center;justify-content:center;gap:10px;background:linear-gradient(135deg,rgba(255,160,40,.22),rgba(247,100,20,.15));border:1px solid rgba(255,160,40,.5);border-radius:var(--radius-sm);padding:10px 18px;margin-bottom:12px;font-size:.85em;font-weight:700;color:#ffaa40;animation:electricPulse 1s ease infinite}
+    .wide-strip{display:none;align-items:center;justify-content:center;gap:12px;background:linear-gradient(135deg,#c0392b,#e74c3c);border:3px solid #922b21;border-radius:var(--radius-sm);padding:16px 22px;margin-bottom:12px;font-size:1.05em;font-weight:800;color:#fff;box-shadow:0 4px 20px rgba(192,57,43,.5);animation:electricPulse 1s ease infinite;flex-wrap:wrap}
     .wide-strip.visible{display:flex}
-    .wicket-strip{display:none;align-items:center;justify-content:center;gap:10px;background:linear-gradient(135deg,rgba(232,51,77,.28),rgba(180,20,50,.15));border:1px solid rgba(232,51,77,.6);border-radius:var(--radius-sm);padding:10px 18px;margin-bottom:12px;font-size:.85em;font-weight:700;color:var(--accent);animation:electricPulse 1s ease infinite}
+    .wicket-strip{display:none;align-items:center;justify-content:center;gap:12px;background:linear-gradient(135deg,#6c3483,#8e44ad);border:3px solid #4a235a;border-radius:var(--radius-sm);padding:16px 22px;margin-bottom:12px;font-size:1.05em;font-weight:800;color:#fff;box-shadow:0 4px 20px rgba(108,52,131,.5);animation:electricPulse 1s ease infinite;flex-wrap:wrap}
     .wicket-strip.visible{display:flex}
-    .wide-ans-btn{margin-left:12px;padding:9px 24px;border-radius:var(--radius-pill);font-family:'Poppins',sans-serif;font-size:.95em;font-weight:800;cursor:pointer;transition:all var(--transition)}
-    .wide-ans-btn.yes{border:1px solid rgba(34,217,138,.7);background:rgba(34,217,138,.2);color:var(--green)}
-    .wide-ans-btn.yes:hover{background:rgba(34,217,138,.45);box-shadow:0 0 16px rgba(34,217,138,.4)}
-    .wide-ans-btn.no{border:1px solid rgba(232,51,77,.7);background:rgba(232,51,77,.2);color:var(--accent)}
-    .wide-ans-btn.no:hover{background:rgba(232,51,77,.45);box-shadow:0 0 16px rgba(232,51,77,.4)}
-    .target-bar-inner{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:10px;padding-top:8px;border-top:1px solid rgba(255,255,255,.08)}
+    .wide-ans-btn{margin-left:8px;padding:10px 22px;border-radius:var(--radius-pill);font-family:'Poppins',sans-serif;font-size:1em;font-weight:800;cursor:pointer;transition:all var(--transition);border:2px solid rgba(255,255,255,.85)}
+    .wide-ans-btn.yes{background:#ffffff;color:#155724}
+    .wide-ans-btn.yes:hover{background:#d4edda;box-shadow:0 4px 16px rgba(0,0,0,.25)}
+    .wide-ans-btn.no{background:#ffffff;color:#7b0000}
+    .wide-ans-btn.no:hover{background:#f8d7da;box-shadow:0 4px 16px rgba(0,0,0,.25)}
+    .target-bar-inner{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:10px;padding-top:8px;border-top:1px solid rgba(30,58,138,.12)}
     .target-bar-inner .target-bar-stat{text-align:center}
     .target-bar-inner .target-bar-num{font-size:1.3em;font-weight:800;display:block;line-height:1}
     .target-bar-inner .target-bar-lbl{font-size:.65em;color:var(--text-dim);letter-spacing:1px;text-transform:uppercase}
-    .target-bar-inner .target-bar-num.runs{color:var(--gold);text-shadow:0 0 12px var(--gold-glow)}
-    .target-bar-inner .target-bar-num.balls{color:var(--pq-color);text-shadow:0 0 10px var(--pq-glow)}
+    .target-bar-inner .target-bar-num.runs{color:#b45309;text-shadow:none}
+    .target-bar-inner .target-bar-num.balls{color:#1e3a8a;text-shadow:none}
     .target-bar-inner .target-bar-num.rrr{color:var(--accent);text-shadow:0 0 10px var(--accent-glow)}
     .target-bar-inner .target-bar-divider{width:1px;height:30px;background:var(--border);flex-shrink:0}
-    .target-bar-inner .target-bar-msg{font-size:.88em;font-weight:800;color:var(--gold);text-align:center}
+    .target-bar-inner .target-bar-msg{font-size:1.25em;font-weight:900;color:#166534;text-align:center;letter-spacing:.5px}
     .target-bar{display:none;margin-top:8px}
     .target-bar.visible{display:block}
     .target-bar-close{margin-left:auto;background:none;border:1px solid rgba(232,51,77,.3);color:var(--accent);border-radius:var(--radius-pill);padding:4px 12px;font-size:.78em;font-weight:700;cursor:pointer;font-family:'Poppins',sans-serif;transition:background var(--transition)}
     .target-bar-close:hover{background:rgba(232,51,77,.15)}
-    .target-bar-msg{width:100%;font-size:.9em;font-weight:800;color:var(--gold);text-align:center;padding-top:4px}
-    .ball-dots-wrap{background:var(--glass);border:1px solid var(--glass-border);border-radius:var(--radius-sm);padding:14px 18px 12px;margin-bottom:14px;backdrop-filter:blur(10px)}
-    .ball-dots-label{font-size:.65em;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--text-dim);margin-bottom:10px;display:flex;align-items:center;justify-content:space-between}
-    .ball-dots-row{display:flex;gap:5px;align-items:center;justify-content:center;flex-wrap:wrap}
-    .ball-dot{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.65em;font-weight:800;border:2px solid rgba(255,255,255,.1);background:rgba(255,255,255,.04);color:var(--text-dim);transition:all .2s ease;letter-spacing:-.5px}
-    .ball-dot.current{border-color:rgba(59,107,235,.7);background:rgba(59,107,235,.12);animation:pulse 1.5s ease infinite}
-    .ball-dot.dot{background:rgba(255,255,255,.07);color:#fff;border-color:rgba(255,255,255,.85)}
-    .ball-dot.run1{background:rgba(125,211,252,.2);color:#7dd3fc;border-color:rgba(125,211,252,.6)}
-    .ball-dot.run2{background:rgba(244,114,182,.2);color:#f472b6;border-color:rgba(244,114,182,.6)}
-    .ball-dot.run3{background:rgba(167,139,250,.2);color:#a78bfa;border-color:rgba(167,139,250,.6)}
-    .ball-dot.run4{background:rgba(34,217,138,.25);color:var(--green);border-color:rgba(34,217,138,.6)}
-    .ball-dot.run6{background:rgba(247,201,72,.25);color:var(--gold);border-color:rgba(247,201,72,.65);box-shadow:0 0 12px rgba(247,201,72,.4)}
-    .ball-dot.wicket{background:rgba(232,51,77,.25);color:var(--accent);border-color:rgba(232,51,77,.65);box-shadow:0 0 12px rgba(232,51,77,.45)}
-    .ball-dot.wide{background:rgba(255,160,40,.2);color:#ffaa40;border-color:rgba(255,160,40,.5);font-size:.55em;width:auto;min-width:38px;height:38px;border-radius:8px;padding:0 5px}
-    .ball-dot.noball{background:rgba(255,80,40,.2);color:#ff8060;border-color:rgba(255,80,40,.5);font-size:.55em;width:auto;min-width:38px;height:38px;border-radius:8px;padding:0 5px}
+    .target-bar-msg{width:100%;font-size:1.25em;font-weight:900;color:#166534;text-align:center;padding-top:6px;letter-spacing:.5px}
+    .over-balls-row{display:flex;gap:10px;align-items:center;justify-content:center;flex-wrap:wrap;margin-top:10px;padding-top:8px;border-top:1px solid rgba(30,58,138,.15)}
+    .ball-txt{font-size:1.05em;font-weight:900;color:#1e3a8a;font-family:'Poppins',sans-serif;letter-spacing:.5px;line-height:1;padding:0 2px}
+    .ball-txt.extra{color:#ff5555}
+    .ball-txt.wicket-txt{color:#ff5555}
+    .ball-txt.current-txt{color:rgba(30,58,138,.3);font-weight:700;font-size:.9em}
+    .ball-sep{color:#374151;font-weight:700;font-size:1em;line-height:1}
     .run-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px}
     .run-btn{position:relative;padding:0;border:1px solid var(--glass-border);border-radius:14px;background:var(--glass);backdrop-filter:blur(10px);cursor:pointer;font-family:'Poppins',sans-serif;font-weight:800;color:var(--text);transition:transform .12s ease,box-shadow .15s ease,border-color .15s ease,background .15s ease;overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;aspect-ratio:1.4;min-height:64px}
     .run-btn:active{transform:scale(.93)}.run-btn:hover{transform:translateY(-3px)}.run-btn:disabled{opacity:.35;cursor:not-allowed;transform:none!important}
@@ -170,6 +163,109 @@
     .modal-btn-cancel:hover{background:var(--surface2);color:var(--text)}
     .modal-btn-confirm{background:linear-gradient(135deg,var(--primary),#5b8af0);color:#fff;box-shadow:0 4px 16px var(--primary-glow)}
     .modal-btn-confirm:hover{transform:translateY(-2px);box-shadow:0 6px 22px var(--primary-glow)}
+    /* ── Light background for daylight visibility ── */
+    body { background: #e8edf8 !important; }
+    body::before, body::after { display: none !important; }
+
+    /* Override glass / surface CSS variables for light background */
+    :root,body{
+      --glass: rgba(255,255,255,0.82);
+      --glass-border: rgba(0,0,0,0.13);
+      --surface2: rgba(0,0,0,0.06);
+      --surface-solid: #ffffff;
+      --border: rgba(0,0,0,0.12);
+      --text: #1a1f36;
+      --text-dim: #4a5270;
+      --shadow-lg: 0 8px 32px rgba(0,0,0,0.18);
+    }
+
+    /* Navbar & mobile menu readable on light */
+    .navbar { background: rgba(255,255,255,0.95) !important; border-bottom: 1px solid rgba(0,0,0,0.12) !important; }
+    .navbar .brand-text, .navbar .nav-links a { color: #1a1f36 !important; }
+    .navbar .nav-links a:hover, .navbar .nav-links a.active { color: var(--primary) !important; }
+    .mobile-menu { background: rgba(255,255,255,0.97) !important; border-bottom: 1px solid rgba(0,0,0,0.12) !important; }
+    .mobile-menu a { color: #1a1f36 !important; }
+
+    /* Setup card */
+    .setup-card { background: #ffffff; border: 1px solid rgba(0,0,0,0.14); box-shadow: 0 8px 32px rgba(0,0,0,0.16); }
+    .setup-card-header { background: linear-gradient(135deg,rgba(59,107,235,.18),rgba(232,51,77,.12)) !important; border-bottom: 1px solid rgba(0,0,0,0.1) !important; }
+    .setup-title { color: #1a1f36 !important; }
+    .setup-sub { color: #4a5270 !important; }
+    .setup-label { color: #3a4060 !important; }
+    .setup-input { background: #f0f3fb !important; border: 1px solid rgba(0,0,0,0.18) !important; color: #1a1f36 !important; }
+    .setup-input::placeholder { color: #8891b0 !important; }
+
+    /* Score display panel — keep dark so big score numbers remain vivid */
+    .score-display-wrap { background: linear-gradient(160deg,#dce8ff,#eef3ff) !important; border: 2px solid rgba(59,107,235,.3) !important; box-shadow: 0 4px 20px rgba(59,107,235,.12) !important; }
+
+    /* Ball dots wrap */
+
+
+    /* Run buttons — solid tinted backgrounds with dark text */
+    .run-btn { background: #f0f3fb !important; border: 2px solid rgba(0,0,0,0.14) !important; color: #1a1f36 !important; box-shadow: 0 2px 8px rgba(0,0,0,0.10); }
+    .run-btn .btn-lbl { opacity: 0.75 !important; }
+
+    .run-btn.btn-dot { background: #e4e7f2 !important; border-color: rgba(80,90,130,0.35) !important; color: #2d3360 !important; }
+    .run-btn.btn-dot:hover { background: #d4d8ec !important; border-color: rgba(80,90,130,0.6) !important; }
+
+    .run-btn.btn-wide { background: rgba(255,140,0,0.14) !important; border-color: rgba(255,140,0,0.55) !important; color: #92400e !important; }
+    .run-btn.btn-wide:hover { background: rgba(255,140,0,0.28) !important; border-color: rgba(255,140,0,0.85) !important; box-shadow: 0 4px 16px rgba(255,140,0,0.3) !important; }
+
+    .run-btn.btn-nb { background: rgba(220,60,30,0.14) !important; border-color: rgba(220,60,30,0.55) !important; color: #7f1d1d !important; }
+    .run-btn.btn-nb:hover { background: rgba(220,60,30,0.28) !important; border-color: rgba(220,60,30,0.85) !important; box-shadow: 0 4px 16px rgba(220,60,30,0.3) !important; }
+    .run-btn.btn-nb.active { background: rgba(220,60,30,0.35) !important; border-color: rgba(220,60,30,1) !important; }
+
+    .run-btn.btn-1 { background: rgba(14,165,233,0.14) !important; border-color: rgba(14,165,233,0.55) !important; color: #0c4a6e !important; }
+    .run-btn.btn-1:hover { background: rgba(14,165,233,0.28) !important; border-color: rgba(14,165,233,0.85) !important; box-shadow: 0 4px 16px rgba(14,165,233,0.3) !important; }
+
+    .run-btn.btn-2 { background: rgba(236,72,153,0.14) !important; border-color: rgba(236,72,153,0.55) !important; color: #831843 !important; }
+    .run-btn.btn-2:hover { background: rgba(236,72,153,0.28) !important; border-color: rgba(236,72,153,0.85) !important; box-shadow: 0 4px 16px rgba(236,72,153,0.3) !important; }
+
+    .run-btn.btn-3 { background: rgba(124,58,237,0.14) !important; border-color: rgba(124,58,237,0.55) !important; color: #3b0764 !important; }
+    .run-btn.btn-3:hover { background: rgba(124,58,237,0.28) !important; border-color: rgba(124,58,237,0.85) !important; box-shadow: 0 4px 16px rgba(124,58,237,0.3) !important; }
+
+    .run-btn.btn-4 { background: rgba(16,185,129,0.16) !important; border-color: rgba(16,185,129,0.6) !important; color: #064e3b !important; }
+    .run-btn.btn-4:hover { background: rgba(16,185,129,0.30) !important; border-color: rgba(16,185,129,0.9) !important; box-shadow: 0 4px 18px rgba(16,185,129,0.35) !important; }
+
+    .run-btn.btn-6 { background: rgba(217,166,0,0.18) !important; border-color: rgba(217,166,0,0.65) !important; color: #713f12 !important; }
+    .run-btn.btn-6:hover { background: rgba(217,166,0,0.32) !important; border-color: rgba(217,166,0,0.95) !important; box-shadow: 0 4px 20px rgba(217,166,0,0.4) !important; }
+
+    .run-btn.btn-wicket { background: rgba(220,38,38,0.14) !important; border-color: rgba(220,38,38,0.55) !important; color: #7f1d1d !important; }
+    .run-btn.btn-wicket:hover { background: rgba(220,38,38,0.28) !important; border-color: rgba(220,38,38,0.85) !important; box-shadow: 0 4px 20px rgba(220,38,38,0.35) !important; }
+    .run-btn.btn-wicket .btn-lbl { opacity: 1 !important; }
+
+    /* Utility buttons */
+    .util-btn { background: #ffffff !important; border: 1px solid rgba(0,0,0,0.16) !important; color: #3a4060 !important; }
+    .util-btn:hover { background: #eef0f9 !important; color: #1a1f36 !important; border-color: rgba(0,0,0,0.28) !important; }
+    .util-btn.btn-undo:hover { border-color: rgba(220,38,38,0.6) !important; color: #991b1b !important; background: rgba(220,38,38,0.08) !important; }
+    .util-btn.btn-target:hover { border-color: rgba(59,107,235,0.6) !important; color: #1e3a8a !important; background: rgba(59,107,235,0.08) !important; }
+    .util-btn.btn-newmatch:hover { border-color: rgba(180,130,0,0.6) !important; color: #713f12 !important; background: rgba(217,166,0,0.10) !important; }
+
+    /* Scoreboard panel */
+    .scoreboard-panel { background: #ffffff !important; border: 1px solid rgba(0,0,0,0.13) !important; }
+    .scoreboard-toggle { color: #1a1f36 !important; }
+    .sb-table th { color: #4a5270 !important; border-bottom-color: rgba(0,0,0,0.12) !important; }
+    .sb-table td { color: #1a1f36 !important; border-bottom-color: rgba(0,0,0,0.06) !important; }
+    .sb-table tr:hover td { background: rgba(0,0,0,0.03) !important; }
+
+    /* Modal */
+    .modal-box { background: #ffffff !important; border: 1px solid rgba(0,0,0,0.14) !important; }
+    .modal-header { background: linear-gradient(135deg,rgba(59,107,235,.15),rgba(232,51,77,.10)) !important; border-bottom: 1px solid rgba(0,0,0,0.1) !important; }
+    .modal-title { color: #1a1f36 !important; }
+    .modal-label { color: #3a4060 !important; }
+    .modal-input { background: #f0f3fb !important; border: 1px solid rgba(0,0,0,0.18) !important; color: #1a1f36 !important; }
+    .modal-btn-cancel { background: #e8edf8 !important; border: 1px solid rgba(0,0,0,0.15) !important; color: #3a4060 !important; }
+    .modal-btn-cancel:hover { background: #d8dff0 !important; color: #1a1f36 !important; }
+
+    /* Innings banner */
+    .innings-banner { background: linear-gradient(135deg,rgba(247,201,72,.22),rgba(232,51,77,.14)) !important; border: 1px solid rgba(180,130,0,0.5) !important; }
+    .innings-banner-title { color: #1a1f36 !important; }
+    .innings-banner-sub { color: #4a5270 !important; }
+
+    /* Restore banner */
+    .restore-banner { background: linear-gradient(135deg,rgba(247,201,72,.2),rgba(59,107,235,.14)) !important; }
+
+    /* Footer */
   </style>
 </head>
 <body>
@@ -253,12 +349,12 @@
   <div class="scorer-screen" id="scorerScreen">
     <div class="scorer-layout">
       <div class="score-col">
-        <div class="match-info-bar">
-          <span class="match-info-batting"><i class="bi bi-shield-fill"></i> <span id="infoTeamA">Team A</span></span>
-          <span style="color:var(--text-dim);font-size:.75em">vs</span>
-          <span class="match-info-bowling"><i class="bi bi-shield"></i> <span id="infoTeamB">Team B</span></span>
-        </div>
         <div class="score-display-wrap">
+          <div class="score-teams-row">
+            <span class="score-team-batting"><i class="bi bi-shield-fill"></i> <span id="infoTeamA">Team A</span></span>
+            <span class="score-teams-vs">vs</span>
+            <span class="score-team-bowling"><i class="bi bi-shield"></i> <span id="infoTeamB">Team B</span></span>
+          </div>
           <div class="score-main">
             <span class="score-runs" id="scoreRuns">0</span>
             <span class="score-sep">/</span>
@@ -277,6 +373,7 @@
               <div class="target-bar-msg" id="targetBarMsg" style="display:none"></div>
             </div>
           </div>
+          <div class="over-balls-row" id="ballDotsRow"></div>
         </div>
 
         <div class="noball-strip" id="noballStrip">
@@ -306,10 +403,7 @@
           <div class="innings-banner-sub" id="inningsBannerSub">Final score recorded.</div>
           <button class="setup-btn" id="startInnings2Btn" style="margin-top:8px;max-width:280px;display:none"><i class="bi bi-play-fill"></i> Start 2nd Innings</button>
         </div>
-        <div class="ball-dots-wrap">
-          <div class="ball-dots-label"><span><i class="bi bi-circle-fill" style="color:var(--primary);margin-right:5px"></i> This Over</span><span id="overLabel">Over 1</span></div>
-          <div class="ball-dots-row" id="ballDotsRow"></div>
-        </div>
+
       </div>
 
       <div class="controls-col">
@@ -453,7 +547,6 @@
       renderAll();
     }
     var inningsBanner = $('inningsBanner');
-    var overLabel     = $('overLabel');
     var scoreboardTbody = $('scoreboardTbody');
     var targetBar     = $('targetBar');
     var tbRuns        = $('tbRuns');
@@ -732,7 +825,6 @@
       var ballsInOver    = state.ballNo - 1;
       if (ballsInOver < 0) ballsInOver = 0;
       scoreOver.textContent = completedOvers + '.' + ballsInOver;
-      overLabel.textContent = 'Over ' + state.overNo;
 
       var totalBalls = completedOvers * 6 + ballsInOver;
       var crr = totalBalls > 0 ? (state.runs / totalBalls * 6).toFixed(2) : '0.00';
@@ -766,16 +858,30 @@
 
       var curOv = state.overs[state.overNo] || { balls: [], extras: 0 };
       ballDotsRowEl.innerHTML = '';
-      curOv.balls.forEach(function(val) {
-        var el = document.createElement('div');
-        el.className = 'ball-dot ' + dotClass(val);
+      curOv.balls.forEach(function(val, idx) {
+        if (idx > 0) {
+          var comma = document.createElement('span');
+          comma.className = 'ball-sep';
+          comma.textContent = ',';
+          ballDotsRowEl.appendChild(comma);
+        }
+        var el = document.createElement('span');
+        el.className = 'ball-txt ' + dotClass(val);
         el.textContent = dotLabel(val);
         ballDotsRowEl.appendChild(el);
       });
+      // Add comma before current placeholder if there are balls
+      if (!state.inningsOver && curOv.balls.length > 0) {
+        var sepCur = document.createElement('span');
+        sepCur.className = 'ball-sep';
+        sepCur.textContent = ',';
+        ballDotsRowEl.appendChild(sepCur);
+      }
       // Add current ball placeholder
       if (!state.inningsOver) {
-        var cur = document.createElement('div');
-        cur.className = 'ball-dot current';
+        var cur = document.createElement('span');
+        cur.className = 'ball-txt current-txt';
+        cur.textContent = '●';
         ballDotsRowEl.appendChild(cur);
       }
 
@@ -818,15 +924,10 @@
     }
 
     function dotClass(v) {
-      if (v === 'D')  return 'dot';
-      if (v === 'W' || v.indexOf('W+') === 0) return 'wicket';
-      if (v === '4')  return 'run4';
-      if (v === '6')  return 'run6';
-      if (v.indexOf('Wd') === 0) return 'wide';
-      if (v.indexOf('NB') === 0) return 'noball';
-      var n = parseInt(v);
-      if (n >= 1 && n <= 3) return 'run' + n;
-      return 'dot';
+      if (v === 'W' || v.indexOf('W+') === 0) return 'wicket-txt';
+      if (v.indexOf('Wd') === 0) return 'extra';
+      if (v.indexOf('NB') === 0) return 'extra';
+      return '';
     }
     function dotLabel(v) {
       if (v === 'D')  return '0';
