@@ -72,8 +72,8 @@
 
   if (!daysEl) return;
 
-  const TARGET     = new Date(2026, 4, 30, 8, 30, 0);
-  const END_TARGET = new Date(2026, 4, 30, 21, 15, 0);
+  const TARGET     = new Date(2026, 5, 6, 9, 0, 0);
+  const END_TARGET = new Date(2026, 5, 6, 22, 0, 0);
 
   function pad(n) { return String(n).padStart(2, '0'); }
 
