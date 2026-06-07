@@ -2177,9 +2177,10 @@ body::after {
 .gallery-item:hover { transform: translateY(-4px) scale(1.02); box-shadow: 0 10px 32px rgba(0,0,0,0.5); }
 .gallery-item img {
   width: 100%; height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   display: block;
   transition: opacity 0.22s;
+  background: #0d1428;
 }
 .gallery-overlay {
   position: absolute; inset: 0;
@@ -2245,6 +2246,49 @@ body::after {
 }
 .gallery-empty i { font-size: 3.5rem; }
 .gallery-empty p { margin: 0; font-style: italic; }
+
+/* ── Gallery year banner ── */
+.gallery-year-banner {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 2.5rem 0 1.5rem;
+}
+.gallery-year-line {
+  flex: 1;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  border-radius: 2px;
+}
+.gallery-year-label {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  padding: 0.3rem 1.1rem;
+  border: 2px solid var(--accent);
+  border-radius: 2rem;
+  background: rgba(255,255,255,0.04);
+}
+
+/* ── Gallery subsection heading (Man of the Match, etc.) ── */
+.gallery-subsection-heading {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text-muted, #aaa);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin: 1.5rem 0 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.gallery-subsection-heading i {
+  color: var(--accent);
+  font-size: 1.15rem;
+}
 
 /* ── Gallery subtitle ── */
 .gallery-page-sub {
@@ -2414,13 +2458,28 @@ body::after {
   flex-shrink: 0;
 }
 
-/* Subtitle */
+/* Subtitle — team name in golden glow */
+@keyframes teamNameGlow {
+  0%,100% { text-shadow: 0 0 12px rgba(247,201,72,0.6), 0 0 28px rgba(247,201,72,0.3); }
+  50%      { text-shadow: 0 0 24px rgba(247,201,72,1.0), 0 0 52px rgba(247,201,72,0.7), 0 0 80px rgba(255,220,80,0.4); }
+}
 .champions-2025-subtitle {
-  font-size: 2%;
-  font-weight: 600;
-  letter-spacing: 3px;
+  font-size: clamp(1.5rem, 5vw, 2.2rem);
+  font-weight: 800;
+  letter-spacing: 5px;
   text-transform: uppercase;
-  color: rgba(247,201,72,0.55);
+  background: linear-gradient(120deg,
+    #c89520 0%,
+    #f7c948 25%,
+    #ffe87a 50%,
+    #f7c948 75%,
+    #c89520 100%);
+  background-size: 300% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: goldShimmer 4s linear infinite, teamNameGlow 2.5s ease-in-out infinite;
+  filter: drop-shadow(0 0 10px rgba(247,201,72,0.5));
   margin-bottom: 32px;
   position: relative;
   z-index: 1;
