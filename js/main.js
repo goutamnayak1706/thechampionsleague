@@ -93,7 +93,7 @@
       if (wrap)     wrap.style.display = 'none';
       if (targetEl) targetEl.style.display = 'none';
       if (started) {
-        started.innerHTML = '<i class="bi bi-trophy-fill"></i>&nbsp; Tournament has ended for ' + END_TARGET.getFullYear();
+        started.innerHTML = '<i class="bi bi-trophy-fill"></i>&nbsp; Tournament has ended for ' + END_TARGET.getFullYear() + '- We will be back with more action soon';
         started.style.display = 'block';
       }
       return;

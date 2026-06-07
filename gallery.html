@@ -63,9 +63,61 @@
     <div class="section-heading reveal" style="margin-top: 2rem;"><i class="bi bi-images"></i> Gallery</div>
     <p class="gallery-page-sub reveal">Memories of the past</p>
 
-    <!-- ═══════════════════════════════════════════════
-         CHAMPIONS-2025 SECTION
-    ═══════════════════════════════════════════════ -->
+    <!-- YEAR BANNER 2026 -->
+    <div class="gallery-year-banner reveal">
+      <span class="gallery-year-line"></span>
+      <span class="gallery-year-label"><i class="bi bi-calendar3"></i> TCL 2026</span>
+      <span class="gallery-year-line"></span>
+    </div>
+
+    <!-- CHAMPIONS 2026 -->
+    <section class="champions-2025-section reveal">
+      <div class="champions-2025-crown-row">
+        <i class="bi bi-star-fill champ-star"></i>
+        <i class="bi bi-trophy-fill champ-trophy-icon"></i>
+        <i class="bi bi-star-fill champ-star"></i>
+      </div>
+      <div class="champions-2025-label">CHAMPIONS</div>
+      <div class="champions-2025-year">2026</div>
+      <div class="champions-2025-divider">
+        <span class="champ-line"></span>
+        <i class="bi bi-shield-fill-check champ-shield"></i>
+        <span class="champ-line"></span>
+      </div>
+      <p class="champions-2025-subtitle">HOLLAND CAPITALS</p>
+      <div class="champions-2025-frame-wrapper">
+        <div class="champions-2025-frame">
+          <img src="images/gallery/champions_2026.jpg" alt="Champions 2026" class="champions-2025-photo">
+          <div class="champions-2025-ribbon"><i class="bi bi-trophy-fill"></i> TCL 2026 Champions</div>
+        </div>
+      </div>
+    </section>
+    <div class="champions-2025-spacer"></div>
+
+    <!-- PLAYERS OF THE MATCHES 2026 -->
+    <div class="gallery-subsection-heading reveal" style="justify-content: center;">
+      <i class="bi bi-award-fill"></i> Players of the Matches — 2026
+    </div>
+    <div class="gallery-grid reveal" id="galleryGrid2026"></div>
+    <div class="gallery-empty" id="galleryEmpty2026" style="display:none">
+      <i class="bi bi-camera"></i>
+      <p>Player of the Match photos coming soon — check back after the tournament!</p>
+    </div>
+
+    <!-- ORGANISING TEAM 2026 -->
+    <div class="gallery-subsection-heading reveal" style="justify-content: center; margin-top: 2.5rem;">
+      <i class="bi bi-people-fill"></i> Organising Team — 2026
+    </div>
+    <div class="reveal" id="galleryGridOrganisers" style="display: flex; justify-content: center; margin-bottom: 2rem;"></div>
+
+    <!-- YEAR BANNER 2025 -->
+    <div class="gallery-year-banner reveal" style="margin-top: 3rem;">
+      <span class="gallery-year-line"></span>
+      <span class="gallery-year-label"><i class="bi bi-calendar3"></i> TCL 2025</span>
+      <span class="gallery-year-line"></span>
+    </div>
+
+    <!-- CHAMPIONS 2025 -->
     <section class="champions-2025-section reveal">
       <div class="champions-2025-crown-row">
         <i class="bi bi-star-fill champ-star"></i>
@@ -88,13 +140,6 @@
       </div>
     </section>
     <div class="champions-2025-spacer"></div>
-
-    <!-- Gallery grid — populated by JS from the GALLERY_PHOTOS array below -->
-    <div class="gallery-grid reveal" id="galleryGrid"></div>
-    <div class="gallery-empty" id="galleryEmpty" style="display:none">
-      <i class="bi bi-camera"></i>
-      <p>Photos coming soon — check back after the tournament!</p>
-    </div>
 
     <!-- Lightbox -->
     <div class="gallery-lightbox" id="galleryLightbox" role="dialog" aria-modal="true" aria-label="Image lightbox">
@@ -135,26 +180,44 @@
 
   <script src="js/main.js"></script>
   <script>
-    /* ════════════════════════════════════════════════
-       GALLERY PHOTOS
-       Add entries here as images are placed in images/gallery/
-       Format: { src: 'images/gallery/filename.jpg', caption: 'Description' }
-    ════════════════════════════════════════════════ */
-    const GALLERY_PHOTOS = [
-      /* Examples — uncomment / add your own:
-      { src: 'images/gallery/match1.jpg',  caption: 'Match Day 1 — Opening Kick-off' },
-      { src: 'images/gallery/teams.jpg',   caption: 'All 24 Teams Together' },
-      { src: 'images/gallery/trophy.jpg',  caption: 'The Champions League Trophy' },
-      */
+    /* Players of the Matches — TCL 2026 */
+    const GALLERY_PHOTOS_2026 = [
+      { src: 'images/gallery/MOM_00.jpeg', caption: 'Player of the Match — 1' },
+      { src: 'images/gallery/MOM_01.jpeg', caption: 'Player of the Match — 2' },
+      { src: 'images/gallery/MOM_03.jpeg', caption: 'Player of the Match — 3' },
+      { src: 'images/gallery/MOM_04.jpeg', caption: 'Player of the Match — 4' },
+      { src: 'images/gallery/MOM_05.jpeg', caption: 'Player of the Match — 5' },
+      { src: 'images/gallery/MOM_06.jpeg', caption: 'Player of the Match — 6' },
+      { src: 'images/gallery/MOM_07.jpeg', caption: 'Player of the Match — 7' },
+      { src: 'images/gallery/MOM_11.jpeg', caption: 'Player of the Match — 8' },
+      { src: 'images/gallery/MOM_12.jpeg', caption: 'Player of the Match — 9' },
+      { src: 'images/gallery/MOM_13.jpeg', caption: 'Player of the Match — 10' },
+      { src: 'images/gallery/MOM_14.jpeg', caption: 'Player of the Match — 11' },
+      { src: 'images/gallery/MOM_15.jpeg', caption: 'Player of the Match — 12' },
+      { src: 'images/gallery/MOM_16.jpeg', caption: 'Player of the Match — 13' },
+      { src: 'images/gallery/MOM_17.jpeg', caption: 'Player of the Match — 14' },
+      { src: 'images/gallery/MOM_18.jpeg', caption: 'Player of the Match — 15' },
+      { src: 'images/gallery/MOM_19.jpeg', caption: 'Player of the Match — 16' },
+      { src: 'images/gallery/MOM_20.jpeg', caption: 'Player of the Match — 17' },
+      { src: 'images/gallery/MOM_21.jpeg', caption: 'Player of the Match — 18' },
+      { src: 'images/gallery/MOM_22.jpeg', caption: 'Player of the Match — 19' },
+      { src: 'images/gallery/MOM_23.jpeg', caption: 'Player of the Match — 20' },
+      { src: 'images/gallery/MOM_24.jpeg', caption: 'Player of the Match — 21' },
+      { src: 'images/gallery/MOM_25.jpeg', caption: 'Player of the Match — 22' },
+      { src: 'images/gallery/MOM_26.jpeg', caption: 'Player of the Match — 23' },
+      { src: 'images/gallery/MOM_27.jpeg', caption: 'Player of the Match — 24' },
     ];
 
-    /* ── Build gallery grid ── */
-    (function () {
-      const grid  = document.getElementById('galleryGrid');
-      const empty = document.getElementById('galleryEmpty');
-      if (!grid) return;
-      if (!GALLERY_PHOTOS.length) { grid.style.display = 'none'; empty.style.display = 'flex'; return; }
-      GALLERY_PHOTOS.forEach(function (photo) {
+    /* Organisers — TCL 2026 */
+    const GALLERY_ORGANISERS = [
+      { src: 'images/gallery/organiers.jpeg', caption: 'Organisers — TCL 2026' },
+    ];
+
+    /* Build a gallery grid */
+    function buildGrid(photos, gridId) {
+      const grid = document.getElementById(gridId);
+      if (!grid || !photos.length) return;
+      photos.forEach(function (photo) {
         const item = document.createElement('div');
         item.className = 'gallery-item';
         item.dataset.caption = photo.caption || '';
@@ -162,9 +225,12 @@
                        + '<div class="gallery-overlay"><i class="bi bi-zoom-in"></i></div>';
         grid.appendChild(item);
       });
-    })();
+    }
 
-    /* ── Gallery lightbox (inline for gallery.html) ── */
+    buildGrid(GALLERY_PHOTOS_2026, 'galleryGrid2026');
+    buildGrid(GALLERY_ORGANISERS, 'galleryGridOrganisers');
+
+    /* Gallery lightbox */
     (function () {
       const items    = Array.from(document.querySelectorAll('.gallery-item'));
       const lightbox = document.getElementById('galleryLightbox');
